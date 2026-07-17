@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIニュースまとめ！（社内版）アーカイブ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f9fb;
+    --card:#ffffff;
+    --ink:#33414e;
+    --sub:#7a8794;
+    --primary:#0aa2c0;
+    --primary-deep:#067e96;
+    --sun:#ffb020;
+    --line:#e3ecf1;
+    --chip:#eaf6f9;
+    /* 分野色（原色系） */
+    --c-law:#e60012;       /* 法規制:赤 */
+    --c-hr:#8f00b7;        /* 人材:紫 */
+    --c-biz:#0068b7;       /* 経営:青 */
+    --c-tool:#009944;      /* ツール:緑 */
+    --c-world:#e4007f;     /* 海外:マゼンタ */
+    --c-ind:#f39800;       /* 産業:オレンジ */
+    --c-sns:#6b7a8f;       /* SNSの話題:グレー（報道と区別） */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.8;
+    font-size:15px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 18px 70px}
+
+  /* ヘッダー */
+  header{
+    background:linear-gradient(120deg,#0aa2c0 0%,#25bfd4 55%,#5fd4c2 100%);
+    color:#fff;
+    padding:34px 18px 60px;
+    border-radius:0 0 34px 34px;
+  }
+  .header-inner{max-width:1120px;margin:0 auto}
+  header h1{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;
+    font-size:clamp(25px,4.6vw,34px);
+    letter-spacing:.03em;
+  }
+  header h1 .spark{color:#ffe9a8}
+  .today{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:12px;
+    background:rgba(255,255,255,.16);
+    border:1.5px solid rgba(255,255,255,.38);
+    padding:6px 18px;border-radius:999px;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:700;font-size:13.5px;letter-spacing:.02em;
+  }
+  .today .t-sep{opacity:.55;font-weight:500}
+  .header-sub{margin-top:10px;font-size:13.5px;opacity:.92}
+
+  /* 検索・絞り込みパネル */
+  .panel{
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(10,120,150,.10);
+    padding:20px 22px;
+    margin:-38px 0 26px;
+    position:relative;
+  }
+  .searchbox{position:relative}
+  .searchbox input{
+    width:100%;
+    font-size:15.5px;
+    font-family:inherit;
+    padding:12px 16px 12px 46px;
+    border:2px solid var(--line);
+    border-radius:999px;
+    outline:none;
+    transition:border-color .15s;
+    background:#fbfdfe;
+  }
+  .searchbox input:focus{border-color:var(--primary)}
+  .searchbox .icon{
+    position:absolute;left:16px;top:50%;
+    transform:translateY(-50%);
+    width:19px;height:19px;color:var(--sub);
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{
+    font-family:inherit;
+    font-size:13px;font-weight:700;
+    padding:6px 15px;border-radius:999px;
+    border:1.5px solid var(--line);
+    background:#fff;color:var(--sub);
+    cursor:pointer;transition:all .15s;
+  }
+  .chip:hover{border-color:var(--primary);color:var(--primary-deep)}
+  .chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
+  .result-count{margin-top:12px;font-size:13px;color:var(--sub)}
+  .result-count b{color:var(--primary-deep);font-size:15px}
+
+  /* カードグリッド */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:start;
+  }
+  @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+  article{
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:20px 20px 16px;
+    transition:transform .15s, box-shadow .15s;
+    display:flex;
+    flex-direction:column;
+  }
+  article:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(50,90,110,.13)}
+  .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  .cat{
+    font-size:11.5px;font-weight:700;color:#fff;
+    padding:3px 12px;border-radius:999px;
+  }
+  .date{font-size:12px;color:var(--sub);font-weight:500}
+  .badge-new{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-size:11px;font-weight:800;letter-spacing:.08em;
+    color:#fff;background:var(--sun);
+    padding:2px 10px;border-radius:999px;
+    animation:pop 1.6s ease-in-out infinite;
+  }
+  @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  @media (prefers-reduced-motion: reduce){.badge-new{animation:none}}
+  article h3{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:700;font-size:16.5px;line-height:1.55;
+    color:#1e4756;margin-bottom:9px;
+  }
+  article p{font-size:13.5px;margin-bottom:9px}
+  .hint{
+    background:#fff8ea;border-radius:12px;
+    padding:10px 14px;font-size:13px;margin:8px 0;
+  }
+  .hint b.h{color:#c07d00}
+  .terms{
+    background:var(--chip);border-radius:12px;
+    padding:10px 14px;margin:8px 0;font-size:12.5px;
+  }
+  .terms .t-title{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:11.5px;letter-spacing:.12em;
+    color:var(--primary-deep);display:block;margin-bottom:4px;
+  }
+  .terms dt{font-weight:700;color:#1e4756;display:inline}
+  .terms dt::after{content:"…"}
+  .terms dd{display:inline;margin:0}
+  .terms .term-row{margin-bottom:5px}
+  .terms .term-row:last-child{margin-bottom:0}
+  .src{
+    font-size:12px;color:var(--sub);
+    border-top:1px dashed var(--line);
+    padding-top:8px;margin-top:auto;
+  }
+  .src a{color:var(--primary-deep);font-weight:500}
+  .src a:hover{color:#e60012}
+
+  .empty{
+    text-align:center;padding:50px 20px;color:var(--sub);
+    background:var(--card);border-radius:20px;
+    grid-column:1 / -1;
+  }
+  .empty .face{font-size:36px;margin-bottom:8px}
+  .back-link{
+    display:inline-block;margin-top:12px;color:#fff;font-weight:700;font-size:13.5px;
+    background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.38);
+    padding:6px 16px;border-radius:999px;text-decoration:none;
+  }
+  .back-link:hover{background:rgba(255,255,255,.28)}
+  .day-head{
+    grid-column:1 / -1;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:17px;color:var(--primary-deep);
+    margin:8px 2px -6px;scroll-margin-top:20px;
+  }
+
+  footer{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）アーカイブ</h1>
+    <div class="header-sub">過去に掲載したニュースのアーカイブページです。キーワード検索・分野の絞り込みができます。</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="panel">
+    <div class="searchbox">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="キーワードで検索（例：規制 / 資格 / ChatGPT）" aria-label="ニュースをキーワードで検索">
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="分野で絞り込み"></div>
+    <div class="result-count" id="count"></div>
+  </div>
+
+  <div id="list" class="grid"></div>
+
+  <footer>本ページは公開報道をもとに社内向けに要約したものです。詳しくは各記事の出典リンクをご覧ください。</footer>
+</div>
+
+<script>
+/* =========================================================
+   ニュースデータ（ここに新しい記事を追加していきます）
+   ・新しい記事は配列の先頭に追加してください
+   ・date は "YYYY-MM-DD" 形式（発行日）
+   ・掲載から4日間は自動で「NEW」が付きます
+========================================================= */
+const NEWS_DATA = [
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【米国】OpenAI、AIへの「なりすまし指示」を自動で見つけ出す防御研究「GPT-Red」を公開",
+    "summary": "OpenAIが7月15日、AIに対する攻撃手口を自動的に探し出し、製品の守りを固めるための研究「GPT-Red」を発表しました。AIがブラウザや接続アプリ、ファイル、外部ツールを扱う場面が増えるほど、文書やWebページの中に紛れ込ませた「隠れた指示」にAIが従ってしまう危険（プロンプトインジェクション）が高まるため、攻撃の探索と対策自体をAIで自動化する取り組みです。（海外報道より当ページで和訳・要約）",
+    "hint": "当社でもAIに資料やWebページを読ませる場面が増えています。「読み込ませたデータの中に不審な指示が紛れていないか」という視点は、日々の業務でも持っておきたい注意点です。",
+    "terms": [
+      {
+        "word": "プロンプトインジェクション",
+        "desc": "AIに読ませる文書やWebページの中に、こっそり「本来の指示を無視してこう動け」という命令文を紛れ込ませ、AIを操ろうとする攻撃手口のことです。"
+      }
+    ],
+    "source": {
+      "label": "eguweb「世界のAI最新ニュース（2026年7月16日）」",
+      "url": "https://eguweb.jp/ai/81198/"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【韓国】AIと半導体に10年で約130兆円の国家投資計画　データセンターやロボットも対象に",
+    "summary": "韓国政府が、AIと半導体を対象に今後10年で約1,350兆ウォン（約130兆円）規模の投資計画を打ち出したと報じられました。半導体（メモリ）製造とAIデータセンターの整備が柱で、2029年までにデータセンターの電力容量を大幅に拡大するほか、人型ロボットの世界シェア引き上げも目標に掲げています。米中に続き、韓国もAIを国家戦略の中心に据えた形です。（海外報道より当ページで和訳・要約）",
+    "hint": "",
+    "terms": [
+      {
+        "word": "データセンター",
+        "desc": "AIの計算を行うコンピューターを大量に集めて動かす施設のこと。AIの利用が増えるほど、施設の数と電力が必要になります。"
+      }
+    ],
+    "source": {
+      "label": "Build Fast with AI「AI News Today（英語・2026年7月15日）」",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【米国】NYタイムズなど新聞社側、OpenAIに「証拠を出していない」と制裁を申し立て　AIと著作権の裁判が新局面に",
+    "summary": "米ニューヨーク・タイムズなどの報道機関が、記事を無断でAIの学習に使われたとしてOpenAIを訴えている裁判で、学習データに関する証拠をOpenAIが適切に開示していないとして、裁判所に制裁を求める申し立てを行ったと報じられました。著作物を許可なくAIの学習に使うことが適法かどうかを問う代表的な裁判で、今後の展開はAI業界全体のルールに影響し得ます。（海外報道より当ページで和訳・要約）",
+    "hint": "マーケティング制作物を扱う当社にとって、「AIと著作権」の司法判断は実務ルールに直結するテーマです。国内の法務省の動き（7月16日掲載）と併せて、続報を追っていきます。",
+    "terms": [
+      {
+        "word": "制裁（サンクション）の申し立て",
+        "desc": "裁判の途中で、相手が証拠の提出義務などのルールを守っていないとして、裁判所に罰則的な措置を求める手続きのことです。"
+      }
+    ],
+    "source": {
+      "label": "Build Fast with AI「AI News Today（英語・2026年7月15日）」",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【米国】Claude開発元Anthropicの「AI導入支援会社」が正式始動　名前は「Ode」に",
+    "summary": "Claudeを開発する米Anthropicが、米大手投資会社ブラックストーンなどと共同で設立したAI導入支援会社を、「Ode（オード）」の名称で正式に始動させたと報じられました。AI技術者を顧客企業の現場に送り込み、業務の流れに合わせたAIの仕組みづくりまで請け負う事業で、評価額は15億ドル（約2,200億円）。競合のOpenAIも同種の会社を立ち上げており、AI競争の主戦場が「導入・定着の支援」に移っていることを裏づける動きです。（海外報道より当ページで和訳・要約）",
+    "hint": "7月9日に掲載したマイクロソフトの導入支援部隊のニュースと同じ流れで、当社が使うClaudeの開発元も「現場に定着させる支援」に本腰を入れた形です。「AIは導入・定着の支援が主戦場」という流れは、AI関連コンテンツの切り口としても使えます。",
+    "terms": [
+      {
+        "word": "ブラックストーン",
+        "desc": "世界最大級の米国の投資会社。企業や不動産に巨額の資金を投じて育て、その成長で利益を得るビジネスをしています。"
+      }
+    ],
+    "source": {
+      "label": "TechCrunch（英語・2026年7月15日）",
+      "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【米国】AI大手の安全対策を採点した「通信簿」公表　首位でも「C+」の厳しい評価",
+    "summary": "AIなどの技術リスクを研究する米国の非営利団体Future of Life Instituteが、主要AI企業の安全対策を採点した2026年版の指数を公表したと報じられました。リスク管理や透明性、自ら掲げた安全上の約束を守っているかを評価したもので、最高はAnthropicの「C+」、OpenAIとグーグル系のGoogle DeepMindは「C」、メタは「D+」など、業界全体でAIの能力向上に安全対策が追いついていないと指摘しています。（海外報道より当ページで和訳・要約）",
+    "hint": "「どの会社のAIを業務で使うか」を選ぶ際、性能や価格だけでなく安全への姿勢も比較材料になる、という視点を示すニュースです。AIの信頼性を扱う記事・資料づくりの材料として押さえておけます。",
+    "terms": [
+      {
+        "word": "非営利団体",
+        "desc": "利益を目的とせず、社会的な課題に取り組む組織のこと。今回のように、企業から独立した立場で業界を評価・監視する役割を担うことがあります。"
+      }
+    ],
+    "source": {
+      "label": "Build Fast with AI「AI News Today（英語・2026年7月15日）」",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "産業動向",
+    "title": "上新電機、全事業所に「ピースサインで勤怠打刻」の顔認証を導入　従業員から好評",
+    "summary": "家電量販店のJoshin（上新電機）が、カメラに向かってピースサインをするだけで出退勤を記録できる顔認証の仕組みを全事業所に導入したと報じられました。カードや打刻機の前に並ぶ手間がなくなり、従業員からの評判も良いとのことです。AIによる画像認識が身近な社内業務に入り込んできた一例です。",
+    "hint": "",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月15日）",
+      "url": "https://www.itmedia.co.jp/aiplus/subtop/news"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【欧州】EUの生成AIルールづくりが具体化　大手AI各社の署名状況が明らかに",
+    "summary": "EU（欧州連合）が進める生成AIの行動規範について、透明性・著作権・安全対策の枠組みが整理され、OpenAI、グーグル、マイクロソフト、Anthropic、IBMなど大手各社の署名状況が示されました。欧州向けにサービスを提供したり、AIで作った内容を扱ったりする日本企業にも影響し得る動きです。（海外報道より当ページで和訳・要約）",
+    "hint": "",
+    "terms": [
+      {
+        "word": "行動規範",
+        "desc": "法律そのものではなく、業界の会社が「守ります」と約束する共通ルールのこと。ただしEUではAI法という法律と連動しており、実質的な影響力があります。"
+      }
+    ],
+    "source": {
+      "label": "eguweb「世界のAI最新ニュース（2026年7月15日）」",
+      "url": "https://eguweb.jp/ai/81194/"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "【米国】セールスフォース、買い物客に対応する「販売AI」を正式提供　ChatGPTとの連携も予定",
+    "summary": "米セールスフォース社が、通販サイト向けに「買い物客対応」「仕入れ」「店舗運営」の3種類のAIエージェントを正式提供しました。在庫の確認から注文の確定まで、会話だけでなく実際の販売業務をAIが代行する仕組みで、今後はChatGPTやグーグルのGeminiからも買い物ができるよう連携する計画です。「AIとの会話の中で買い物が完結する」流れが本格化しています。（海外報道より当ページで和訳・要約）",
+    "hint": "通販・販促の世界では「消費者がAIに相談して買う」時代が近づいています。マーケティング施策でも、AI経由で見つけてもらえる情報発信（AI検索対策）という視点が今後効いてきそうです。",
+    "terms": [
+      {
+        "word": "セールスフォース",
+        "desc": "顧客管理システムで世界最大手の米国企業。営業やお客様対応の記録を管理する仕組みを提供しており、日本の企業でも広く使われています。"
+      }
+    ],
+    "source": {
+      "label": "AI Agent Store ニュース（英語・2026年7月15日の週）",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "人材・組織",
+    "title": "三菱商事、AI資格の取得を管理職昇格の要件に　大手で「昇進の条件はAI活用力」が広がる",
+    "summary": "三菱商事は2027年度から、AI関連資格の取得を管理職への昇格要件にすると報じられました。将来的には役員を含む全社員約5,000人超に取得を義務づける方針です。ユニ・チャームも係長級への昇進要件にAI資格を加えるなど、社員のAI活用力を人事制度に組み込む動きが日本の大手企業で本格化しています。",
+    "hint": "規模は違えど方向性は同じです。当社でも全員がClaudeを日常業務で使う体制を進めており、「AIを使いこなせることが仕事の前提になる」流れを裏づけるニュースといえます。",
+    "terms": [],
+    "source": {
+      "label": "日本経済新聞「AIは企業経営に『マスト』な存在に」",
+      "url": "https://www.nikkei.com/article/DGXZQOUC234SX0T21C25A2000000/"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "業務ツール",
+    "title": "パソコン版ChatGPTが大幅刷新　自動作業機能を統合した「ChatGPT Work」に",
+    "summary": "OpenAIがパソコン用のChatGPTを大きく作り替え、指示を受けて自律的に作業を進める機能「Codex（コーデックス）」を統合した「ChatGPT Work」として提供を始めたと報じられました。パソコン上での資料作成や事務作業をAIに任せる「机の上の自動化」をめぐり、各社の競争が激しくなっています。",
+    "hint": "当社が使っているClaudeにも同種の機能（Claude Coworkなど）があります。他社ツールの動向は、記事やセミナーの話題としても押さえておくと役立ちます。",
+    "terms": [
+      {
+        "word": "AIエージェント",
+        "desc": "一問一答で答えるだけでなく、目標を伝えると自分で段取りを考え、複数の作業を続けて進めてくれる型のAI。「指示待ちでなく、任せられるAI」というイメージです。"
+      }
+    ],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月15日）",
+      "url": "https://www.itmedia.co.jp/aiplus/"
+    }
+  },
+  {
+    "date": "2026-07-15",
+    "category": "海外の動き",
+    "title": "中国で「人間らしく振る舞うAI」への新規制が施行　大手2社が関連機能を終了へ",
+    "summary": "中国で、人格や話し方を自由に設定できる「擬人化AI」を対象とする新しい規制が7月15日に施行され、バイトダンス（TikTok運営元）とアリババが該当するAI機能を相次いで終了すると報じられました。AIが人間になりすます・人間関係の代わりになることへの規制は、各国で今後の論点になりそうです。",
+    "hint": "BizOn!のような人と人をつなぐ場を運営する当社にとって、「AIによるなりすまし」への規制動向は本人確認や不正対策の観点で無関係ではありません。国内の議論も注視します。",
+    "terms": [],
+    "source": {
+      "label": "Ledge.ai（2026年7月15日）",
+      "url": "https://ledge.ai/"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "業務ツール",
+    "title": "マイクロソフトの「Microsoft 365 Copilot」、標準AIを最新の「GPT-5.6」へ切り替え",
+    "summary": "OpenAIが7月14日、WordやExcel、Outlookなどに組み込まれているマイクロソフトのAIアシスタント「Microsoft 365 Copilot」で、最新モデル「GPT-5.6」が標準で使われるようになったと発表しました。Officeソフトを日常的に使う人にとっては、特別な設定をしなくてもAIの精度が一段上がることになります。（海外発表より当ページで和訳・要約）",
+    "hint": "中身のAIが変わると、同じ指示でも出てくる結果が変わることがあります。Copilotの利用者が「最近挙動が変わった」と感じたときの背景知識として押さえておくと役立ちます。",
+    "terms": [
+      {
+        "word": "Copilot（コパイロット）",
+        "desc": "マイクロソフトが提供するAIアシスタントの総称。「副操縦士」という意味で、WordやExcelの中で文章作成や表の分析を手伝ってくれます。"
+      }
+    ],
+    "source": {
+      "label": "OpenAI公式ニュース（英語・2026年7月14日）",
+      "url": "https://openai.com/news/"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "経営・投資",
+    "title": "個人事業主も使える「デジタル化・AI導入補助金2026」　7月下旬に申請締め切りの回が集中",
+    "summary": "旧「IT導入補助金」から名称が変わった国の「デジタル化・AI導入補助金2026」は、中小企業・小規模事業者に加えて個人事業主も対象で、AIを含む業務ソフトやクラウドサービスの導入費用の一部が補助されます。現在は7月21日締め切りの交付申請が受付中で、省力化投資補助金（7月31日締め切り）など、中小・個人向け支援の申請期限が7月下旬に集中しています。",
+    "hint": "中小企業・個人事業主に直接役立つ情報です。記事・メルマガ・セミナー告知で「補助金が使える可能性」に触れると、読者の反応が見込めるテーマです。フリーランスの外部パートナーにも紹介できる情報です。",
+    "terms": [
+      {
+        "word": "交付申請",
+        "desc": "補助金を受け取るために「この内容で導入します」と国に申請する手続きのこと。原則として、申請して認められる前に購入・契約したものは補助の対象になりません。"
+      }
+    ],
+    "source": {
+      "label": "経済産業省 北海道経済産業局（2026年7月14日更新）",
+      "url": "https://www.hkd.meti.go.jp/hokcm/digital_ai2026/index.htm"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "業務ツール",
+    "title": "ChatGPTに「横断検索」機能　過去のやり取りや保存ファイルをまとめて探せるように",
+    "summary": "OpenAIが7月14日、ChatGPTの過去のチャット・保存した画像や文書などを一括で検索できる機能を全プランで提供開始しました。種類別の絞り込みもでき、探したい過去のやり取りにすぐたどり着けるようになります。AI活用が進むほど「過去のやり取りが資産になる」ことを示す機能強化です。",
+    "hint": "当社が使うClaudeにも過去のチャットを検索する機能があります。「前に作ったあの文面どこだっけ」というときは、新しく作り直す前にAIに探させるのが時短の近道です。",
+    "terms": [],
+    "source": {
+      "label": "TECH NOISY（2026年7月14日発表分）",
+      "url": "https://tech-noisy.com/2026/07/16/ai-daily-news-2026-07-15/"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "人材・組織",
+    "title": "技術者派遣大手テクノプロ、Claudeを全社導入　1万人規模の「AI実装人材」育成へ",
+    "summary": "技術者派遣大手のテクノプロ・ホールディングスが、AIのClaudeを全社導入し、1万人規模でAIを業務システムに組み込める人材を育てる方針だと報じられました。AIを「使える人」を通り越して「仕事に組み込める人」を大量に育てる段階へ、国内企業の取り組みが進んでいます。",
+    "hint": "",
+    "terms": [],
+    "source": {
+      "label": "BizFreak AIニュースまとめ（2026年7月14日）",
+      "url": "https://bizfreak.co.jp/blog/l8uvk89bsrdv"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "産業動向",
+    "title": "「SoftBank World 2026」が開幕　国内最大級のAI関連イベント、8月末まで開催",
+    "summary": "ソフトバンク主催の大型イベント「SoftBank World 2026」が7月14日に開幕しました。会期は8月31日までと長期にわたり、AIエージェントや関連設備についての講演・発表が集中する見込みです。国内企業のAI導入の方向性を知るうえで、会期中の発表が注目されます。",
+    "hint": "講演の多くは無料のオンライン視聴が可能な例年構成です。記事や企画のネタ探しに、興味のある回だけでも覗いてみる価値があります。",
+    "terms": [],
+    "source": {
+      "label": "BizFreak AIニュースまとめ（2026年7月14日）",
+      "url": "https://bizfreak.co.jp/blog/l8uvk89bsrdv"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "海外の動き",
+    "title": "【米国】メタ、1,400人の追加削減を発表　トップ自ら「AI開発は期待ほど進んでいない」と認める",
+    "summary": "フェイスブックなどを運営する米メタが、5月の約8,000人削減に続き、1,400人の追加削減を発表したと報じられました。ザッカーバーグ最高経営責任者は社内向けに「この4か月のAIエージェント開発は期待していたほど加速していない」と率直に認めています。一方で7,000人をAI中心の業務に配置転換しており、単純な縮小ではなく「人の置き直し」が進んでいる形です。（海外報道より当ページで和訳・要約）",
+    "hint": "世界最大級の企業でもAIへの期待と現実の間で試行錯誤しているという話です。「AIですぐ何でもできる」という過度な期待を戒める材料として、記事やセミナー資料の論拠に使えます。",
+    "terms": [],
+    "source": {
+      "label": "petit a code「World AI News 7月14日号」",
+      "url": "https://note.com/sukerokerasu/n/ne7444b696cab"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "海外の動き",
+    "title": "【米国】著名経済学者やIT界の重鎮が「今すぐ行動を」　AIによる急激な変化に警鐘",
+    "summary": "AIがもたらす雇用や社会への急激な変化に対し、著名な経済学者やIT業界の重鎮たちが「We Must Act Now（今すぐ行動しなければならない）」と警鐘を鳴らしたと報じられました。AIの恩恵と副作用の両方に、社会全体で備えるべきだという議論が海外で強まっています。（海外報道より当ページで和訳・要約）",
+    "hint": "",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月14日）",
+      "url": "https://www.itmedia.co.jp/aiplus/subtop/news"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "海外の動き",
+    "title": "【米国・韓国】エヌビディアとSKハイニックス、次世代のAI向け記憶装置を共同開発へ",
+    "summary": "AI用半導体最大手の米エヌビディアと、韓国の半導体大手SKハイニックスが、複数年にわたる提携を結び、AIの処理速度を支える次世代の高速記憶装置を共同で設計すると発表しました。AI競争の主戦場が、頭脳となるAIそのものだけでなく、それを支える設備・部品の分野にも広がっています。（海外報道より当ページで和訳・要約）",
+    "hint": "",
+    "terms": [
+      {
+        "word": "HBM（高帯域メモリ）",
+        "desc": "AIの計算装置のすぐ隣に置かれる超高速の記憶部品。AIの処理速度を左右するため、世界的に取り合いになっています。"
+      }
+    ],
+    "source": {
+      "label": "petit a code「World AI News 7月14日号」",
+      "url": "https://note.com/sukerokerasu/n/ne7444b696cab"
+    }
+  },
+  {
+    "date": "2026-07-14",
+    "category": "産業動向",
+    "title": "川崎重工・ファナック・安川電機のロボット大手3社が「フィジカルAI」で連携",
+    "summary": "国内ロボット大手3社が、実世界で体を動かすAIの開発に向けて連携し、触覚データを含む共通の学習用データ基盤を構築すると発表されました。AIが文章や画像の世界を越えて、工場や物流など「現実の作業」に広がっていく流れを象徴する動きです。",
+    "hint": "",
+    "terms": [
+      {
+        "word": "フィジカルAI",
+        "desc": "ロボットなどの機械を通じて、現実世界で物を持つ・動かすといった作業を行うAIのこと。「頭脳だけでなく、手足を持ったAI」というイメージです。"
+      }
+    ],
+    "source": {
+      "label": "Ledge.ai（2026年7月15日）",
+      "url": "https://ledge.ai/"
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "category": "法規制・権利",
+    "title": "選挙のSNS偽情報対策法が成立　AIで作った画像・動画は「AI使用」の表示が義務に",
+    "summary": "選挙期間中のSNS上の偽情報対策を強化する改正公職選挙法と改正情報流通プラットフォーム対処法が7月13日、参議院で可決・成立しました。生成AIで作成・改変した選挙関連の画像や動画のうち、実際の撮影と誤認されるおそれのあるものには「AIで作成した」旨の表示が義務づけられ、SNS事業者には偽情報の拡散を抑える対策が求められます。2027年3月に施行され、同年春の統一地方選挙から適用されます。",
+    "hint": "選挙分野が先行例ですが、「AIで作ったものにはAI製と明示する」ルールは今後ほかの分野にも広がる可能性があります。広告・販促物でAI生成素材を使う当社としても、制作時の表示ルールづくりを先取りしておきたい動きです。",
+    "terms": [
+      {
+        "word": "情報流通プラットフォーム対処法",
+        "desc": "SNSなどの大手事業者に、誹謗中傷や偽情報への対応体制の整備を求める法律。今回の改正で、選挙に関する偽情報対策が義務として追加されました。"
+      }
+    ],
+    "source": {
+      "label": "日本経済新聞（2026年7月13日）",
+      "url": "https://www.nikkei.com/article/DGXZQOUA101YR0Q6A710C2000000/"
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "category": "人材・組織",
+    "title": "GMOグループ、AI時代に合わせ組織を見直し　熊谷代表が「AI変革最高責任者」に就任",
+    "summary": "GMOインターネットグループが、AI時代に対応するため技術者を含む組織体制を見直すと発表し、熊谷正寿代表自らが「AI変革最高責任者」に就くと報じられました。経営トップが直接AI変革の責任者となる体制は、国内大手でも珍しく、本気度を示す動きとして注目されています。",
+    "hint": "",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月13日）",
+      "url": "https://www.itmedia.co.jp/aiplus/subtop/news"
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "category": "業務ツール",
+    "title": "アニメ調の動画を作れるAI「AnimeGen」が無償公開　商用利用も可能",
+    "summary": "国内のAIベンチャーAIdeaLab社が、アニメ風の動画に特化した生成AI「AnimeGen」を無償公開しました。商用利用も認められており、販促動画やSNS向けの短い動画を低コストで作る選択肢が増えます。国産AIが特定分野に絞って存在感を出す例としても注目です。",
+    "hint": "BizOn!やセミナー告知のSNS動画など、当社でも試せる場面がありそうです。ただし利用規約と、実在の作品・人物に似せない配慮は必ず確認のうえで。",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月13日）",
+      "url": "https://www.itmedia.co.jp/aiplus/subtop/news"
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "category": "業務ツール",
+    "title": "OpenAI、ブラウザ「ChatGPT Atlas」を公開1年足らずで終了へ",
+    "summary": "OpenAIが、AI機能を組み込んだインターネット閲覧ソフト「ChatGPT Atlas」の提供を、公開から1年足らずで終了すると発表しました。AI各社が次々に新サービスを出す一方で、撤退の判断も早く、「出ては消える」の入れ替わりが激しい状況を象徴するニュースです。",
+    "hint": "新しいAIサービスを業務に採用するときは、この例のように短命に終わる可能性も頭に入れて、乗り換えやすい形で使い始めるのが安全です。",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月13日）",
+      "url": "https://www.itmedia.co.jp/aiplus/subtop/news"
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "category": "海外の動き",
+    "title": "【米国】マイクロソフトCEO「自社の大事なデータをAI企業に渡しすぎるのはリスク」と発言",
+    "summary": "マイクロソフトのナデラ最高経営責任者が、企業が独自のノウハウや業務データを外部のAI企業に渡すことのリスクに言及し、自社で管理できる形のAI活用への流れを示唆したと報じられました。「どのデータをAIに渡し、どのデータは渡さないか」の線引きが、世界的な経営テーマになりつつあります。（海外報道より当ページで和訳・要約）",
+    "hint": "当社が続けている「お客様の個人情報はAIに渡さず、手元のパソコンで処理する」という運用は、まさにこの世界的な流れに沿ったものです。",
+    "terms": [],
+    "source": {
+      "label": "BizFreak AIニュースまとめ（2026年7月14日）",
+      "url": "https://bizfreak.co.jp/blog/l8uvk89bsrdv"
+    }
+  },
+  {
+    "date": "2026-07-09",
+    "category": "海外の動き",
+    "title": "【米国】マイクロソフト、企業に入り込んでAI導入を支援する専門部隊を新設　約3,700億円を投入",
+    "summary": "米マイクロソフトが7月上旬、25億ドル（約3,700億円）を投じ、技術者6,000人を顧客企業に直接送り込んでAIの設計・導入・定着まで支援する新組織「Frontier Company」の設立を発表しました。米アマゾンも直前に同様の10億ドル規模の取り組みを発表しており、AIの競争は「モデルの賢さ」から「現場に定着させる支援力」へ移りつつあります。（海外報道より当ページで和訳・要約）",
+    "hint": "世界最大手が「AIは導入支援こそが勝負どころ」と判断したという話です。当社の支援事業の方向性とも重なる、心強い流れといえます。",
+    "terms": [],
+    "source": {
+      "label": "Crescendo AIニュースまとめ（英語・2026年7月上旬）",
+      "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates"
+    }
+  },
+  {
+    "date": "2026-07-08",
+    "category": "海外の動き",
+    "title": "【中国】高性能AIの国外提供に制限を検討　「AIは国家の戦略資産」との位置づけ強まる",
+    "summary": "ロイター通信によると、中国商務省などが、アリババやバイトダンスの最先端AIについて、国外への提供を制限する案を検討していると報じられました。AI技術の流出を国家安全にかかわる問題として扱う案も議論されているとのことです。米国も高性能半導体の対中輸出を制限しており、米中がAIを「国の資産」として囲い込む動きが強まっています。（海外報道より当ページで和訳・要約）",
+    "hint": "",
+    "terms": [
+      {
+        "word": "バイトダンス",
+        "desc": "動画アプリTikTok（ティックトック）を運営する中国の会社。AI開発でも中国の主要企業のひとつです。"
+      }
+    ],
+    "source": {
+      "label": "Benzinga（英語・2026年7月8日）",
+      "url": "https://www.benzinga.com/markets/tech/26/07/60326205/china-could-restrict-global-access-to-alibaba-and-bytedance-ai-models-as-beijing-tightens-its-grip-on-advanced-ai-report"
+    }
+  },
+  {
+    "date": "2026-04-01",
+    "category": "人材・組織",
+    "title": "【参考資料】フリーランスの生成AI活用調査　8割近くが週1回以上使う一方、7割超は「無料プランのみ」",
+    "summary": "フリーランス309名を対象にした民間調査（グロースフリー社・2026年3月実施）によると、78.3％が週1回以上、45.6％がほぼ毎日、業務で生成AIを使っています。76.4％が1割以上の時間短縮を実感し、約半数は3割以上の短縮を感じている一方、74.4％は無料プランのみの利用で、発注元との間のAI利用ルールもまだ過渡期にあると指摘されています。フリーランス・個人事業主の間でも、AIはすでに「使うのが当たり前の道具」になりつつあります。",
+    "hint": "外部のフリーランスパートナーと仕事をする際は、「AIをどこまで使ってよいか」「成果物にAIを使ったことを伝えるか」の取り決めを先に決めておくと、後々のトラブルを防げます。BizOn!ユーザーやセミナーの話題としても使える調査です。",
+    "terms": [],
+    "source": {
+      "label": "グロースフリー合同会社（PR TIMES・2026年4月1日）",
+      "url": "https://prtimes.jp/main/html/rd/p/000000003.000180271.html"
+    }
+  }
+];
+
+/* ===================== 表示処理 ===================== */
+const CAT_COLORS = {
+  "法規制・権利": "var(--c-law)",
+  "人材・組織":   "var(--c-hr)",
+  "経営・投資":   "var(--c-biz)",
+  "業務ツール":   "var(--c-tool)",
+  "海外の動き":   "var(--c-world)",
+  "産業動向":     "var(--c-ind)",
+  "SNSの話題":    "var(--c-sns)"
+};
+const NEW_DAYS = -1; // 掲載からこの日数はNEW表示
+
+const listEl  = document.getElementById("list");
+const qEl     = document.getElementById("q");
+const chipsEl = document.getElementById("chips");
+const countEl = document.getElementById("count");
+
+let activeCat = "すべて";
+
+function fmtDate(s){
+  const d = new Date(s + "T00:00:00");
+  const w = ["日","月","火","水","木","金","土"][d.getDay()];
+  return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${w}）`;
+}
+function isNew(s){
+  const d = new Date(s + "T00:00:00");
+  return (Date.now() - d.getTime()) / 86400000 <= NEW_DAYS;
+}
+function esc(t){
+  return t.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function buildChips(){
+  const cats = ["すべて", ...Object.keys(CAT_COLORS).filter(c => NEWS_DATA.some(n => n.category === c))];
+  chipsEl.innerHTML = cats.map(c =>
+    `<button class="chip${c===activeCat?" active":""}" data-cat="${esc(c)}">${esc(c)}</button>`
+  ).join("");
+  chipsEl.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+    activeCat = b.dataset.cat;
+    buildChips(); render();
+  }));
+}
+
+function render(){
+  const q = qEl.value.trim().toLowerCase();
+  const sorted = [...NEWS_DATA].sort((a,b) => b.date.localeCompare(a.date));
+  const hits = sorted.filter(n => {
+    if(activeCat !== "すべて" && n.category !== activeCat) return false;
+    if(!q) return true;
+    const hay = [n.title, n.summary, n.hint, n.category, n.date,
+                 ...n.terms.flatMap(t => [t.word, t.desc])].join(" ").toLowerCase();
+    return q.split(/\s+/).every(w => hay.includes(w));
+  });
+
+  countEl.innerHTML = q || activeCat !== "すべて"
+    ? `<b>${hits.length}</b> 件が見つかりました（全 ${NEWS_DATA.length} 件）`
+    : `全 <b>${NEWS_DATA.length}</b> 件を掲載中`;
+
+  if(hits.length === 0){
+    listEl.innerHTML = `<div class="empty"><div class="face">🔍</div>見つかりませんでした。<br>別の言葉で検索してみてください。</div>`;
+    return;
+  }
+
+  let prevD = null;
+  listEl.innerHTML = hits.map(n => {
+    const head = n.date !== prevD ? `<div class="day-head" id="d${n.date}">${fmtDate(n.date)}のニュース</div>` : "";
+    prevD = n.date;
+    return head + `
+    <article>
+      <div class="meta">
+        <span class="cat" style="background:${CAT_COLORS[n.category] || "var(--primary)"}">${esc(n.category)}</span>
+        <span class="date">${fmtDate(n.date)} 掲載</span>
+        ${isNew(n.date) ? `<span class="badge-new">NEW</span>` : ""}
+      </div>
+      <h3>${esc(n.title)}</h3>
+      <p>${esc(n.summary)}</p>
+      ${n.hint ? `<div class="hint"><b class="h">注目ポイント：</b>${esc(n.hint)}</div>` : ""}
+      ${n.terms.length ? `<div class="terms"><span class="t-title">用語解説</span>${
+        n.terms.map(t => `<div class="term-row"><dt>${esc(t.word)}</dt><dd>${esc(t.desc)}</dd></div>`).join("")
+      }</div>` : ""}
+      <div class="src">出典：<a href="${esc(n.source.url)}" target="_blank" rel="noopener">${esc(n.source.label)}</a></div>
+    </article>
+  `;}).join("");
+}
+
+qEl.addEventListener("input", render);
+buildChips();
+render();
+
+</script>
+</body>
+</html>
