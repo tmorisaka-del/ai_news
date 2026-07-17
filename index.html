@@ -179,26 +179,6 @@
   }
   .empty .face{font-size:36px;margin-bottom:8px}
 
-  /* 今日のトップニュース */
-  .top-wrap{margin-bottom:24px}
-  .top-label{
-    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
-    font-family:"M PLUS Rounded 1c",sans-serif;
-    font-weight:800;font-size:16.5px;color:#c07d00;
-    margin-bottom:10px;
-  }
-  .top-label .top-sub{font-size:12.5px;color:var(--sub);font-weight:700}
-  .top-card{
-    border:2.5px solid var(--sun);
-    box-shadow:0 8px 22px rgba(255,176,32,.20);
-    padding:22px 22px 16px;
-  }
-  .top-card h3{font-size:18px}
-  .top-reason{
-    background:#fff3d6;border-radius:12px;
-    padding:10px 14px;font-size:13px;margin:8px 0;
-  }
-  .top-reason b{color:#c07d00}
 
   /* 過去ニュースのアーカイブ一覧 */
   .archive-box{
@@ -241,8 +221,6 @@
     <div class="chips" id="chips" role="group" aria-label="分野で絞り込み"></div>
     <div class="result-count" id="count"></div>
   </div>
-
-  <div id="top-news"></div>
 
   <div id="list" class="grid"></div>
 
@@ -404,8 +382,7 @@ const NEWS_DATA = [
     "source": {
       "label": "日本経済新聞「AI」トピック（2026年7月16日更新）",
       "url": "https://www.nikkei.com/topics/24032501"
-    },
-    "topReason": "広告バナー・LP・SNS販促物にAI生成素材を使う機会が増えるほど、「実在の人物に似ていないか」の確認は制作フローの必須項目になります。責任範囲の明文化は、マーケターの実務ルールに直結する動きです。"
+    }
   },
   {
     "date": "2026-07-16",
@@ -462,29 +439,6 @@ function esc(t){
   return t.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
-function renderTop(n){
-  const topEl = document.getElementById("top-news");
-  if(!n){ topEl.innerHTML = ""; return; }
-  topEl.innerHTML = `
-  <div class="top-wrap">
-    <div class="top-label">👑 今日のトップニュース <span class="top-sub">— Webマーケターがまず読むべき1本</span></div>
-    <article class="top-card">
-      <div class="meta">
-        <span class="cat" style="background:${CAT_COLORS[n.category] || "var(--primary)"}">${esc(n.category)}</span>
-        <span class="date">${fmtDate(n.date)} 掲載</span>
-        ${isNew(n.date) ? `<span class="badge-new">NEW</span>` : ""}
-      </div>
-      <h3>${esc(n.title)}</h3>
-      <p>${esc(n.summary)}</p>
-      <div class="top-reason"><b>🎯 Webマーケター視点：</b>${esc(n.topReason)}</div>
-      ${n.hint ? `<div class="hint"><b class="h">注目ポイント：</b>${esc(n.hint)}</div>` : ""}
-      ${n.topReason ? `<div class="top-reason"><b>🎯 Webマーケター視点：</b>${esc(n.topReason)}</div>` : ""}
-      ${n.terms.length ? `<div class="terms"><span class="t-title">用語解説</span>${n.terms.map(t => `<div class="term-row"><dt>${esc(t.word)}</dt><dd>${esc(t.desc)}</dd></div>`).join("")}</div>` : ""}
-      <div class="src">出典：<a href="${esc(n.source.url)}" target="_blank" rel="noopener">${esc(n.source.label)}</a></div>
-    </article>
-  </div>`;
-}
-
 function buildChips(){
   const cats = ["すべて", ...Object.keys(CAT_COLORS).filter(c => NEWS_DATA.some(n => n.category === c))];
   chipsEl.innerHTML = cats.map(c =>
@@ -499,10 +453,7 @@ function buildChips(){
 function render(){
   const q = qEl.value.trim().toLowerCase();
   const sorted = [...NEWS_DATA].sort((a,b) => b.date.localeCompare(a.date));
-  const topItem = (!q && activeCat === "すべて") ? sorted.find(n => n.topReason) : null;
-  renderTop(topItem);
   const hits = sorted.filter(n => {
-    if(n === topItem) return false;
     if(activeCat !== "すべて" && n.category !== activeCat) return false;
     if(!q) return true;
     const hay = [n.title, n.summary, n.hint, n.category, n.date,
