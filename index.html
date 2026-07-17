@@ -51,7 +51,17 @@
     letter-spacing:.03em;
   }
   header h1 .spark{color:#ffe9a8}
-  .header-sub{margin-top:6px;font-size:13.5px;opacity:.92}
+  .today{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:12px;
+    background:rgba(255,255,255,.16);
+    border:1.5px solid rgba(255,255,255,.38);
+    padding:6px 18px;border-radius:999px;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:700;font-size:13.5px;letter-spacing:.02em;
+  }
+  .today .t-sep{opacity:.55;font-weight:500}
+  .header-sub{margin-top:10px;font-size:13.5px;opacity:.92}
 
   /* 検索・絞り込みパネル */
   .panel{
@@ -177,7 +187,8 @@
 
 <header>
   <div class="header-inner">
-    <h1>AIニュースまとめ！（社内版） <span class="spark">☀</span></h1>
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="today"><span id="t-date"></span><span class="t-sep">｜</span><span id="t-weather">…</span></div>
     <div class="header-sub">ビジネス・経営にかかわるAIの動きを、わかりやすい解説つきでお届けする社内向けページです。気になる言葉で検索してみてください。</div>
   </div>
 </header>
@@ -679,6 +690,48 @@ function render(){
 qEl.addEventListener("input", render);
 buildChips();
 render();
+
+/* ===================== 日付と今日の天気（東京） =====================
+   ページを開いた時点の日付と、Open-Meteo（無料の気象データAPI）から
+   取得した東京の現在の天気・気温を表示します。
+   取得に失敗した場合は日付のみ表示されます。
+==================================================================== */
+(function(){
+  const dateEl = document.getElementById("t-date");
+  const weatherEl = document.getElementById("t-weather");
+  const now = new Date();
+  const w = ["日","月","火","水","木","金","土"][now.getDay()];
+  dateEl.textContent = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日（${w}）`;
+
+  function codeToWeather(c){
+    if(c === 0) return ["☀️","快晴"];
+    if(c === 1) return ["🌤️","晴れ"];
+    if(c === 2) return ["⛅","晴れ時々くもり"];
+    if(c === 3) return ["☁️","くもり"];
+    if(c === 45 || c === 48) return ["🌫️","霧"];
+    if(c >= 51 && c <= 57) return ["🌦️","霧雨"];
+    if(c >= 61 && c <= 67) return ["🌧️","雨"];
+    if(c >= 71 && c <= 77) return ["🌨️","雪"];
+    if(c >= 80 && c <= 82) return ["🌦️","にわか雨"];
+    if(c === 85 || c === 86) return ["🌨️","雪"];
+    if(c >= 95) return ["⛈️","雷雨"];
+    return ["🌡️","天気"];
+  }
+
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=35.66&longitude=139.75&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo")
+    .then(r => r.json())
+    .then(d => {
+      const [icon, name] = codeToWeather(d.current.weather_code);
+      const t = Math.round(d.current.temperature_2m);
+      const hi = Math.round(d.daily.temperature_2m_max[0]);
+      const lo = Math.round(d.daily.temperature_2m_min[0]);
+      weatherEl.textContent = `東京 ${icon} ${name} ${t}℃（最高${hi}℃／最低${lo}℃）`;
+    })
+    .catch(() => {
+      weatherEl.textContent = "";
+      weatherEl.previousElementSibling.style.display = "none"; // 区切り線も消す
+    });
+})();
 </script>
 </body>
 </html>
