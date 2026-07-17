@@ -178,6 +178,11 @@
     grid-column:1 / -1;
   }
   .empty .face{font-size:36px;margin-bottom:8px}
+  .top-reason{
+    background:#fff3d6;border-radius:12px;
+    padding:10px 14px;font-size:13px;margin:8px 0;
+  }
+  .top-reason b{color:#c07d00}
   .back-link{
     display:inline-block;margin-top:12px;color:#fff;font-weight:700;font-size:13.5px;
     background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.38);
@@ -714,6 +719,7 @@ function render(){
       <h3>${esc(n.title)}</h3>
       <p>${esc(n.summary)}</p>
       ${n.hint ? `<div class="hint"><b class="h">注目ポイント：</b>${esc(n.hint)}</div>` : ""}
+      ${n.topReason ? `<div class="top-reason"><b>🎯 Webマーケター視点：</b>${esc(n.topReason)}</div>` : ""}
       ${n.terms.length ? `<div class="terms"><span class="t-title">用語解説</span>${
         n.terms.map(t => `<div class="term-row"><dt>${esc(t.word)}</dt><dd>${esc(t.desc)}</dd></div>`).join("")
       }</div>` : ""}
