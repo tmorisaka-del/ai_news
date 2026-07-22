@@ -199,21 +199,29 @@
 
   /* 今日のトップニュース */
   .topnews{
-    background:linear-gradient(120deg,#ffffff 0%,#eefafd 100%);
-    border:2px solid var(--primary);
-    border-radius:20px;
-    box-shadow:0 8px 24px rgba(10,120,150,.13);
-    padding:18px 22px 20px;margin:26px 0 4px;
+    position:relative;
+    background:linear-gradient(120deg,#ffffff 0%,#e9f8fc 100%);
+    border:3px solid var(--primary);
+    border-radius:22px;
+    box-shadow:0 12px 32px rgba(10,120,150,.20);
+    padding:22px 24px 22px 30px;margin:26px 0 10px;
+    overflow:hidden;
+  }
+  .topnews::before{
+    content:"";position:absolute;top:0;left:0;width:9px;height:100%;
+    background:linear-gradient(180deg,var(--sun) 0%,var(--primary) 100%);
   }
   .topnews .tn-label{
     display:inline-flex;align-items:center;gap:6px;
     font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-    font-size:12px;letter-spacing:.08em;color:#fff;
-    background:var(--primary);padding:4px 14px;border-radius:999px;
+    font-size:13px;letter-spacing:.1em;color:#fff;
+    background:linear-gradient(120deg,var(--sun),#ff9d00);
+    padding:5px 17px;border-radius:999px;
+    box-shadow:0 3px 10px rgba(255,157,0,.4);
   }
   .topnews h2{
     font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-    font-size:clamp(18px,2.6vw,21px);line-height:1.5;color:#12414f;margin:12px 0 8px;
+    font-size:clamp(19px,2.9vw,23px);line-height:1.5;color:#0e3d4b;margin:13px 0 9px;
   }
   .topnews .tn-summary{font-size:13.5px;margin-bottom:10px}
   .topnews .tn-reason{background:#fff8ea;border-radius:12px;padding:10px 14px;font-size:13px}
@@ -267,6 +275,42 @@
    ・掲載から4日間は自動で「NEW」が付きます
 ========================================================= */
 const NEWS_DATA = [
+  {
+    "date": "2026-07-21",
+    "category": "業務ツール",
+    "title": "グーグル・クラウド、コード改善AI「AlphaEvolve」を一般提供　物流・金融などの効率化に",
+    "summary": "グーグル・クラウドが、同社のAI「Gemini」を土台にしたコード改善・探索エージェント「AlphaEvolve」を、誰でも使える形で一般提供したと発表しました。処理の速いプログラムやより良い計算手順を探し出すのが得意で、物流、半導体、ゲノム解析、金融など幅広い分野で検証されてきたとされています。文章を書くだけでなく、業務システムの中身そのものを速く・安くするAIが実用段階に入りつつあります。（海外報道より当ページで和訳・要約）",
+    "hint": "在庫検索や問い合わせの振り分け、レポート集計、CSV処理など、身近な処理にも改善の余地は多くあります。ただしAIの改善案をそのまま本番に入れず、テストと元に戻せる仕組みをセットにするのが安全です。",
+    "terms": [],
+    "source": {
+      "label": "Google Cloud 公式ブログ（英語・2026年7月）",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/alphaevolve-is-available-for-everyone"
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "category": "SNSの話題",
+    "title": "OpenAIの次期モデル「GPT-5.6」を非公開テストか　Xで品質向上と処理遅延の指摘",
+    "summary": "OpenAIが次期モデル「GPT-5.6」をChatGPT上で非公開のまま試しているのではないか、との見方がXで広がっています。利用者からは、生成物の品質が上がったと評価する声が出る一方、これまで10分ほどで終わっていた作業が1時間を超えたなど、処理時間が延びたとの指摘も相次いでいます。※X上の反応をAIが自動集計・要約した情報のため、内容の正確性は各自ご確認ください。",
+    "hint": "モデルの世代が上がると品質と速度のバランスが変わることがあります。制作や広告運用でAIを使う際は、締め切りの直前に主力モデルを切り替えない、といった運用面の備えが役立ちます。",
+    "terms": [],
+    "source": {
+      "label": "デジタルトゥデイ（2026年7月21日／X上の反応を報道）",
+      "url": "https://www.digitaltoday.co.kr/jp/view/73196/gpt-5-6-rumors-stir-community-chatgpt-codex-performance-gains-spotted"
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "category": "経営・投資",
+    "title": "「新事業進出・ものづくり商業サービス補助金」第1回公募の日程を変更　中小機構が案内",
+    "summary": "中小企業向けの支援情報サイト「J-Net21」が7月21日、「新事業進出・ものづくり商業サービス補助金」第1回公募の日程変更を伝えました。設備投資や新事業への進出を後押しする代表的な補助金で、申請を検討する中小企業・個人事業主は、最新の公募スケジュールを事務局の告知で確認する必要があります。AI・IT導入を含む生産性向上の投資にも活用されてきた制度です。",
+    "hint": "補助金の公募日程は変更されることがあります。自社やお客様向けのメルマガ・記事で支援制度を紹介する際は、掲載前に事務局の最新情報を確認し、申請期限の取り違えを防ぐことが大切です。",
+    "terms": [],
+    "source": {
+      "label": "J-Net21（中小企業基盤整備機構・2026年7月21日）",
+      "url": "https://j-net21.smrj.go.jp/news/bt5puv000000otsl.html"
+    }
+  },
   {
     "date": "2026-07-21",
     "category": "業務ツール",
@@ -346,6 +390,35 @@ const NEWS_DATA = [
     "source": {
       "label": "NVIDIA公式ブログ（英語・2026年7月21日）",
       "url": "https://blogs.nvidia.com/blog/vera-rubin/"
+    }
+  },
+  {
+    "date": "2026-07-20",
+    "category": "海外の動き",
+    "title": "【中国】上海「世界人工知能大会」が閉幕　29カ国が中国主導の国際AI機構に署名",
+    "summary": "上海で7月17日から開かれていた「世界人工知能大会（WAIC 2026）」が7月20日に閉幕しました。会期に合わせて、パキスタンやロシアなど29カ国が、中国主導の国際的なAI協力の枠組み「世界人工知能協力機構（WAICO）」の設立協定に署名し、本部は上海に置かれる方向とされています。国連の事務総長も関連行事に出席し、米国主導とは異なるAIのルールづくりの受け皿を中国が整えつつあることを印象づけました。（海外報道より当ページで和訳・要約）",
+    "hint": "AIのルールが「米国流」と「中国流」に分かれていくと、海外向けにサービスや広告を出す企業は、どちらの基準にも合わせられる備えが必要になります。越境ECや多言語サイトを扱う企画で押さえておきたい論点です。",
+    "terms": [
+      {
+        "word": "WAICO（世界人工知能協力機構）",
+        "desc": "中国が主導し、AIの国際的な協力やルールづくりを進めるために設立が発表された枠組み。本部は上海に置かれる方向とされています。"
+      }
+    ],
+    "source": {
+      "label": "新華社（英語・2026年7月16日）",
+      "url": "http://english.news.cn/20260716/b0449aa2133542868e310fdc45ef2969/c.html"
+    }
+  },
+  {
+    "date": "2026-07-20",
+    "category": "海外の動き",
+    "title": "【英国】材料探索AIの「CuspAI」が約4.5億ドルを調達　英政府とベゾスも出資",
+    "summary": "ロイター通信によると、英ケンブリッジの新素材探索AIスタートアップCuspAIが、7月20日までに約4億5000万ドルの資金を調達しました。評価額は約26億ドルで、2025年9月の約5億ドルからおよそ5倍に上昇しています。ジェフ・ベゾス氏の投資ファンドや英国政府も加わり、AIと大規模なシミュレーションで、半導体やクリーンエネルギー向けの新素材を実験前に絞り込む用途が期待されています。（海外報道より当ページで和訳・要約）",
+    "hint": "AIの活躍の場が、文章や画像の生成から、素材や製造といった「現実の産業」へ広がっていることを示す動きです。AIの用途を語る記事やセミナーで、身近なチャット以外の応用例として使えます。",
+    "terms": [],
+    "source": {
+      "label": "Reuters（英語・2026年7月20日）",
+      "url": "https://www.reuters.com/business/uk-government-bezos-back-cuspais-450-million-round-startup-seeks-discover-new-2026-07-20/"
     }
   }
 ];
@@ -456,11 +529,11 @@ renderTop();
 const ARCHIVE_INDEX = [
   {
     "date": "2026-07-17",
-    "count": 1
+    "count": 3
   },
   {
     "date": "2026-07-16",
-    "count": 9
+    "count": 10
   },
   {
     "date": "2026-07-15",
@@ -468,11 +541,11 @@ const ARCHIVE_INDEX = [
   },
   {
     "date": "2026-07-14",
-    "count": 9
+    "count": 10
   },
   {
     "date": "2026-07-13",
-    "count": 5
+    "count": 6
   },
   {
     "date": "2026-07-09",
