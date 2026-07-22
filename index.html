@@ -199,6 +199,35 @@
 
   footer{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+  /* 今日のトップニュース */
+  .topnews{
+    background:linear-gradient(120deg,#ffffff 0%,#eefbfd 100%);
+    border:2px solid var(--primary);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(10,120,150,.12);
+    padding:20px 22px;margin:0 0 22px;
+  }
+  .topnews .tn-label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
+    font-size:12px;letter-spacing:.1em;color:#fff;
+    background:var(--sun);padding:4px 14px;border-radius:999px;margin-bottom:10px;
+  }
+  .topnews .tn-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .topnews h2{
+    font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
+    font-size:19px;line-height:1.5;color:#1e4756;margin:2px 0 8px;
+  }
+  .topnews p{font-size:14px;margin-bottom:10px}
+  .topnews .tn-reason{
+    background:var(--chip);border-left:4px solid var(--primary);
+    border-radius:10px;padding:11px 14px;font-size:13.5px;margin-bottom:8px;
+  }
+  .topnews .tn-reason b{color:var(--primary-deep)}
+  .topnews .tn-src{font-size:12px;color:var(--sub)}
+  .topnews .tn-src a{color:var(--primary-deep);font-weight:500}
+  .topnews .tn-src a:hover{color:#e60012}
 </style>
 </head>
 <body>
@@ -222,6 +251,8 @@
     <div class="result-count" id="count"></div>
   </div>
 
+  <div id="topnews"></div>
+
   <div id="list" class="grid"></div>
 
   <div class="archive-box">
@@ -242,167 +273,72 @@
 ========================================================= */
 const NEWS_DATA = [
   {
-    "date": "2026-07-17",
-    "category": "海外の動き",
-    "title": "【中国】世界最大級のAI見本市「世界人工知能大会」が上海で開幕　習近平国家主席が初めて登壇へ",
-    "summary": "中国最大のAIイベント「世界人工知能大会」が7月17日から20日まで上海で開かれます。今年は「AIの世界的な統治（ルールづくり）」を話し合う閣僚級会合も併せて開催され、習近平国家主席が初めて開幕式に出席し、中国のAI政策を包括的に語る演説を行う予定です。展示面積は初めて10万平方メートルを超え、1,100社超が出展する過去最大規模で、中国がAIを国家最重要課題と位置づけていることを内外に示す場となります。（海外報道より当ページで和訳・要約）",
-    "hint": "",
+    "date": "2026-07-18",
+    "category": "業務ツール",
+    "title": "Anthropic、最上位AI「Claude Fable 5」を上位プランの標準機能に　下位プランは従量課金へ移行",
+    "summary": "当社が業務で使うClaudeの開発元Anthropicが7月17日（米国時間）、最上位モデル「Claude Fable 5」の提供方法を見直し、7月20日から上位プラン「Max」「Team Premium」の標準機能にすると発表しました。両プランでは利用上限の50%まで追加料金なしで使えます。一方、下位の「Pro」「Team Standard」では月額とは別に使った分だけ支払う従量課金に切り替わり、対象者には100ドル分のクレジットが1回だけ付与されます。Fable 5は6月9日の公開後、輸出規制による一時停止や無償提供期間の延長を繰り返してきましたが、今回プラン階層に応じた恒常的な提供体制に落ち着きました。（海外報道より当ページで和訳・要約）",
+    "hint": "AIツールは提供条件や料金体系が短期間で変わることを示す一例です。制作や分析でどのモデル・プランを使うかを決める際は、最上位モデルの使い放題枠や従量課金の有無を定期的に見直すと、費用と品質のバランスを取りやすくなります。",
     "terms": [
       {
-        "word": "世界人工知能大会（WAIC）",
-        "desc": "中国政府の後援で2018年から上海で毎年開かれているAIの国際見本市・会議。中国のAI政策や最新技術が一堂に披露される場です。"
+        "word": "従量課金",
+        "desc": "定額料金とは別に、使った分だけ料金がかかる仕組み。利用量が読みにくいサービスで採用されがちです。"
       }
     ],
     "source": {
-      "label": "新華社（中国語・2026年7月13日発表）",
-      "url": "https://www.news.cn/politics/leaders/20260713/fe1e7ba9506b44cc97756604937044c5/c.html"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "産業動向",
-    "title": "国産AI新会社「Noetra」が本格始動　ソニー・ソフトバンク・NEC・ホンダが中核となり「ロボットの頭脳」づくりへ挑む",
-    "summary": "ソニーグループ、ソフトバンク、NEC、ホンダが中核出資する国産AI企業Noetra（ノエトラ）が7月16日、産業技術総合研究所などと組み、文章・画像・音声や物理空間の情報までまとめて扱える国産の「マルチモーダル基盤モデル」の研究開発を本格始動したと発表しました。ロボットや工場などで働く「フィジカルAI」の頭脳となる技術で、経済産業省・NEDOの国家事業（初年度の委託費は約3,873億円と報じられています）に採択されています。日本の産業データを国内で安全に生かすための、官民を挙げた大型プロジェクトです。",
-    "hint": "",
-    "terms": [
-      {
-        "word": "マルチモーダル基盤モデル",
-        "desc": "文章だけでなく、画像・音声・動画など複数の種類の情報をまとめて理解・処理できる土台のAIのこと。ロボットが現実世界を認識するために欠かせない技術です。"
-      }
-    ],
-    "source": {
-      "label": "ソフトバンク プレスリリース（2026年7月16日）",
-      "url": "https://www.softbank.jp/corp/news/press/sbkk/2026/20260716_01/"
+      "label": "ITmedia NEWS（2026年7月18日）",
+      "url": "https://www.itmedia.co.jp/news/articles/2607/18/news019.html"
     }
   },
   {
     "date": "2026-07-16",
     "category": "海外の動き",
-    "title": "【米国】スペースX株が上場価格を下回る　過熱していたAI関連の新規上場に一服感",
-    "summary": "イーロン・マスク氏率いる米スペースXの株価が、新規上場時の価格を下回ったとブルームバーグが報じました。AI関連インフラや航空宇宙・防衛といった人気分野の新規上場銘柄が軒並み下落しており、7月15日時点の2026年の米国新規上場銘柄の平均リターンは6％と、株式市場全体（S&P500の11％）を下回っています。AIへの期待だけで株価が上がる局面は一巡しつつある、という見方が広がっています。",
-    "hint": "「AIブームはバブルでは？」という論点を扱う際の材料になるニュースです。期待先行の投資には調整が入る一方、実際の業務での活用は着実に広がっている、という整理で書けます。",
+    "title": "【欧州】EUがグーグルに「AIアシスタント開放」を命令　ChatGPTやClaudeにもAndroidの主要機能と検索データの共有も",
+    "summary": "欧州委員会は7月16日、デジタル市場法（DMA）に基づく2つの拘束力ある決定を出し、グーグルに対しAndroidの主要機能を競合のAIアシスタントにも開放するよう命じました。音声での呼び出し（「OK Google」に相当）やアプリ内での操作など計11の機能が対象で、利用者が好みのAIアシスタントを既定に選べるようにします。もう1つの決定では、グーグルが検索の精度向上に使う匿名化した検索・クリックデータを、競合の検索エンジンや検索機能を持つAIチャットボットに有償で共有するよう求めています。決定は即時発効で、グーグルは異議を申し立てる方針ですが、申し立てても義務の履行は止まりません。（海外報道より当ページで和訳・要約）",
+    "topReason": "AIアシスタント経由で情報に触れる流れが広がるなか、この決定は「どのAIに、どんな検索データが渡るか」という土台を動かすものです。検索やAI経由で自社・顧客の情報を見つけてもらう設計（いわゆるAIO・検索対策）を考えるうえで、前提となる大きな地殻変動として押さえておきたい一件です。",
+    "hint": "欧州向けの措置ですが、各国の規制当局が「AIアシスタントと検索データをどう競争環境に開くか」の具体的なひな型として注視しています。日本での議論にも波及し得るため、続報を追う価値があります。",
     "terms": [
       {
-        "word": "IPO（新規株式公開）",
-        "desc": "未上場の会社が初めて証券取引所に株式を公開し、誰でも売買できるようにすること。上場時に付いた値段を「公開価格」と呼びます。"
+        "word": "DMA（デジタル市場法）",
+        "desc": "EUが2023年に導入した、巨大IT企業に公正な競争を義務づける法律。違反すると世界売上高に対する高額の制裁金が科され得ます。"
       }
     ],
     "source": {
-      "label": "Bloomberg日本語版（2026年7月16日）",
-      "url": "https://www.bloomberg.com/jp/news/articles/2026-07-16/TIA97KKJH6V400"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "産業動向",
-    "title": "エヌビディア、トヨタなど日本企業との連携を一挙発表　実証都市「ウーブン・シティ」の頭脳づくりも支援へ",
-    "summary": "AI用半導体最大手の米エヌビディアが7月16日、来日中のフアン最高経営責任者の「今週はジャパンAIの幕開け」という予告どおり、日本企業との提携を相次いで発表しました。トヨタ自動車とは実証都市「ウーブン・シティ」（静岡県裾野市）の交通管制AIや次世代車、工場効率化で連携するほか、同社が無償公開するAIモデルをNTTデータ・日立製作所・Sakana AIが採用します。三菱重工業もAI設備向けの冷却装置で協力するなど、半導体からまちづくりまで幅広い分野に及ぶ内容です。",
-    "hint": "海外AI大手が日本を「重要市場」と位置づけて投資する流れは、国内企業のAI導入をさらに後押しします。「AIはこれからますます当たり前になる」ことを示す具体例として、コンテンツ制作で使えるニュースです。",
-    "terms": [
-      {
-        "word": "オープンモデル",
-        "desc": "AIの中身（設計や学習済みデータ）を公開し、他社が自社サービスに組み込んで使えるようにしたAIのこと。今回NTTデータなどが採用を決めたのはエヌビディア製の「ネモトロン」というオープンモデルです。"
-      }
-    ],
-    "source": {
-      "label": "日本経済新聞（2026年7月16日）",
-      "url": "https://www.nikkei.com/article/DGXZQOUC154MR0V10C26A7000000/"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "産業動向",
-    "title": "【続報】ロボット大手3社の「フィジカルAI」連合に富士通も参画　製造・小売・医療の現場で実用化めざす",
-    "summary": "富士通が7月16日、ファナック・安川電機・川崎重工業のロボット大手3社と「フィジカルAI」分野で提携すると発表しました。ファナックとは製造業、安川電機とは小売・流通、川崎重工とは病院内の薬や検体の搬送・受付自動化などヘルスケア分野で実用化を進め、エヌビディアが技術基盤を支援します。当ページで14日に掲載した3社連携の続報で、日本のロボット×AI陣営が急速に形になりつつあります。",
-    "hint": "",
-    "terms": [],
-    "source": {
-      "label": "日本経済新聞（2026年7月16日）",
-      "url": "https://www.nikkei.com/article/DGXZQOUC151S20V10C26A7000000/"
+      "label": "欧州委員会 デジタル市場法 公式発表（英語・2026年7月16日）",
+      "url": "https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en"
     }
   },
   {
     "date": "2026-07-16",
     "category": "海外の動き",
-    "title": "【中国】アップルのAI機能、中国政府が提供を承認　アリババと百度が技術を提供",
-    "summary": "中国の規制当局が、iPhoneなどに搭載されるアップルのAIサービス「Apple Intelligence」の中国国内での提供を承認しました。約2年待たされた末の承認で、中国版ではアリババのAI「Qwen（クウェン）」と検索大手・百度（バイドゥ）の技術が使われます。発表を受けて両社の株価は大きく上昇しました。中国では生成AIサービスの公開に政府の事前審査が必要で、外国企業のAIが承認されるのは大きな節目です。（海外報道より当ページで和訳・要約）",
-    "hint": "",
+    "title": "【中国】上海のAI会議WAICが閉幕　29カ国が新機関「WAICO」を設立し、AIルールづくりで欧米と別路線",
+    "summary": "中国・上海で開かれた世界人工知能会議（WAIC 2026）が7月17日から20日まで開催され、開幕前日の7月16日には、ロシアやパキスタン、カザフスタン、インドネシアなど29カ国が「世界人工知能協力機構（WAICO）」の設立協定に署名しました。上海に本部を置く政府間の新組織で、中国の王毅外相が署名し、国連のグテーレス事務総長も式典に出席しました。EUのAI法やG7の枠組みとは別のAIガバナンスの受け皿づくりが進んでおり、複数国で事業を行う企業には、地域ごとに異なるルールへの対応が今後求められそうです。（海外報道より当ページで和訳・要約）",
+    "hint": "AIのルールが「欧米・日本の枠組み」と「中国主導の枠組み」に二極化しつつあります。海外にサービスを広げる場面や、海外製AIツールを選ぶ場面で、どちらの規制圏に属するかが判断材料になることが今後増えそうです。",
     "terms": [
       {
-        "word": "百度（バイドゥ）",
-        "desc": "中国最大の検索サイトを運営する会社。「中国のグーグル」と呼ばれることが多く、AI開発にも力を入れています。"
+        "word": "WAICO（世界人工知能協力機構）",
+        "desc": "2026年7月に中国の呼びかけで29カ国が設立したAI分野の政府間組織。本部は上海で、途上国のAI活用支援や独自のルールづくりを掲げています。"
       }
     ],
     "source": {
-      "label": "CNBC（英語・2026年7月16日）",
-      "url": "https://www.cnbc.com/2026/07/16/alibaba-baidu-shares-jump-apple-ai-partnership-.html"
+      "label": "Global Times（英語・2026年7月16日）",
+      "url": "https://www.globaltimes.cn/page/202607/1366141.shtml"
     }
   },
   {
     "date": "2026-07-16",
-    "category": "SNSの話題",
-    "title": "イーロン・マスク氏の新AI「Grok 4.5」登場　「安くて速い」と驚きの声が続出",
-    "summary": "イーロン・マスク氏が率いるxAI社の新しいAI「Grok（グロック）4.5」が公開され、利用料の安さと処理の速さに驚く投稿がXで相次いでいます。※X上の反応をAIが自動集計・要約した情報のため、内容の正確性は各自ご確認ください。",
-    "hint": "",
+    "category": "業務ツール",
+    "title": "グーグルの動画ツール「Google Vids」、自分そっくりのAIアバターで動画を作成可能に",
+    "summary": "グーグルは7月16日（米国時間）、動画作成ツール「Google Vids」に、自分の顔と声を再現したAIアバターを出演させる新機能と、文章での指示から動画を生成・編集できるAIモデル「Gemini Omni」を追加したと発表しました。自撮り写真と短い音声を登録すると本人に似たアバターが作られ、背景や照明の変更なども会話形式で修正できます。生成した動画にはAI作成であることを示す電子透かし「SynthID」が付き、アバターは本人の外見にのみ使えるよう制限されています。当面は英語のみ・対象地域限定で、有料の上位プランやWorkspaceの法人向けに提供されます。",
+    "hint": "動画コンテンツの内製が一段と手軽になる一方、AIアバターや生成動画には電子透かしや本人限定といった制約が設けられ始めています。販促・SNS向け動画の制作でこうしたツールを使う際は、透かしの扱いや、実在の人物に似せない配慮とあわせて活用したい機能です。",
     "terms": [
       {
-        "word": "Grok（グロック）",
-        "desc": "X（旧Twitter）と同じイーロン・マスク氏の会社が開発している対話型AI。X上の投稿を情報源にできるのが特徴です。"
+        "word": "SynthID",
+        "desc": "AIが作った画像・動画・音声であることを機械が判別できるよう埋め込む、目に見えない電子透かし技術。グーグルが提供しています。"
       }
     ],
     "source": {
-      "label": "Yahoo!リアルタイム検索「SNSのバズまとめ」（X上の反応・2026年7月16日）",
-      "url": "https://search.yahoo.co.jp/realtime/search/matome/91a46acaedc64fd698bd87c5e5c36f53-1783551600"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "SNSの話題",
-    "title": "OpenAIの新音声AI「GPT-Live」、人と話すようなテンポの会話が注目の的に",
-    "summary": "OpenAIが公開した新しい音声AI「GPT-Live」は、人と話すようなテンポでやり取りできる応答の速さが特徴で、Xでは実際に試した感想の投稿が広がっています。電話応対や接客への応用を期待する声も見られます。※X上の反応をAIが自動集計・要約した情報のため、内容の正確性は各自ご確認ください。",
-    "hint": "",
-    "terms": [],
-    "source": {
-      "label": "Yahoo!リアルタイム検索「SNSのバズまとめ」（X上の反応・2026年7月16日）",
-      "url": "https://search.yahoo.co.jp/realtime/search/matome/b241c4aab98f4983a84140ed29cbcf51-1783548000"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "法規制・権利",
-    "title": "法務省、生成AIによる肖像・声の無断使用について民事責任の範囲を整理へ",
-    "summary": "生成AIで他人の顔や声を無断で再現・使用した場合に、どこまで損害賠償などの民事上の責任を問えるのか、法務省が範囲の整理に乗り出したと報じられました。実在の人物に似せた画像・音声をAIで作る行為への法的な線引きが、今後具体化していく見通しです。",
-    "hint": "広告画像や販促物にAI生成素材を使う機会が増えている当社にとって、実在人物に似た生成物の扱いは今後さらに注意が必要です。制作時の確認手順に関わる動きとして続報を追います。",
-    "terms": [
-      {
-        "word": "民事責任",
-        "desc": "刑罰ではなく「損害を金銭などで償う責任」のこと。今回は、AIで顔や声を勝手に使われた人がどんな場合に賠償を求められるか、というルール整理です。"
-      }
-    ],
-    "source": {
-      "label": "日本経済新聞「AI」トピック（2026年7月16日更新）",
-      "url": "https://www.nikkei.com/topics/24032501"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "経営・投資",
-    "title": "AIの費用対効果は「成果1件あたりの費用」で測る　OpenAI・NVIDIAが相次ぎ考え方を提示",
-    "summary": "OpenAIは7月14日、企業がAIへの投資を管理するための考え方を公表しました。要点は「利用料の単価だけを見ても損得は判断できない」という点です。安いAIでもやり直しが多ければ総費用はかさみ、高いAIでも一度で仕上がれば結果的に安くつくため、「確認・承認を通った成果1件あたりにいくらかかったか」で見るべきだとしています。同じく14日には半導体大手NVIDIAが、AI設備の効率を「電力あたりの処理量」で測る指標を打ち出しました。",
-    "hint": "当社のClaude活用も「作成した資料1本あたり」「対応した案件1件あたり」の時間・費用で振り返ると、投資判断の材料として説得力が増します。",
-    "terms": [
-      {
-        "word": "OpenAI（オープンエーアイ）",
-        "desc": "対話型AI「ChatGPT」を開発している米国の会社。当社が使うClaudeの開発元Anthropic（アンソロピック）の競合にあたります。"
-      },
-      {
-        "word": "NVIDIA（エヌビディア）",
-        "desc": "AIの計算に使われる半導体で世界最大手の米国企業。AI業界の「設備の供給元」的な存在です。"
-      }
-    ],
-    "source": {
-      "label": "eguweb「世界のAI最新ニュース（2026年7月16日）」",
-      "url": "https://eguweb.jp/ai/81198/"
+      "label": "Mogura VR（2026年7月16日）",
+      "url": "https://www.moguravr.com/google-vids-gemini-omni-personal-avatar/"
     }
   }
 ];
@@ -492,8 +428,40 @@ qEl.addEventListener("input", render);
 buildChips();
 render();
 
+/* ===================== 今日のトップニュース =====================
+   topReason を持つ記事のうち、最新の1件を上部に強調表示します。
+   該当がなければ枠は表示されません。
+================================================================ */
+(function renderTopNews(){
+  const el = document.getElementById("topnews");
+  if(!el) return;
+  const withReason = NEWS_DATA.filter(n => n.topReason && n.topReason.trim());
+  if(withReason.length === 0){ el.style.display = "none"; return; }
+  const top = [...withReason].sort((a,b) => b.date.localeCompare(a.date))[0];
+  el.innerHTML = `
+    <div class="tn-label">\u2605 \u4eca\u65e5\u306e\u30c8\u30c3\u30d7\u30cb\u30e5\u30fc\u30b9</div>
+    <div class="tn-meta">
+      <span class="cat" style="background:${CAT_COLORS[top.category] || "var(--primary)"}">${esc(top.category)}</span>
+      <span class="date">${fmtDate(top.date)} \u63b2\u8f09</span>
+      ${isNew(top.date) ? `<span class="badge-new">NEW</span>` : ""}
+    </div>
+    <h2>${esc(top.title)}</h2>
+    <p>${esc(top.summary)}</p>
+    <div class="tn-reason"><b>Web\u30de\u30fc\u30b1\u30bf\u30fc\u8996\u70b9\uff1a</b>${esc(top.topReason)}</div>
+    <div class="tn-src">\u51fa\u5178\uff1a<a href="${esc(top.source.url)}" target="_blank" rel="noopener">${esc(top.source.label)}</a></div>
+  `;
+})();
+
 /* ===================== 過去ニュースのアーカイブ一覧 ===================== */
 const ARCHIVE_INDEX = [
+  {
+    "date": "2026-07-17",
+    "count": 1
+  },
+  {
+    "date": "2026-07-16",
+    "count": 9
+  },
   {
     "date": "2026-07-15",
     "count": 11
