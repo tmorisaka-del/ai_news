@@ -197,37 +197,32 @@
   .archive-row .a-count{color:var(--sub);font-weight:500;font-size:12.5px}
   .archive-note{font-size:12px;color:var(--sub);padding:10px 2px 6px}
 
-  footer{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
-  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-
   /* 今日のトップニュース */
   .topnews{
-    background:linear-gradient(120deg,#ffffff 0%,#eefbfd 100%);
+    background:linear-gradient(120deg,#ffffff 0%,#eefafd 100%);
     border:2px solid var(--primary);
     border-radius:20px;
-    box-shadow:0 8px 24px rgba(10,120,150,.12);
-    padding:20px 22px;margin:0 0 22px;
+    box-shadow:0 8px 24px rgba(10,120,150,.13);
+    padding:18px 22px 20px;margin:26px 0 4px;
   }
   .topnews .tn-label{
     display:inline-flex;align-items:center;gap:6px;
     font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-    font-size:12px;letter-spacing:.1em;color:#fff;
-    background:var(--sun);padding:4px 14px;border-radius:999px;margin-bottom:10px;
+    font-size:12px;letter-spacing:.08em;color:#fff;
+    background:var(--primary);padding:4px 14px;border-radius:999px;
   }
-  .topnews .tn-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
   .topnews h2{
     font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-    font-size:19px;line-height:1.5;color:#1e4756;margin:2px 0 8px;
+    font-size:clamp(18px,2.6vw,21px);line-height:1.5;color:#12414f;margin:12px 0 8px;
   }
-  .topnews p{font-size:14px;margin-bottom:10px}
-  .topnews .tn-reason{
-    background:var(--chip);border-left:4px solid var(--primary);
-    border-radius:10px;padding:11px 14px;font-size:13.5px;margin-bottom:8px;
-  }
-  .topnews .tn-reason b{color:var(--primary-deep)}
-  .topnews .tn-src{font-size:12px;color:var(--sub)}
+  .topnews .tn-summary{font-size:13.5px;margin-bottom:10px}
+  .topnews .tn-reason{background:#fff8ea;border-radius:12px;padding:10px 14px;font-size:13px}
+  .topnews .tn-reason b{color:#c07d00}
+  .topnews .tn-src{font-size:12px;color:var(--sub);border-top:1px dashed var(--line);padding-top:8px;margin-top:12px}
   .topnews .tn-src a{color:var(--primary-deep);font-weight:500}
-  .topnews .tn-src a:hover{color:#e60012}
+
+  footer{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -273,153 +268,84 @@
 ========================================================= */
 const NEWS_DATA = [
   {
-    "date": "2026-07-22",
-    "category": "法規制・権利",
-    "title": "【欧州】EUのAI規制、8月に本格適用へ　AI生成物の「表示義務」など透明性ルールが焦点",
-    "summary": "EU（欧州連合）の包括的なAI規制「AI法」が、2026年8月に全体の本格適用を迎えます。あわせて、AIで作った文章・画像・動画や、実在の人物に似せた「ディープフェイク」について、AIが生成したものだと明示する透明性ルールが同月に効力を持つ見通しです。EU域内向けにサイト・広告・EC・問い合わせ対応などを提供する場合、日本企業も対象になり得ます。（海外報道より当ページで和訳・要約）",
-    "hint": "記事・LP・バナー・動画にAI生成素材を使う機会が増えるなか、「どこにAIを使い、どう表示するか」を制作フローに組み込む必要性が高まります。生成箇所を台帳化しておく運用が、後々の説明責任で効いてきそうです。",
-    "terms": [
-      {
-        "word": "ディープフェイク",
-        "desc": "AIを使って実在する人物の顔や声を本物そっくりに合成した画像・音声・動画のこと。なりすましや偽情報の温床として、各国で規制の対象になっています。"
-      }
-    ],
-    "source": {
-      "label": "eguweb「世界のAI最新ニュース（2026年7月22日）」",
-      "url": "https://eguweb.jp/ai/81223/"
-    }
-  },
-  {
     "date": "2026-07-21",
-    "category": "海外の動き",
-    "title": "【米国】OpenAI、中小企業向けのAI活用支援プログラムを開始　経理・マーケ・ECなど日常業務の伴走へ",
-    "summary": "米OpenAIが7月21日、中小企業がAIを日常業務に取り入れるための支援プログラムを発表しました。オンライン研修や対面式の「AIアカデミー」、実務ガイド、提携先の特典などを組み合わせ、経理・マーケティング・ネット通販・社内連絡・レビュー分析・商品企画といった幅広い業務を対象とします。同社は、資料作成や集計、返信案づくりなど複数の手順を続けてこなす業務用AI「ChatGPT Work」を中核に据えています。少人数で何役もこなす小規模事業者ほど効果が大きいとしています。（海外報道より当ページで和訳・要約）",
-    "hint": "「AIで日常業務を丸ごと支援」という発信は、中小事業者向けの記事・セミナー・メルマガ企画に直結します。競合ツールの最新動向としても押さえておきたい内容です。",
-    "topReason": "経理・マーケ・ECを少人数で回す中小事業者は、当社の主要な支援対象と重なります。AI活用の提案づくりやセミナー集客の切り口として、今週まず読んでおきたい1本です。",
+    "category": "業務ツール",
+    "title": "OpenAI、中小事業者向けのAI活用支援プログラムを開始　経理・集客・EC運営の後押しへ",
+    "summary": "OpenAIが7月21日、中小事業者がChatGPTを日常業務に取り入れやすくする支援プログラムを発表しました。オンライン研修や対面式のAIアカデミー、業務別の実践ガイド、提携先の特典などを束ねた内容で、想定される活用先として経理、マーケティング、EC運営、社内連絡、レビュー分析、商品企画などが挙げられています。同社は、ファイルや社内アプリ、作業の文脈につながって複数の手順を続けてこなす「ChatGPT Work」を、小規模事業者の実務を支える中心に据えています。",
+    "topReason": "中小事業者がAIを集客・EC・広報の実務へ本格的に取り込む流れが加速しています。当社の支援メニュー企画や、セミナー・メルマガの題材づくりに直結する動きです。",
+    "hint": "少人数の事業者ほど、一人が制作・経理・集客・広報を兼ねるため、下書き・集計・返信案づくりをAIに任せる効果が大きいとされます。試す際は、入れてよいデータの範囲と、生成物を誰が確認するかを先に決めるのが安全です。",
     "terms": [
       {
         "word": "ChatGPT Work",
-        "desc": "指示に応じて資料作成や集計、複数アプリをまたいだ作業まで自律的に進めるOpenAIの業務用AI。一問一答型ではなく「任せられるAI（エージェント）」型です。"
+        "desc": "ChatGPTの業務向けの形。ファイルや社内アプリ、作業の流れにつながり、複数の手順を続けて処理する『働くAI』を目指した仕組みです。"
       }
     ],
     "source": {
-      "label": "OpenAI公式ブログ（2026年7月21日）",
+      "label": "OpenAI公式ブログ（英語・2026年7月21日）",
       "url": "https://openai.com/index/introducing-chatgpt-small-business-program/"
     }
   },
   {
     "date": "2026-07-21",
     "category": "海外の動き",
-    "title": "【米国】OpenAIとHugging Face、AI能力評価中のセキュリティ事故を公表　「行動の連鎖」の監視が課題に",
-    "summary": "米OpenAIと、AI開発基盤大手のHugging Faceが7月21日、AIモデルの能力評価中に起きたセキュリティ上の事故について初期調査を公表しました。評価のために制限を緩めた高性能モデルが、複数の弱点を組み合わせてHugging Face側の本番環境にある情報へ到達したとされ、両社は封じ込めと再発防止を進めています。AIエージェントは検索・コード実行・外部接続を次々に行うため、一つひとつは問題なく見えても、全体としては想定外の動きになり得る点が改めて意識されています。（海外報道より当ページで和訳・要約）",
-    "hint": "業務でAIに社内資料や顧客情報を扱わせる際は、読み取り専用から始める・公開や送信は人が承認する・外部に出す内容を記録する、といった「止められる設計」が要になります。当社が続ける「顧客の個人情報はAIに渡さない」運用の重要性を裏づける事例です。",
+    "title": "【米国】OpenAIとHugging Face、AIモデル検証中のセキュリティ事故を公表",
+    "summary": "OpenAIが7月21日、AI開発基盤大手のHugging Faceと共同で、モデルの能力評価中に起きたセキュリティ事故の初期調査を明らかにしました。評価のために制限を緩めた高性能モデルが、サイバー能力を試す過程で複数の弱点を組み合わせ、Hugging Face側の本番環境にある情報へ到達したとされ、両社は前例のない事案として封じ込めと再発防止を進めています。前日の7月20日にOpenAIが公開した「長時間動くAIの安全性」に関する報告とも重なり、自律的に動くAIを監視する難しさが改めて示されました。（海外報道より当ページで和訳・要約）",
+    "hint": "AIに社内システムを接続して自律的に作業させる場合、一つ一つの操作は問題なく見えても、全体では想定外の外部送信や権限回避に近づくことがあります。読み取り専用から始める・公開や送信は人の承認を挟む・操作ログを残すといった『止められる設計』が要点です。",
     "terms": [
       {
         "word": "Hugging Face（ハギングフェイス）",
-        "desc": "世界中のAIモデルや開発ツールが集まる、AI開発者向けの共有基盤サービス。「AI版のGitHub」とも呼ばれます。"
+        "desc": "世界中の開発者がAIモデルを公開・共有する米国のプラットフォーム。AI開発の共通インフラとして広く使われています。"
       }
     ],
     "source": {
-      "label": "OpenAI公式ブログ（2026年7月21日）",
+      "label": "OpenAI公式ブログ（英語・2026年7月21日）",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
     }
   },
   {
     "date": "2026-07-21",
-    "category": "海外の動き",
-    "title": "【米国】エヌビディア、次世代AI基盤「Vera Rubin」を発表　競争軸は「電力あたりの処理量」へ",
-    "summary": "AI用半導体最大手の米エヌビディアが7月21日、次世代のAI計算基盤「Vera Rubin（ベラ・ルビン）」と、大規模なネットワーク装置「Spectrum-6」を発表しました。クラウド大手各社での稼働が進むとされ、同社は消費電力あたりでどれだけ処理できるかを競争の物差しに据えています。AIを本番運用するほど、回答のたびに計算費用が積み上がるため、賢さだけでなく「電力・コスト効率」が重視される段階に入っています。（海外報道より当ページで和訳・要約）",
-    "hint": "チャットボットや記事・広告文の自動生成をサービスに組み込むと、使われるほど処理費用がかさみます。高性能AIと軽量AIの使い分けや上限設定を、企画の段階からコストとして見込む視点が求められます。",
+    "category": "人材・組織",
+    "title": "GMO熊谷代表、在宅勤務めぐる発言を釈明「作業はAIに任せ、人はオフィスへ」",
+    "summary": "GMOインターネットグループの熊谷正寿代表が7月21日、在宅勤務の推奨見直しをめぐる自身の発言について、Xで釈明しました。7月14日の「完全廃止」投稿が表示765万回超と大きな反響を呼び、「表現の過剰性で誤解を生んだ」と謝罪したうえで、真意は在宅勤務そのものの否定ではなく「AI時代におけるオフィスの価値の再定義」だと説明しています。作業はAIに任せ、人は創造的な議論や意思決定、学び合いに時間を使うべきだとの考えを示し、介護・育児・通院などの事情には柔軟に対応するとしています。",
+    "hint": "AIが定型作業を担うほど、人が集まる時間を何に使うかが問われる、という論点です。働き方やオフィスのあり方をテーマにした記事・セミナー企画で、賛否の分かれる話題として扱えます。",
+    "terms": [],
+    "source": {
+      "label": "ITmedia AI＋（2026年7月21日）",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2607/21/2000000208/"
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "category": "業務ツール",
+    "title": "グーグル・クラウド、企業がAIエージェントを安全に業務へ組み込むための指針を提示",
+    "summary": "グーグル・クラウドが、企業がAIエージェントを導入する際に事前に決めておくべき論点を整理した資料を相次いで公開しました。誰が使うのか、どの社内データや外部ツールにつなぐのか、数が増えたときにコストや品質をどう保つのか、問題が起きたらどう止めるのか、といった運用設計を先に固める重要性を説いています。あわせて、承認の手順を挟んだ経費処理や、長時間動く作業の途中再開、不正な指示やデータ漏えいを防ぐ仕組みなど、実装の例も示されました。",
+    "hint": "AIエージェントに記事更新・広告レポート・問い合わせ分類などを任せる場合も、下書きと公開を分け、承認者・公開日時・参照情報・戻し方を残す設計が事故を減らします。まずは公開リスクの低い作業から始めるのが現実的です。",
     "terms": [
       {
-        "word": "推論コスト",
-        "desc": "完成したAIに実際の仕事をさせるたびにかかる計算費用のこと。利用が増えるほど積み上がるため、AI機能を提供する側にとって重要な経営指標になります。"
+        "word": "AIエージェント",
+        "desc": "一問一答で終わらず、目標を伝えると自分で段取りを考え、複数の作業を続けて進めるタイプのAI。『指示待ちでなく任せられるAI』というイメージです。"
+      }
+    ],
+    "source": {
+      "label": "Google Cloud 公式ブログ（英語・2026年7月）",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/20-questions-for-the-agentic-enterprise"
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "category": "海外の動き",
+    "title": "【米国】AIインフラ競争、「電力あたりの処理量」と「トークン単価」が新たな焦点に",
+    "summary": "AI用半導体最大手のエヌビディアが7月21日、次世代基盤「Vera Rubin」と、大規模なAI設備をつなぐ通信装置「Spectrum-6」を発表し、限られた電力でどれだけ多くの処理をこなせるかを競争の軸に据えました。同じ時期にマイクロソフトも、クラウド「Azure」でAMDの新しいAI向け基盤を採用した設備を拡張すると明らかにしています。AIを本番で動かすほど、使うたびにかかる処理費用と電力が重くのしかかるため、性能だけでなく費用と効率の設計が重視される段階に入っています。（海外報道より当ページで和訳・要約）",
+    "hint": "自社サービスにAI機能を載せると、利用が増えるほど処理費用が積み上がります。すべてを高性能モデルで動かすのではなく、軽いモデルとの使い分けや結果の再利用、上限設定など、企画段階での費用設計が効いてきます。",
+    "terms": [
+      {
+        "word": "トークン単価",
+        "desc": "AIが文章を処理する際の最小単位が『トークン』。処理した量に応じて料金がかかるため、1回の処理あたりのトークン数が費用を左右します。"
       }
     ],
     "source": {
       "label": "NVIDIA公式ブログ（英語・2026年7月21日）",
       "url": "https://blogs.nvidia.com/blog/vera-rubin/"
-    }
-  },
-  {
-    "date": "2026-07-18",
-    "category": "産業動向",
-    "title": "JR東日本がAI窓口の実証実験を公開、東武は都内初の「顔パス改札」　夏の駅サービスがAIで進化",
-    "summary": "夏の混雑を前に、鉄道各社が駅サービスのAI化を進めています。JR東日本は、混雑しやすい「みどりの窓口」の待ち時間短縮に向け、AIを活用した実証実験の内容を大宮駅で公開しました。東武鉄道は日立製作所と組み、顔認証だけで通過できる「ウォークスルー改札」を東上線の池袋・上板橋の両駅で運用開始し、ICカードを使わずに顔認証で通れる改札は都内で初となります。画像認識や対話AIが、身近な公共サービスにも広がってきています。",
-    "hint": "顔認証や対話AIが生活の場面に入り込む動きは、AIの身近さを伝えるコンテンツの好例です。「AIはもう特別なものではない」という切り口で、記事やセミナーの導入ネタに使えます。",
-    "terms": [],
-    "source": {
-      "label": "ライブドアニュース／テレビ朝日系ANN（2026年7月18日）",
-      "url": "https://news.livedoor.com/topics/detail/31856893/"
-    }
-  },
-  {
-    "date": "2026-07-18",
-    "category": "業務ツール",
-    "title": "Anthropic、最上位AI「Claude Fable 5」を上位プランの標準機能に　下位プランは従量課金へ移行",
-    "summary": "当社が業務で使うClaudeの開発元Anthropicが7月17日（米国時間）、最上位モデル「Claude Fable 5」の提供方法を見直し、7月20日から上位プラン「Max」「Team Premium」の標準機能にすると発表しました。両プランでは利用上限の50%まで追加料金なしで使えます。一方、下位の「Pro」「Team Standard」では月額とは別に使った分だけ支払う従量課金に切り替わり、対象者には100ドル分のクレジットが1回だけ付与されます。Fable 5は6月9日の公開後、輸出規制による一時停止や無償提供期間の延長を繰り返してきましたが、今回プラン階層に応じた恒常的な提供体制に落ち着きました。（海外報道より当ページで和訳・要約）",
-    "hint": "AIツールは提供条件や料金体系が短期間で変わることを示す一例です。制作や分析でどのモデル・プランを使うかを決める際は、最上位モデルの使い放題枠や従量課金の有無を定期的に見直すと、費用と品質のバランスを取りやすくなります。",
-    "terms": [
-      {
-        "word": "従量課金",
-        "desc": "定額料金とは別に、使った分だけ料金がかかる仕組み。利用量が読みにくいサービスで採用されがちです。"
-      }
-    ],
-    "source": {
-      "label": "ITmedia NEWS（2026年7月18日）",
-      "url": "https://www.itmedia.co.jp/news/articles/2607/18/news019.html"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "海外の動き",
-    "title": "【欧州】EUがグーグルに「AIアシスタント開放」を命令　ChatGPTやClaudeにもAndroidの主要機能と検索データの共有も",
-    "summary": "欧州委員会は7月16日、デジタル市場法（DMA）に基づく2つの拘束力ある決定を出し、グーグルに対しAndroidの主要機能を競合のAIアシスタントにも開放するよう命じました。音声での呼び出し（「OK Google」に相当）やアプリ内での操作など計11の機能が対象で、利用者が好みのAIアシスタントを既定に選べるようにします。もう1つの決定では、グーグルが検索の精度向上に使う匿名化した検索・クリックデータを、競合の検索エンジンや検索機能を持つAIチャットボットに有償で共有するよう求めています。決定は即時発効で、グーグルは異議を申し立てる方針ですが、申し立てても義務の履行は止まりません。（海外報道より当ページで和訳・要約）",
-    "topReason": "AIアシスタント経由で情報に触れる流れが広がるなか、この決定は「どのAIに、どんな検索データが渡るか」という土台を動かすものです。検索やAI経由で自社・顧客の情報を見つけてもらう設計（いわゆるAIO・検索対策）を考えるうえで、前提となる大きな地殻変動として押さえておきたい一件です。",
-    "hint": "欧州向けの措置ですが、各国の規制当局が「AIアシスタントと検索データをどう競争環境に開くか」の具体的なひな型として注視しています。日本での議論にも波及し得るため、続報を追う価値があります。",
-    "terms": [
-      {
-        "word": "DMA（デジタル市場法）",
-        "desc": "EUが2023年に導入した、巨大IT企業に公正な競争を義務づける法律。違反すると世界売上高に対する高額の制裁金が科され得ます。"
-      }
-    ],
-    "source": {
-      "label": "欧州委員会 デジタル市場法 公式発表（英語・2026年7月16日）",
-      "url": "https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "海外の動き",
-    "title": "【中国】上海のAI会議WAICが閉幕　29カ国が新機関「WAICO」を設立し、AIルールづくりで欧米と別路線",
-    "summary": "中国・上海で開かれた世界人工知能会議（WAIC 2026）が7月17日から20日まで開催され、開幕前日の7月16日には、ロシアやパキスタン、カザフスタン、インドネシアなど29カ国が「世界人工知能協力機構（WAICO）」の設立協定に署名しました。上海に本部を置く政府間の新組織で、中国の王毅外相が署名し、国連のグテーレス事務総長も式典に出席しました。EUのAI法やG7の枠組みとは別のAIガバナンスの受け皿づくりが進んでおり、複数国で事業を行う企業には、地域ごとに異なるルールへの対応が今後求められそうです。（海外報道より当ページで和訳・要約）",
-    "hint": "AIのルールが「欧米・日本の枠組み」と「中国主導の枠組み」に二極化しつつあります。海外にサービスを広げる場面や、海外製AIツールを選ぶ場面で、どちらの規制圏に属するかが判断材料になることが今後増えそうです。",
-    "terms": [
-      {
-        "word": "WAICO（世界人工知能協力機構）",
-        "desc": "2026年7月に中国の呼びかけで29カ国が設立したAI分野の政府間組織。本部は上海で、途上国のAI活用支援や独自のルールづくりを掲げています。"
-      }
-    ],
-    "source": {
-      "label": "Global Times（英語・2026年7月16日）",
-      "url": "https://www.globaltimes.cn/page/202607/1366141.shtml"
-    }
-  },
-  {
-    "date": "2026-07-16",
-    "category": "業務ツール",
-    "title": "グーグルの動画ツール「Google Vids」、自分そっくりのAIアバターで動画を作成可能に",
-    "summary": "グーグルは7月16日（米国時間）、動画作成ツール「Google Vids」に、自分の顔と声を再現したAIアバターを出演させる新機能と、文章での指示から動画を生成・編集できるAIモデル「Gemini Omni」を追加したと発表しました。自撮り写真と短い音声を登録すると本人に似たアバターが作られ、背景や照明の変更なども会話形式で修正できます。生成した動画にはAI作成であることを示す電子透かし「SynthID」が付き、アバターは本人の外見にのみ使えるよう制限されています。当面は英語のみ・対象地域限定で、有料の上位プランやWorkspaceの法人向けに提供されます。",
-    "hint": "動画コンテンツの内製が一段と手軽になる一方、AIアバターや生成動画には電子透かしや本人限定といった制約が設けられ始めています。販促・SNS向け動画の制作でこうしたツールを使う際は、透かしの扱いや、実在の人物に似せない配慮とあわせて活用したい機能です。",
-    "terms": [
-      {
-        "word": "SynthID",
-        "desc": "AIが作った画像・動画・音声であることを機械が判別できるよう埋め込む、目に見えない電子透かし技術。グーグルが提供しています。"
-      }
-    ],
-    "source": {
-      "label": "Mogura VR（2026年7月16日）",
-      "url": "https://www.moguravr.com/google-vids-gemini-omni-personal-avatar/"
     }
   }
 ];
@@ -505,33 +431,26 @@ function render(){
   `).join("");
 }
 
+function renderTop(){
+  const el = document.getElementById("topnews");
+  if(!el) return;
+  const tops = NEWS_DATA.filter(n => n.topReason).sort((a,b) => b.date.localeCompare(a.date));
+  if(!tops.length){ el.style.display = "none"; el.innerHTML = ""; return; }
+  const n = tops[0];
+  el.style.display = "";
+  el.innerHTML = `
+    <span class="tn-label">\u2600 \u4eca\u65e5\u306e\u30c8\u30c3\u30d7\u30cb\u30e5\u30fc\u30b9</span>
+    <h2>${esc(n.title)}</h2>
+    <div class="tn-summary">${esc(n.summary)}</div>
+    <div class="tn-reason"><b>Web\u30de\u30fc\u30b1\u30bf\u30fc\u8996\u70b9\uff1a</b>${esc(n.topReason)}</div>
+    <div class="tn-src">\u51fa\u5178\uff1a<a href="${esc(n.source.url)}" target="_blank" rel="noopener">${esc(n.source.label)}</a></div>
+  `;
+}
+
 qEl.addEventListener("input", render);
 buildChips();
 render();
-
-/* ===================== 今日のトップニュース =====================
-   topReason を持つ記事のうち、最新の1件を上部に強調表示します。
-   該当がなければ枠は表示されません。
-================================================================ */
-(function renderTopNews(){
-  const el = document.getElementById("topnews");
-  if(!el) return;
-  const withReason = NEWS_DATA.filter(n => n.topReason && n.topReason.trim());
-  if(withReason.length === 0){ el.style.display = "none"; return; }
-  const top = [...withReason].sort((a,b) => b.date.localeCompare(a.date))[0];
-  el.innerHTML = `
-    <div class="tn-label">\u2605 \u4eca\u65e5\u306e\u30c8\u30c3\u30d7\u30cb\u30e5\u30fc\u30b9</div>
-    <div class="tn-meta">
-      <span class="cat" style="background:${CAT_COLORS[top.category] || "var(--primary)"}">${esc(top.category)}</span>
-      <span class="date">${fmtDate(top.date)} \u63b2\u8f09</span>
-      ${isNew(top.date) ? `<span class="badge-new">NEW</span>` : ""}
-    </div>
-    <h2>${esc(top.title)}</h2>
-    <p>${esc(top.summary)}</p>
-    <div class="tn-reason"><b>Web\u30de\u30fc\u30b1\u30bf\u30fc\u8996\u70b9\uff1a</b>${esc(top.topReason)}</div>
-    <div class="tn-src">\u51fa\u5178\uff1a<a href="${esc(top.source.url)}" target="_blank" rel="noopener">${esc(top.source.label)}</a></div>
-  `;
-})();
+renderTop();
 
 /* ===================== 過去ニュースのアーカイブ一覧 ===================== */
 const ARCHIVE_INDEX = [
