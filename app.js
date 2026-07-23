@@ -195,6 +195,13 @@
     }
   }
 
+  function renderLastUpdated() {
+    var el = document.getElementById("last-updated");
+    if (!el || !NEWS_DATA.length) return;
+    var latest = NEWS_DATA.reduce(function (a, b) { return a > b.date ? a : b.date; }, "");
+    if (latest) el.textContent = fmtDate(latest);
+  }
+
   function start() {
     buildChips();
     render();
@@ -228,6 +235,7 @@
         NEWS_DATA = data;
         start();
         renderTop();
+        renderLastUpdated();
       })
       .catch(function (e) { console.error(e); fail("最新ニュースを読み込めませんでした。"); });
 
