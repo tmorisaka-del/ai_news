@@ -134,7 +134,7 @@
       '<span class="tn-label">☀ 今日のトップニュース</span>' +
       '<h2>' + esc(n.title) + '</h2>' +
       '<div class="tn-summary">' + esc(n.summary) + '</div>' +
-      '<div class="tn-reason"><b>マーケター視点：</b>' + esc(n.topReason) + '</div>' +
+      '<div class="tn-reason"><b>担当者視点：</b>' + esc(n.topReason) + '</div>' +
       '<div class="tn-src">出典：<a href="' + esc(n.source.url) + '" target="_blank" rel="noopener">' + esc(n.source.label) + '</a></div>';
   }
 
