@@ -205,6 +205,7 @@
   function start() {
     buildChips();
     render();
+    renderLastUpdated();
     if (qEl) qEl.addEventListener("input", render);
   }
 
