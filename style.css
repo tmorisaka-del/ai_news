@@ -1,0 +1,239 @@
+
+  :root{
+    --bg:#f4f9fb;
+    --card:#ffffff;
+    --ink:#33414e;
+    --sub:#7a8794;
+    --primary:#0aa2c0;
+    --primary-deep:#067e96;
+    --sun:#ffb020;
+    --line:#e3ecf1;
+    --chip:#eaf6f9;
+    /* 分野色（原色系） */
+    --c-law:#e60012;       /* 法規制:赤 */
+    --c-hr:#8f00b7;        /* 人材:紫 */
+    --c-biz:#0068b7;       /* 経営:青 */
+    --c-tool:#009944;      /* ツール:緑 */
+    --c-world:#e4007f;     /* 海外:マゼンタ */
+    --c-ind:#f39800;       /* 産業:オレンジ */
+    --c-sns:#6b7a8f;       /* SNSの話題:グレー（報道と区別） */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.8;
+    font-size:15px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 18px 70px}
+
+  /* ヘッダー */
+  header{
+    background:linear-gradient(120deg,#0aa2c0 0%,#25bfd4 55%,#5fd4c2 100%);
+    color:#fff;
+    padding:34px 18px 60px;
+    border-radius:0 0 34px 34px;
+  }
+  .header-inner{max-width:1120px;margin:0 auto}
+  header h1{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;
+    font-size:clamp(25px,4.6vw,34px);
+    letter-spacing:.03em;
+  }
+  header h1 .spark{color:#ffe9a8}
+  .today{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:12px;
+    background:rgba(255,255,255,.16);
+    border:1.5px solid rgba(255,255,255,.38);
+    padding:6px 18px;border-radius:999px;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:700;font-size:13.5px;letter-spacing:.02em;
+  }
+  .today .t-sep{opacity:.55;font-weight:500}
+  .header-sub{margin-top:10px;font-size:13.5px;opacity:.92}
+
+  /* 検索・絞り込みパネル */
+  .panel{
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(10,120,150,.10);
+    padding:20px 22px;
+    margin:-38px 0 26px;
+    position:relative;
+  }
+  .searchbox{position:relative}
+  .searchbox input{
+    width:100%;
+    font-size:15.5px;
+    font-family:inherit;
+    padding:12px 16px 12px 46px;
+    border:2px solid var(--line);
+    border-radius:999px;
+    outline:none;
+    transition:border-color .15s;
+    background:#fbfdfe;
+  }
+  .searchbox input:focus{border-color:var(--primary)}
+  .searchbox .icon{
+    position:absolute;left:16px;top:50%;
+    transform:translateY(-50%);
+    width:19px;height:19px;color:var(--sub);
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{
+    font-family:inherit;
+    font-size:13px;font-weight:700;
+    padding:6px 15px;border-radius:999px;
+    border:1.5px solid var(--line);
+    background:#fff;color:var(--sub);
+    cursor:pointer;transition:all .15s;
+  }
+  .chip:hover{border-color:var(--primary);color:var(--primary-deep)}
+  .chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
+  .result-count{margin-top:12px;font-size:13px;color:var(--sub)}
+  .result-count b{color:var(--primary-deep);font-size:15px}
+
+  /* カードグリッド */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:start;
+  }
+  @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+  article{
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:20px 20px 16px;
+    transition:transform .15s, box-shadow .15s;
+    display:flex;
+    flex-direction:column;
+  }
+  article:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(50,90,110,.13)}
+  .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  .cat{
+    font-size:11.5px;font-weight:700;color:#fff;
+    padding:3px 12px;border-radius:999px;
+  }
+  .date{font-size:12px;color:var(--sub);font-weight:500}
+  .badge-new{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-size:11px;font-weight:800;letter-spacing:.08em;
+    color:#fff;background:var(--sun);
+    padding:2px 10px;border-radius:999px;
+    animation:pop 1.6s ease-in-out infinite;
+  }
+  @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  @media (prefers-reduced-motion: reduce){.badge-new{animation:none}}
+  article h3{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:700;font-size:16.5px;line-height:1.55;
+    color:#1e4756;margin-bottom:9px;
+  }
+  article p{font-size:13.5px;margin-bottom:9px}
+  .hint{
+    background:#fff8ea;border-radius:12px;
+    padding:10px 14px;font-size:13px;margin:8px 0;
+  }
+  .hint b.h{color:#c07d00}
+  .terms{
+    background:var(--chip);border-radius:12px;
+    padding:10px 14px;margin:8px 0;font-size:12.5px;
+  }
+  .terms .t-title{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:11.5px;letter-spacing:.12em;
+    color:var(--primary-deep);display:block;margin-bottom:4px;
+  }
+  .terms dt{font-weight:700;color:#1e4756;display:inline}
+  .terms dt::after{content:"…"}
+  .terms dd{display:inline;margin:0}
+  .terms .term-row{margin-bottom:5px}
+  .terms .term-row:last-child{margin-bottom:0}
+  .src{
+    font-size:12px;color:var(--sub);
+    border-top:1px dashed var(--line);
+    padding-top:8px;margin-top:auto;
+  }
+  .src a{color:var(--primary-deep);font-weight:500}
+  .src a:hover{color:#e60012}
+
+  .empty{
+    text-align:center;padding:50px 20px;color:var(--sub);
+    background:var(--card);border-radius:20px;
+    grid-column:1 / -1;
+  }
+  .empty .face{font-size:36px;margin-bottom:8px}
+
+
+  /* 過去ニュースのアーカイブ一覧 */
+  .archive-box{
+    background:var(--card);border-radius:20px;
+    box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:20px 22px 12px;margin-top:26px;
+  }
+  .archive-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:16px;color:#1e4756;margin-bottom:6px}
+  .archive-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:11px 12px;border-bottom:1px dashed var(--line);
+    color:var(--primary-deep);font-weight:700;font-size:14px;
+    text-decoration:none;border-radius:10px;
+  }
+  .archive-row:hover{background:var(--chip)}
+  .archive-row .a-count{color:var(--sub);font-weight:500;font-size:12.5px}
+  .archive-note{font-size:12px;color:var(--sub);padding:10px 2px 6px}
+
+  /* 今日のトップニュース */
+  .topnews{
+    position:relative;
+    background:linear-gradient(120deg,#ffffff 0%,#e9f8fc 100%);
+    border:3px solid var(--primary);
+    border-radius:22px;
+    box-shadow:0 12px 32px rgba(10,120,150,.20);
+    padding:22px 24px 22px 30px;margin:26px 0 10px;
+    overflow:hidden;
+  }
+  .topnews::before{
+    content:"";position:absolute;top:0;left:0;width:9px;height:100%;
+    background:linear-gradient(180deg,var(--sun) 0%,var(--primary) 100%);
+  }
+  .topnews .tn-label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
+    font-size:13px;letter-spacing:.1em;color:#fff;
+    background:linear-gradient(120deg,var(--sun),#ff9d00);
+    padding:5px 17px;border-radius:999px;
+    box-shadow:0 3px 10px rgba(255,157,0,.4);
+  }
+  .topnews h2{
+    font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
+    font-size:clamp(19px,2.9vw,23px);line-height:1.5;color:#0e3d4b;margin:13px 0 9px;
+  }
+  .topnews .tn-summary{font-size:13.5px;margin-bottom:10px}
+  .topnews .tn-reason{background:#fff8ea;border-radius:12px;padding:10px 14px;font-size:13px}
+  .topnews .tn-reason b{color:#c07d00}
+  .topnews .tn-src{font-size:12px;color:var(--sub);border-top:1px dashed var(--line);padding-top:8px;margin-top:12px}
+  .topnews .tn-src a{color:var(--primary-deep);font-weight:500}
+
+  footer{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+  /* ===== アーカイブページ専用 ===== */
+  .day-head{
+    grid-column:1 / -1;
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:17px;color:var(--primary-deep);
+    margin:8px 2px -6px;scroll-margin-top:20px;
+  }
+  .back-link{
+    display:inline-block;margin-top:12px;color:#fff;font-weight:700;font-size:13.5px;
+    background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.38);
+    padding:6px 16px;border-radius:999px;text-decoration:none;
+  }
+  .back-link:hover{background:rgba(255,255,255,.28)}
