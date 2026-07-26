@@ -24,6 +24,30 @@
   };
   var WD = ["日", "月", "火", "水", "木", "金", "土"];
 
+  /* ▼ フロント表示ルール（例外的にapp.jsへ実装）
+     土日祝を「営業日」に数えず、2営業日前までのカードを表示する。
+     ・その範囲内にある土日祝の日付の記事は表示される（数えないだけ）。
+     ・HOLIDAYS は日本の祝日（振替休日・国民の休日含む）。年ごとに要更新。 */
+  var FRONT_BUSINESS_DAYS = 2;
+  var HOLIDAYS = { "2026-01-01": true, "2026-01-12": true, "2026-02-11": true, "2026-02-23": true, "2026-03-20": true, "2026-04-29": true, "2026-05-03": true, "2026-05-04": true, "2026-05-05": true, "2026-05-06": true, "2026-07-20": true, "2026-08-11": true, "2026-09-21": true, "2026-09-22": true, "2026-09-23": true, "2026-10-12": true, "2026-11-03": true, "2026-11-23": true, "2027-01-01": true, "2027-01-11": true, "2027-02-11": true, "2027-02-23": true, "2027-03-21": true, "2027-03-22": true, "2027-04-29": true, "2027-05-03": true, "2027-05-04": true, "2027-05-05": true, "2027-07-19": true, "2027-08-11": true, "2027-09-20": true, "2027-09-23": true, "2027-10-11": true, "2027-11-03": true, "2027-11-23": true };
+  function ymd(d) {
+    var m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + "-" + (m < 10 ? "0" + m : m) + "-" + (day < 10 ? "0" + day : day);
+  }
+  function isNonBusiness(d) {
+    var w = d.getDay();
+    return w === 0 || w === 6 || HOLIDAYS[ymd(d)] === true;
+  }
+  function frontCutoff(nDays) {
+    var d = new Date(); d.setHours(0, 0, 0, 0);
+    var counted = 0;
+    while (counted < nDays) {
+      d.setDate(d.getDate() - 1);
+      if (!isNonBusiness(d)) counted++;
+    }
+    return ymd(d);
+  }
+
   var listEl  = document.getElementById("list");
   var qEl     = document.getElementById("q");
   var chipsEl = document.getElementById("chips");
@@ -233,7 +257,8 @@
     renderHeaderDateWeather();
     getJSON("news.json")
       .then(function (data) {
-        NEWS_DATA = data;
+        var cutoff = frontCutoff(FRONT_BUSINESS_DAYS);
+        NEWS_DATA = data.filter(function (n) { return n.date >= cutoff; });
         start();
         renderTop();
         renderLastUpdated();
