@@ -221,7 +221,9 @@
 
   function renderLastUpdated() {
     var el = document.getElementById("last-updated");
-    if (!el || !NEWS_DATA.length) return;
+    if (!el) return;
+    if (CFG.updatedAt) { el.textContent = CFG.updatedAt; return; }
+    if (!NEWS_DATA.length) return;
     var latest = NEWS_DATA.reduce(function (a, b) { return a > b.date ? a : b.date; }, "");
     if (latest) el.textContent = fmtDate(latest);
   }
