@@ -21,19 +21,10 @@
 
 <div class="wrap">
 
-  <div class="panel">
-    <div class="searchbox">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-      <input id="q" type="search" placeholder="キーワードで検索（例：規制 / 資格 / ChatGPT）" aria-label="ニュースをキーワードで検索">
-    </div>
-    <div class="chips" id="chips" role="group" aria-label="分野で絞り込み"></div>
-    <div class="result-count" id="count"></div>
-  </div>
-
   <style>
     .info-banner{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;
       background:linear-gradient(120deg,#0E6E6E,#12897b);color:#fff;
-      text-decoration:none;border-radius:16px;padding:15px 22px;margin:0 0 20px;
+      text-decoration:none;border-radius:16px;padding:15px 22px;margin:-38px 0 20px;
       box-shadow:0 6px 18px rgba(14,110,110,.25);transition:transform .15s,box-shadow .15s;}
     .info-banner:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,110,110,.32);}
     .info-banner .ib-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:14.5px;
@@ -53,6 +44,16 @@
   <div id="topnews" class="topnews"></div>
 
   <div id="list" class="grid"></div>
+
+  <div class="panel" style="margin:30px 0 26px">
+    <div class="panel-lead" style="font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:14px;color:#067e96;margin-bottom:10px">🔍 過去の記事も含めて探す</div>
+    <div class="searchbox">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="キーワードで検索（例：規制 / 資格 / ChatGPT）" aria-label="ニュースをキーワードで検索">
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="分野で絞り込み"></div>
+    <div class="result-count" id="count"></div>
+  </div>
 
   <div class="archive-box">
     <div class="archive-title">📚 これより前のニュース</div>
