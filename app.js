@@ -73,7 +73,7 @@
 
   function cardHTML(n) {
     return "" +
-      '<article>' +
+      '<article' + (isNew(n.date) ? ' class="is-new"' : "") + '>' +
         '<div class="meta">' +
           '<span class="cat" style="background:' + (CAT_COLORS[n.category] || "var(--primary)") + '">' + esc(n.category) + '</span>' +
           '<span class="date">' + fmtDate(n.date) + ' 掲載</span>' +
