@@ -132,17 +132,29 @@
   @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
   @media (prefers-reduced-motion: reduce){.badge-new{animation:none}}
 
-  /* 新着記事カードの強調（案A：枠で囲う） */
+  /* 新着記事カードを大きく表示（2列分の幅を使う） */
   article.is-new{
+    grid-column:span 2;
     border:2px solid var(--sun);
     background:#fffdf7;
     box-shadow:0 4px 16px rgba(255,176,32,.18);
+    padding:26px 28px 20px;
   }
   article.is-new:hover{box-shadow:0 10px 24px rgba(255,176,32,.26)}
+  article.is-new .cat{font-size:12.5px;padding:4px 14px}
+  article.is-new .date{font-size:13px}
   article.is-new .badge-new{
-    font-size:12px;letter-spacing:.1em;
+    font-size:12.5px;letter-spacing:.1em;
     color:#5c3d00;background:#ffcf4d;
-    padding:3px 12px;
+    padding:3px 13px;
+  }
+  article.is-new h3{font-size:21px;line-height:1.5;margin-bottom:12px}
+  article.is-new p{font-size:15px}
+  article.is-new .hint{font-size:14px;padding:12px 16px}
+  @media (max-width:640px){
+    article.is-new{grid-column:span 1;padding:20px 20px 16px}
+    article.is-new h3{font-size:18px}
+    article.is-new p{font-size:14px}
   }
   article h3{
     font-family:"M PLUS Rounded 1c",sans-serif;
