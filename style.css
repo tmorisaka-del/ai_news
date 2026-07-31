@@ -131,6 +131,19 @@
   }
   @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
   @media (prefers-reduced-motion: reduce){.badge-new{animation:none}}
+
+  /* 新着記事カードの強調（案A：枠で囲う） */
+  article.is-new{
+    border:2px solid var(--sun);
+    background:#fffdf7;
+    box-shadow:0 4px 16px rgba(255,176,32,.18);
+  }
+  article.is-new:hover{box-shadow:0 10px 24px rgba(255,176,32,.26)}
+  article.is-new .badge-new{
+    font-size:12px;letter-spacing:.1em;
+    color:#5c3d00;background:#ffcf4d;
+    padding:3px 12px;
+  }
   article h3{
     font-family:"M PLUS Rounded 1c",sans-serif;
     font-weight:700;font-size:16.5px;line-height:1.55;
