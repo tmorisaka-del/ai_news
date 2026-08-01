@@ -97,14 +97,21 @@
   .result-count b{color:var(--primary-deep);font-size:15px}
 
   /* カードグリッド */
+  /* 6分割グリッド：通常カード=2枠（3列並び）／NEWカード=3枠（2列並び） */
   .grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(6,1fr);
     gap:20px;
     align-items:start;
   }
-  @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+  .grid > article{grid-column:span 2}
+  @media (max-width:1024px){
+    .grid{grid-template-columns:repeat(4,1fr)}
+  }
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    .grid > article{grid-column:span 1}
+  }
 
   article{
     background:var(--card);
@@ -132,9 +139,9 @@
   @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
   @media (prefers-reduced-motion: reduce){.badge-new{animation:none}}
 
-  /* 新着記事カードを大きく表示（2列分の幅を使う） */
-  article.is-new{
-    grid-column:span 2;
+  /* 新着記事カードを大きく表示（3枠分の幅＝2つずつ並ぶ） */
+  .grid > article.is-new{
+    grid-column:span 3;
     border:2px solid var(--sun);
     background:#fffdf7;
     box-shadow:0 4px 16px rgba(255,176,32,.18);
@@ -151,8 +158,12 @@
   article.is-new h3{font-size:21px;line-height:1.5;margin-bottom:12px}
   article.is-new p{font-size:15px}
   article.is-new .hint{font-size:14px;padding:12px 16px}
+  @media (max-width:1024px){
+    .grid > article.is-new{grid-column:span 4}
+  }
   @media (max-width:640px){
-    article.is-new{grid-column:span 1;padding:20px 20px 16px}
+    .grid > article.is-new{grid-column:span 1}
+    article.is-new{padding:20px 20px 16px}
     article.is-new h3{font-size:18px}
     article.is-new p{font-size:14px}
   }
