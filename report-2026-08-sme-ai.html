@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中小企業のAI活用 ― 数字と事例で見る現在地｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#2f6f8f;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid var(--primary)}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#2f6f8f;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp-points{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:var(--chip);font-weight:700;color:#1e4756;font-size:13px}
+  .rp-case{border:1px solid var(--line);border-radius:14px;padding:6px 22px 18px;margin:16px 0}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 200px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:var(--primary-deep);display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-links{margin:14px 0 18px}
+  .rp-links .l-item{border-left:3px solid var(--line);padding:4px 0 4px 14px;margin-bottom:16px}
+  .rp-links .l-title{font-weight:700;color:#1e4756;font-size:14px;display:block;margin-bottom:4px}
+  .rp-links a{color:var(--primary-deep);font-size:12.5px;word-break:break-all}
+  .rp-links p{font-size:13.5px;margin:6px 0}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{color:var(--primary-deep);word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:var(--primary-deep)}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}.rp-case{padding:6px 16px 14px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月5日 作成</span>
+    </div>
+
+    <h2>中小企業のAI活用 ― 数字と事例で見る現在地</h2>
+    <div class="rp-lead">
+      「中小企業でもAIは使われているのか」「実際どんな使い方をしているのか」。国の調査と、公開されている導入事例をもとに、2026年8月時点の実態を整理しました。数字だけでなく、うまくいった順序とつまずいた場面まで拾っています。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>中小企業のAI導入率は<strong>20.4%</strong>。検討中を含めると39.0%が前向き。</li>
+        <li>進んでいるのは工場ではなく<strong>事務部門</strong>。使われているAIの<strong>82.6%が生成AI</strong>。</li>
+        <li>目的も効果も「時間の短縮」に集中。ただし<strong>増収企業だけは「品質向上」も重視</strong>している。</li>
+        <li>最大の不足は資金ではなく<strong>情報</strong>。「活用事例が十分に手に入らない」が83.3%。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>生成AI</dt><dd>文章や画像などを新しくつくり出すタイプのAI。ChatGPTやClaudeがこれにあたります。</dd></div>
+        <div class="g-row"><dt>画像認識AI</dt><dd>写真や映像に何が写っているかを判別するAI。本文では惣菜の種類を見分ける用途で登場します。</dd></div>
+        <div class="g-row"><dt>ノーコードツール</dt><dd>プログラムを書かずに、画面の操作だけで業務アプリをつくれる道具のこと。</dd></div>
+        <div class="g-row"><dt>内製化（ないせいか）</dt><dd>これまで外部に発注していた作業を、自社の中で行うように切り替えること。</dd></div>
+        <div class="g-row"><dt>バックオフィス</dt><dd>総務・経理・人事など、直接お客様と接しない社内向けの業務部門のこと。</dd></div>
+        <div class="g-row"><dt>有効回答</dt><dd>アンケートで、集計に使える形で回収できた回答の件数。母数が小さいほど数字は振れやすくなります。</dd></div>
+        <div class="g-row"><dt>中間事業</dt><dd>ふるさと納税で、返礼品の発送手配や寄附者対応などを自治体に代わって行う業務のこと。</dd></div>
+        <div class="g-row"><dt>公募回次（こうぼかいじ）</dt><dd>補助金の申請受付を区切った回のこと。回ごとに締切と採択発表があり、条件が変わることもあります。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. 導入率は2割、前向きは4割</h3>
+    <p>中小企業基盤整備機構が2026年3月に公表した「中小企業のAI等の利活用に係る実態調査」によると、AIを導入している中小企業は<strong>20.4%</strong>でした（全社導入＋一部業務での導入の合計）。「導入を検討している」18.6%を足すと<strong>39.0%</strong>が前向きです。裏を返せば、6割はまだ本格的に動いていません。</p>
+    <p>調査は2025年11月17日〜12月12日、全国の中小企業1万社を対象としたWebアンケートで、有効回答は1,647件。実施は東京商工リサーチへの委託です。</p>
+    <p><strong>業務分野別に見ると、偏りがはっきりしています。</strong></p>
+    <table>
+      <tr><th>業務分野</th><th>導入率</th></tr>
+      <tr><td>総務・管理部門</td><td>68.3%</td></tr>
+      <tr><td>営業・販売・サービス部門</td><td>60.3%</td></tr>
+      <tr><td>経営・企画部門</td><td>58.5%</td></tr>
+      <tr><td>製造・生産部門</td><td>34.9%</td></tr>
+    </table>
+    <p>「AI＝工場の自動化」という印象がありますが、実際に先行しているのはバックオフィスでした。</p>
+    <p>導入済み企業（n=322）が使っているAIの種類も、<strong>生成AIが82.6%</strong>と突出しています。2位の音声認識・音声対話AIが29.8%、画像認識AIは11.2%、需要予測AIは8.1%、異常検知AIは4.3%。文章や資料をつくるAIから入る、というのが実態です。</p>
+
+    <h3>2. 目的も効果も「時間」に集中している</h3>
+    <p>導入目的（n=331）で最も多いのは「業務効率化／作業時間の短縮」で<strong>87.0%</strong>。2位の「品質向上」32.3%とは50ポイント以上の開きがあります。</p>
+    <p>導入後の効果も同じ傾向で、「業務効率化／作業時間の短縮」が83.2%、「人手不足対応」33.9%、「品質向上」30.6%と続きます。</p>
+    <p><strong>ただし、従来のITと比べたときに違いが出る項目があります。</strong>「付加価値創出」の効果はAIが22.3%、ITが7.4%で、約15ポイントの差がつきました。時短だけでなく、新しい価値をつくる方向でもAIは評価されています。</p>
+    <p>もう一つ目を引くのが、直近3年の売上推移で分けたときの差です。「品質向上」を目的に挙げた企業の割合は、<strong>増収傾向の企業で38.6%</strong>。減収傾向26.4%、横ばい29.0%を上回ります。時短だけを見ている会社と、品質まで見ている会社で、業績の傾向が分かれている形です。</p>
+
+    <h3>3. 足りないのはツールではなく「事例」</h3>
+    <p>同じ調査で、社内の理解度と情報量についても聞いています。</p>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">45.1%</span><span class="f-lab">社内にIT・AIの必要性への理解がある</span></div>
+      <div class="rp-fig"><span class="f-num">83.3%</span><span class="f-lab">活用事例の情報が入手できていない</span></div>
+      <div class="rp-fig"><span class="f-num">79.8%</span><span class="f-lab">製品選定の情報が足りていない</span></div>
+    </div>
+    <p>必要性は半数近くが理解している一方で、「では何をすればいいのか」の材料がない、という構図です。</p>
+    <p>求める公的支援でも、「導入費用などの助成」77.9%に次いで「導入事例などの情報提供」が<strong>70.5%</strong>で2位に入りました。以下、従業員向けの教育・研修67.7%、試行導入の機会61.3%、専門家の派遣や導入相談59.8%と続きます。</p>
+
+    <h3>4. 事例①：岡田研磨（石川県津幡町・従業員80人）</h3>
+    <div class="rp-case">
+      <p>建設機械などの部品を研磨加工する岡田研磨株式会社は、AIとの対話だけで業務アプリを内製化しています。DXを推進する岡田雄太専務は、大手IT企業の営業出身でプログラミングの技術は持っていません。</p>
+
+      <h4>最初の失敗は「使わなくてもいいもの」から始めたこと</h4>
+      <p>岡田専務が2020年に入社した当時、現場は紙で管理されていました。まずタブレット端末を5台試験導入しましたが、ベテラン従業員から「紙のほうが見やすい」という声が上がり、端末は工場に放置されたといいます。</p>
+      <p>そこで方針を変えました。<strong>「絶対に使わなくてはいけない業務からシステム化する」</strong>という考え方です。最初に着手したのが検査成績書。現場の約60人全員が毎日5〜6枚記入する書類で、これをタブレット入力に切り替えれば、全員が毎日端末に触れることになります。</p>
+      <p>同時に従業員1人に1台の端末を配布。入力は簡単になり、工場から紙が消えました。反発していた従業員にも利点が伝わり、続いて図面のデジタル化も浸透しました。岡田専務は、管理側の都合ではなく<strong>「現場を楽にする」</strong>ことを軸にしたのがよかったと振り返っています。</p>
+
+      <h4>積み上がった数字</h4>
+      <div class="rp-figs">
+        <div class="rp-fig"><span class="f-num">約20種類</span><span class="f-lab">稼働中の業務アプリ</span></div>
+        <div class="rp-fig"><span class="f-num">月5,600枚</span><span class="f-lab">削減した紙（A4換算）</span></div>
+        <div class="rp-fig"><span class="f-num">月330時間</span><span class="f-lab">会社全体の労働時間削減</span></div>
+      </div>
+
+      <h4>AIでの内製：短縮できたもの、できなかったもの</h4>
+      <p>岡田専務は現在、業務アプリのリニューアルをAIとの対話で進めています。すべて日本語で「こういうシステムを作りたい」と指示し、AIがプログラムに変換する形です。</p>
+      <p>本人の見立てでは、外注すれば<strong>2,000万〜3,000万円級のシステム</strong>が、ここまでで<strong>約300時間</strong>。ただし、そこに至るまでにAIとの対話を<strong>約2年間・通算1,000時間</strong>積み重ねたとも語っています。<strong>開発は短縮できても、使いこなす練習量は短縮できなかった</strong>、という点が示唆的です。</p>
+
+      <h4>なぜ既製品ではなく内製だったのか</h4>
+      <p>同社は以前、製造業で標準的な業務管理システムの導入を試みて、うまくいきませんでした。その過程で、細かい生産計画を立てずに現場の判断で納期を守る「現場主導の生産」という自社の仕組みの価値に気づいたといいます。既製品に合わせるのではなく、自社の進め方に合わせて作る。その手段としてAIが選ばれました。</p>
+    </div>
+
+    <h3>5. 事例②：大津屋（福井県福井市・従業員205人）</h3>
+    <div class="rp-case">
+      <p>創業1573年、福井県内初のコンビニ「オレンジBOX（オレボ）」を1981年に開いた老舗です。第三十代当主の大津屋孫左衛門氏は、店舗でのAI活用と、AIを使った新規事業の両方を進めています。</p>
+
+      <h4>アルバイトが辞める原因だった「量り売り」</h4>
+      <p>オレボの看板商品は店内調理の惣菜で、好きな量だけ容器に盛る量り売りが人気でした。ところがレジ担当者にとっては重い負担でした。惣菜は約70種類あり、100グラムあたりの価格もばらばら。種類と価格を覚えきれず、<strong>それを苦に辞めるアルバイト従業員もいた</strong>といいます。</p>
+      <p>同社は計量機器の大手メーカーなどと組み、AIの画像認識で惣菜の種類を瞬時に判別する会計システムを開発しました。盛り付け方は人によって違うため、さまざまなパターンをAIに学習させたうえで、2019年10月から各店に順次導入しています。</p>
+
+      <h4>負担軽減だけでなく、取りこぼしていた利益も戻った</h4>
+      <p>効果は従業員の負担軽減にとどまりませんでした。導入前は、種類や価格が分からないレジ担当者が「お客様に迷惑が掛からないように」と、<strong>一番安い惣菜の価格を打ち込んでいたことがあった</strong>といいます。つまり意図しない値引き販売が常態化していたわけです。システム導入でこれがなくなり、適正な利益が確保できるようになりました。</p>
+      <div class="rp-note">
+        <b>ここが要点：</b>これは「時短」の数字には表れない効果です。AIの投資対効果を人件費の削減だけで測ると、この種の改善は評価対象から漏れます。
+      </div>
+
+      <h4>新規事業でも生成AIを使う</h4>
+      <p>同社はふるさと納税の中間事業を2020年10月から受託しています。2023年9月には、ChatGPTを使った「AIふるさと納税コンシェルジュ（β版）」を公開しました。WebでもLINEでも使え、寄附額・ジャンル・都道府県を伝えると条件に合う返礼品を提案します。有人のオペレーターを置かずに済むため、全員に無料で提供できる設計です。</p>
+      <p>2024年8月には、食品返礼品の品質管理や法令順守を監査するサービス「Custos」も開始。2023年に立ち上げた共同事業「HAQTSUYA」は2025年4月に分社化しました。</p>
+      <p>支援先自治体の寄附額は伸びており、ある自治体では2022年度の4億1000万円が2024年度に7億円（約1.7倍）、別の自治体では2021年度の1800万円が2024年度に3億円（約16倍）になっています。</p>
+      <p>大津屋氏は<strong>「地域創生に貢献したい」</strong>として、AIとデジタル技術で地域の産品を広げる方向を掲げています。</p>
+    </div>
+
+    <h3>6. 他にも公開されている事例</h3>
+    <div class="rp-links">
+      <div class="l-item">
+        <span class="l-title">全員DXで生産性を向上 “社員が楽になる”を実感して自走へ【株式会社後藤組（山形県米沢市）】（2026年2月9日）</span>
+        <p>建設業。専任のDXチームが技術面を支え、<strong>現場社員自身がノーコードツールで業務アプリを作成</strong>する体制を築きました。労働時間の短縮とコスト削減に加え、新卒者の定着率向上も評価され、経済産業省の「DXセレクション2025」でグランプリに選ばれています。</p>
+        <p>ただ、道のりは平坦ではなかったとされます。後藤社長はDXが当初は社員に歓迎されなかったこと、賞与への反映を持ち出してまで実施させたことを明かし、ゼロを1にするのが社長の仕事で、動き出せば社員が自走すると語っています。<strong>「社長のやるという覚悟」</strong>が要点だという説明です。岡田研磨・大津屋がいずれもトップ層主導だった点とも重なります。</p>
+        <a href="https://j-net21.smrj.go.jp/special/dx/_20260209.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/_20260209.html</a>
+      </div>
+      <div class="l-item">
+        <span class="l-title">IT・DXで「新しいオフィスを創造する企業」へ進化を続ける老舗【株式会社イシマル（長崎県長崎市）】（2026年1月19日）</span>
+        <p>140年以上前の文具店を源流とし、現在は事務機器とITソリューションを手がけます。インターネット黎明期に早くIT事業へ舵を切り、デジタル人材の育成にも力を入れています。2021年にリニューアルした本社オフィスで自らDXを実践し、働き方改革を進めました。なお、この記事は生成AIの活用事例ではなくIT・DX全般の事例です。</p>
+        <a href="https://j-net21.smrj.go.jp/special/dx/20260119.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/20260119.html</a>
+      </div>
+      <div class="l-item">
+        <span class="l-title">J-Net21「中小企業とDX」取組事例一覧</span>
+        <p>事例は継続的に追加されています。</p>
+        <a href="https://j-net21.smrj.go.jp/special/dx/index.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/index.html</a>
+      </div>
+    </div>
+
+    <h3>7. 費用面の制度：名称に「AI」が入った</h3>
+    <p>従来の「IT導入補助金」は、令和7年度補正予算事業から<strong>「デジタル化・AI導入補助金」</strong>へ名称が変わりました。中小企業庁の事業で、事務局は中小機構です。2026年度からはAIの位置づけが強まり、ツール検索でAI機能付きのものを絞り込めるようになったほか、生成AIを活用したシステムも補助対象として明確化されています。「複数者連携デジタル化・AI導入枠」も新設されました。</p>
+    <p>公募は2026年2月27日開始、交付申請の受付は3月30日から。締切は通年でおおむね1〜2か月に1回のペースで設定されており、2026年8月時点では<strong>8月25日締切まで</strong>が公表されています。</p>
+    <div class="rp-note">
+      <b>注意：</b>枠の種類・補助上限・補助率・締切は公募回次ごとに変わります。予算上限に達した枠から早期終了する場合もあるため、申請を検討する際は必ず公式ポータルで最新の公募要領を確認してください。
+    </div>
+
+    <h3>8. この記事から読み取れること</h3>
+    <p><strong>入口は事務作業。</strong>導入済み企業の8割超が生成AIを使い、最も進んでいるのは総務・管理部門でした。工場の自動化から考える必要はありません。</p>
+    <p><strong>「全員が毎日やる業務」から始めると定着する。</strong>岡田研磨の教訓です。使っても使わなくてもいい仕組みは使われません。</p>
+    <p><strong>時短の数字に表れない効果がある。</strong>大津屋の量り売りは、従業員の負担軽減と同時に、意図しない値引き販売という「見えない損失」を止めていました。削減時間だけを追うと、こうした改善は評価対象から漏れます。</p>
+    <p><strong>時短で止めない。</strong>増収企業ほど品質向上も目的に挙げていました。「何時間減ったか」だけでなく「何が良くなったか」を見る余地があります。</p>
+    <p><strong>足りないのはツールではなく事例。</strong>8割超が「活用事例の情報が入手できていない」と答えています。他社の具体例を集めること自体に価値がある、ということです。</p>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>中小企業基盤整備機構「中小企業のＡＩ等の利活用に係る実態調査」（2026年3月）<br><a href="https://www.smrj.go.jp/research_case/questionnaire/fbrion0000002pjw-att/202603_AI_point.pdf" target="_blank" rel="noopener">https://www.smrj.go.jp/research_case/questionnaire/fbrion0000002pjw-att/202603_AI_point.pdf</a></li>
+        <li>J-Net21「『デジタルを会社の武器に』 AIを活用し業務アプリ内製化【岡田研磨株式会社（石川県津幡町）】」（2025年7月31日）<br><a href="https://j-net21.smrj.go.jp/special/dx/20250731.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/20250731.html</a></li>
+        <li>J-Net21「創業450年の企業がAIを活用した既存ビジネスの『深化』と新規ビジネスの『進化』で地域創生に貢献へ【株式会社大津屋（福井県福井市）】」（2025年10月14日）<br><a href="https://j-net21.smrj.go.jp/special/dx/20251014.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/20251014.html</a></li>
+        <li>J-Net21「全員DXで生産性を向上 “社員が楽になる”を実感して自走へ【株式会社後藤組（山形県米沢市）】」（2026年2月9日）<br><a href="https://j-net21.smrj.go.jp/special/dx/_20260209.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/special/dx/_20260209.html</a></li>
+        <li>J-Net21「DXセレクション2025 グランプリに後藤組を選定：経済産業省」<br><a href="https://j-net21.smrj.go.jp/news/cek71k000000m0le.html" target="_blank" rel="noopener">https://j-net21.smrj.go.jp/news/cek71k000000m0le.html</a></li>
+        <li>中小企業庁「デジタル化・AI導入補助金2026の公募要領を公開しました」（2026年3月10日）<br><a href="https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260310001.html" target="_blank" rel="noopener">https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260310001.html</a></li>
+        <li>デジタル化・AI導入補助金2026 公式ポータル（事務局：中小機構）<br><a href="https://it-shien.smrj.go.jp/" target="_blank" rel="noopener">https://it-shien.smrj.go.jp/</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。統計は2025年11〜12月に実施された調査によるものです。補助金の公募内容は随時変わります。2026年8月5日時点の情報である点にご留意ください。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
