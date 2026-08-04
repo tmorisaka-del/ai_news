@@ -28,6 +28,16 @@
   .rp-points ol{margin:0;padding-left:20px}
   .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
   .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
   .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
   .rp-note b{color:#c07d00}
   .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
@@ -80,6 +90,25 @@
         <li><b>米国は自国の最先端モデルを規制で絞る側に回った。</b>ただし止められるのは自国のクローズドなモデルだけ、という構造的なねじれがある。</li>
         <li><b>欧州はモデル開発では劣後し、ルールづくりで存在感を出している。</b>EU AI法の透明性規定が2026年8月2日に適用開始。</li>
       </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>パラメータ</dt><dd>AIの中身にある調整つまみの数。多いほど複雑な内容を扱えますが、動かすのに必要な設備も大きくなります。本文の「2.8兆」は現時点で最大級の規模です。</dd></div>
+        <div class="g-row"><dt>トークン</dt><dd>AIが文章を扱うときの最小単位。日本語ではおおむね1文字から数文字で1トークンです。利用料もこの単位で計算されます。</dd></div>
+        <div class="g-row"><dt>文脈（コンテキスト）の長さ</dt><dd>AIが一度に読み込んで覚えていられる分量のこと。100万トークンは、書籍数冊ぶんの文章を一度に渡せる規模にあたります。</dd></div>
+        <div class="g-row"><dt>オープンウェイト（公開モデル）</dt><dd>AIの中身にあたるデータが公開され、誰でも自分の環境で動かせる形。逆に外部へ出さないものをクローズド（非公開）モデルと呼びます。</dd></div>
+        <div class="g-row"><dt>ベンチマーク</dt><dd>AIの性能を測るための共通テスト。試験の種類によって得意・不得意が出るため、どの試験を使うかで順位が変わります。</dd></div>
+        <div class="g-row"><dt>SWE-Bench Verified</dt><dd>実際のソフトウェア開発で起きた不具合をAIに直させる試験。開発用途での実力を測る指標として広く使われています。</dd></div>
+        <div class="g-row"><dt>フロンティアモデル</dt><dd>その時点で最高水準の性能を持つ大規模なAIのこと。米国の規制では「保護対象フロンティアモデル」という区分が新たに設けられました。</dd></div>
+        <div class="g-row"><dt>CAISI</dt><dd>米商務省の国立標準技術研究所（NIST）の下に置かれた、AIの能力と安全性を評価する政府機関です。</dd></div>
+        <div class="g-row"><dt>モデル仲介サービス</dt><dd>複数の会社のAIを、1つの窓口からまとめて使えるようにする中継サービス。本文のOpenRouterがその代表格です。</dd></div>
+        <div class="g-row"><dt>適合性評価</dt><dd>製品や仕組みが法律の求める基準を満たしているかを、提供を始める前に確認する手続きのことです。</dd></div>
+        <div class="g-row"><dt>来歴情報</dt><dd>そのファイルを誰がいつ何で作ったかを、データ自体に持たせておく仕組み。写真や動画の「産地表示」にあたります。</dd></div>
+        <div class="g-row"><dt>国家情報法</dt><dd>組織や個人に対し、国の情報活動への協力を義務づける中国の法律。2017年に施行されました。</dd></div>
+      </dl>
     </div>
 
     <h3>1. 性能の差はどこまで縮んだか</h3>
