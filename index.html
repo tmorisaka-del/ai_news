@@ -23,7 +23,7 @@
 
   <style>
     .feature-banner{display:block;background:linear-gradient(120deg,#1f4d6e,#2f7f92);color:#fff;
-      text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:-38px 0 10px;
+      text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:4px 0 10px;
       box-shadow:0 6px 18px rgba(31,77,110,.26);transition:transform .15s,box-shadow .15s;}
     .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(31,77,110,.34);}
     .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
@@ -39,10 +39,23 @@
     .fb-sum{font-size:13.8px;line-height:1.8;opacity:.95;}
     .fb-cta{display:inline-block;margin-top:11px;font-weight:700;font-size:13.5px;
       border-bottom:1.5px solid rgba(255,255,255,.55);padding-bottom:1px;}
+    #topnews{margin:-38px 0 14px}
+    .notice{display:flex;align-items:center;gap:13px;background:#fff8ea;
+      border:1px solid #f2dfae;border-radius:14px;padding:13px 18px;margin:0 0 16px;
+      text-decoration:none;transition:box-shadow .15s,border-color .15s;}
+    .notice:hover{box-shadow:0 5px 14px rgba(192,125,0,.13);border-color:#e0bf6a;}
+    .nt-tag{flex:none;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;
+      letter-spacing:.06em;color:#fff;background:#c07d00;padding:4px 12px;border-radius:999px;white-space:nowrap;}
+    .nt-body{min-width:0;}
+    .nt-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:14px;
+      line-height:1.5;color:#1e4756;display:block;}
+    .nt-sub{font-size:12.5px;color:var(--sub);line-height:1.6;display:block;margin-top:2px;}
+    .nt-arrow{flex:none;margin-left:auto;color:#c07d00;font-size:15px;font-weight:700;}
+    @media (max-width:640px){.notice{align-items:flex-start}.nt-arrow{display:none}}
     .more-reads{margin:0 0 20px}
     .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
       letter-spacing:.14em;color:var(--sub);margin:0 0 7px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+    .mr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;}
     @media (max-width:780px){.mr-grid{grid-template-columns:1fr}}
     .mr-card{display:flex;align-items:center;gap:9px;background:var(--card);
       border:1px solid var(--line);border-radius:11px;padding:8px 11px;text-decoration:none;
@@ -55,6 +68,19 @@
       line-height:1.4;color:#1e4756;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     .mr-arrow{flex:none;margin-left:auto;color:var(--sub);font-size:13px;}
   </style>
+  </div>
+
+  <div id="topnews" class="topnews"></div>
+
+  <a class="notice" href="report-2026-08-claude-guide.html">
+    <span class="nt-tag">&#128227; お知らせ</span>
+    <span class="nt-body">
+      <span class="nt-name">Claudeで結局なにができるのか ― Teamプランの機能と当社での使いどころ</span>
+      <span class="nt-sub">チャット／Cowork／Design／Officeアドイン／Chrome拡張の5つの入口を、当社の業務のどこで使えるかとあわせて整理しました。</span>
+    </span>
+    <span class="nt-arrow">&#8250;</span>
+  </a>
+
   <a href="report-2026-08-ai-search-traffic.html" class="feature-banner">
     <div class="fb-head">
       <span class="fb-tag">&#9998; Claude独自編集記事</span>
@@ -78,15 +104,7 @@
         <span class="mr-name">欧米勢と中国勢のAI競争</span>
         <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
-      <a class="mr-card guide" href="share-opus5.html" title="Claude Opus 5の使い方（社内向けガイド）">
-        <span class="mr-badge" aria-hidden="true">&#9788;</span>
-        <span class="mr-name">Claude Opus 5の使い方</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
     </div>
-  </div>
-
-  <div id="topnews" class="topnews"></div>
 
   <div id="list" class="grid"></div>
 
@@ -109,7 +127,7 @@
   <footer>本ページは公開報道をもとに社内向けに要約したものです。詳しくは各記事の出典リンクをご覧ください。</footer>
 </div>
 
-<script>window.PAGE_CONFIG = { mode: "index", newDays: 1, updatedAt: "2026年8月5日（水）" };</script>
+<script>window.PAGE_CONFIG = { mode: "index", newDays: 1, updatedAt: "2026年8月6日（木）" };</script>
 <script src="app.js?v=4"></script>
 </body>
 </html>
