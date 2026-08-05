@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claudeで結局なにができるのか ― Teamプランの機能と当社での使いどころ｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#c07d00;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid var(--sun)}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#c07d00;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp-points{background:#fff8ea;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#c07d00;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp-warn{background:#fdf0f0;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-warn b{color:#c0392b}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:var(--chip);font-weight:700;color:#1e4756;font-size:13px}
+  .rp-steps{list-style:none;margin:14px 0 18px;padding:0;counter-reset:st}
+  .rp-steps li{counter-increment:st;position:relative;padding:11px 0 11px 44px;
+    border-bottom:1px dashed var(--line);font-size:14px;}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:0;top:11px;
+    width:27px;height:27px;border-radius:50%;background:var(--sun);color:#fff;
+    font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:13px;
+    text-align:center;line-height:27px;}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{color:var(--primary-deep);word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:var(--primary-deep)}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">お知らせ</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#128227; お知らせ</span>
+      <span class="rp-date">2026年8月6日 作成</span>
+    </div>
+
+    <h2>Claudeで結局なにができるのか ― Teamプランの機能と当社での使いどころ</h2>
+    <div class="rp-lead">
+      新しい名前が次々に出てきますが、やっていることは「Claudeに仕事を渡す入口が増えた」だけです。全部を覚える必要はありません。当社が契約しているTeamプランで実際に使えるものだけを、当社の業務のどこに置けるかとあわせて整理しました。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>入口は大きく<strong>5つ</strong>。チャット／Cowork／Claude Design／Officeアドイン／Chrome拡張です。</li>
+        <li>当社のTeamプランでは、<strong>この5つすべてが使えます。</strong></li>
+        <li>ただし一部は<strong>管理者が設定をオンにしないと動きません</strong>（後述）。</li>
+        <li>使用量は全機能で<strong>共通の枠</strong>。「Designを使うと別料金」ということはありません。</li>
+      </ol>
+    </div>
+
+    <h3>全体像</h3>
+    <table>
+      <tr><th>入口</th><th>ひとことで言うと</th><th>当社での使いどころ</th></tr>
+      <tr><td><b>チャット</b></td><td>相談する・文章を書く・ファイルを作る</td><td>原稿、企画、要約、資料作成</td></tr>
+      <tr><td><b>Cowork</b></td><td>パソコンの中で実際に手を動かす</td><td>定型作業、大量ファイル処理、定期レポート</td></tr>
+      <tr><td><b>Claude Design</b></td><td>見た目のあるものを会話で作る</td><td>LP案、提案資料、画面設計</td></tr>
+      <tr><td><b>Officeアドイン</b></td><td>Excel/PowerPoint等の中で使う</td><td>提案書、実績報告、冊子のたたき台</td></tr>
+      <tr><td><b>Claude in Chrome</b></td><td>ブラウザを操作させる</td><td>調査、管理画面の定型入力</td></tr>
+    </table>
+    <p>このほかに、開発者向けの<strong>Claude Code</strong>がTeamプランの標準シートに含まれています（2026年1月から）。</p>
+
+    <h3>1. チャット ― 実は一番使われていない機能がここにある</h3>
+    <p>「質問して答えてもらう」で止まっている人が多い機能です。以下は全部チャットの中でできます。</p>
+    <p><strong>ファイルをそのまま作れる。</strong>Excel、PowerPoint、Word、PDFを会話から直接生成し、ダウンロードできます。「この数字で表を作って」で.xlsxが出てきます。</p>
+    <p><strong>下書きを部分的に直せる。</strong>Claudeが書いた文章は横に開きます。直したい箇所を選んで指示すると、<strong>その部分だけ</strong>書き換わります。全文を作り直させる必要はありません。</p>
+    <p><strong>会話の中に図やグラフを描ける。</strong>説明文だけでなく、フロー図や比較表、グラフを会話の中に直接出せます。</p>
+    <p><strong>プロジェクトで案件ごとにまとめられる。</strong>資料と指示をひとまとめにでき、Teamプランでは組織内で共有できます。「セミナー集客」「政府調達PR冊子」のように案件別に作れば、毎回背景を説明し直す必要がなくなります。</p>
+    <p><strong>過去のやり取りを覚えている／探せる。</strong>メモリと過去チャット検索はTeamプランで使えます。</p>
+    <div class="rp-note">
+      <b>当社での使いどころ：</b>セミナー告知文、メルマガ、冊子原稿の下書き、BizOn!のFAQ整備。「新しく作る前に、前に作ったものを探させる」だけでも時間が変わります。
+    </div>
+
+    <h3>2. Claude Cowork ― パソコンの中で作業させる</h3>
+    <p>チャットとの違いは、<strong>Claudeが実際にファイルを開いて手を動かす</strong>点です。TeamプランではデスクトップアプリのほかWeb・スマホでも使えます（Web・スマホはベータ）。</p>
+    <p><strong>Teamプランは「クラウド実行」が既定でオンです。</strong>Claudeの作業がAnthropic側のコンピューターで動くため、ノートPCを閉じても作業が続き、誰もPCを開いていない時間帯でも予約タスクが動きます。</p>
+    <p><strong>予約タスクが組めます。</strong>「毎週月曜の朝に、指定サイトを見て変更点をまとめる」といった定期実行が可能です。</p>
+    <p><strong>プラグインを組織で配れます。</strong>管理者がよく使う手順をまとめて配布し、「必須」「既定でインストール」「任意」「非表示」に分けて管理できます。</p>
+    <div class="rp-note">
+      <b>当社での使いどころ：</b>月次の実績レポート作成、大量ファイルのリネームと仕分け、定期的な情報収集。実は<b>このAIニュースサイトの毎日の更新作業がこの領域です。</b>
+    </div>
+    <div class="rp-warn">
+      <b>注意：</b>Coworkはインターネットに接続して自律的に動くため、外部から不正な指示を紛れ込ませる攻撃のリスクがゼロではありません。公式ガイドでも「機微な情報を含むファイルへのアクセスは避ける」よう案内されています。お客様の個人情報を扱うファイルは渡さない、という当社の運用はここでも有効です。
+    </div>
+
+    <h3>3. Claude Design ― 見た目のあるものを会話で作る</h3>
+    <p>Pro・Max・Team・Enterpriseでベータ提供されており、<strong>Webとデスクトップでのみ</strong>使えます（スマホ不可）。</p>
+    <p>画面は左がチャット、右がキャンバスです。「作りたいもの」を言葉で説明すると右側に形になって出てきます。直し方は3通りあります。</p>
+    <ul class="rp-steps">
+      <li><b>チャットで指示</b> ― 全体の構成を変える、色調を変える、別案を出す</li>
+      <li><b>インラインコメント</b> ― キャンバスの一部をクリックして「ここのボタンを大きく」</li>
+      <li><b>直接編集</b> ― ドラッグして位置やサイズを調整</li>
+    </ul>
+    <p><strong>書き出し先が実用的です。</strong>PDF、<strong>PPTX</strong>、HTML、zipのほか、Canva、Adobe、Miro、Gammaなどへ送れます。つまり「Designで作ってPowerPointに落とす」ができます。</p>
+    <p><strong>組織のデザインシステムを設定しておくと、以後すべての制作物が自動でブランドに沿います。</strong>一度設定すれば、メンバーは何も意識せずに作り始められます。</p>
+    <div class="rp-note">
+      <b>当社での使いどころ：</b>セミナーのランディングページ案、提案資料の構成案、BizOn!の画面案。特に効くのが<b>「2〜3案出して」</b>という頼み方です。ゼロから考えるより、出てきた案を比べるほうが速く決まります。プロンプトには「目的」「レイアウト」「載せる内容」「誰が使うか」の4点を入れると精度が上がります。デザインの知識は不要とされています。
+    </div>
+
+    <h3>4. Officeアドイン ― Excel / PowerPoint / Word / Outlook</h3>
+    <p>各アプリの中にClaudeを組み込む方式です。Microsoft Marketplaceからインストールします。</p>
+    <p><strong>PowerPoint</strong>（Pro・Max・Team・Enterprise、一般提供）。既存のテンプレートを読み取り、レイアウト・フォント・配色を守ったまま新しいスライドを作ります。デッキ全体を作り直さずに<strong>特定のスライドだけ</strong>直せます。箇条書きを図解やネイティブのグラフに変換することもできます。</p>
+    <p><strong>Excel</strong>（有料プラン全般）。ピボットテーブルの編集、条件付き書式、グラフ作成、ファイルのアップロードに対応します。<strong>Word・Outlook</strong>のアドインも提供されています。</p>
+    <div class="rp-warn">
+      <b>管理者への確認事項：</b>アプリをまたいだ文脈の共有は、<b>Teamプランでは既定でオフです。</b>ExcelでのやりとりをPowerPointに引き継ぐ機能を使うには、オーナーが「組織設定 &gt; Office agents」で有効化する必要があります（Pro・Maxは既定オン、Team・Enterpriseは既定オフ）。ここが未設定だと、アプリごとにゼロから説明し直すことになります。
+    </div>
+
+    <h3>5. Claude in Chrome ― ブラウザを操作させる</h3>
+    <p>有料プラン全般にベータ提供されています。複数タブをまたいだ作業、手順を録画して覚えさせる機能、定期実行、画面の一部を範囲指定しての指示に対応します。</p>
+    <div class="rp-note">
+      <b>当社での使いどころ：</b>競合サイトの定点調査、広告管理画面での定型入力、フォーム入力の代行。
+    </div>
+    <p>Teamプランのオーナーは「組織設定 &gt; Claude in Chrome」で、組織全体の有効/無効と、アクセスを許可・禁止するサイトを設定できます。</p>
+
+    <h3>6. スキルとコネクタ ― 「毎回同じ説明」をなくす仕組み</h3>
+    <p><strong>スキル</strong>は、繰り返す作業の手順書をClaudeに持たせておく仕組みです。Teamプランでは<strong>組織全体に配布・管理</strong>できます。「当社の原稿ルール」「冊子の体裁」といった社内の決まりごとをスキルにしておけば、誰が使っても同じ品質で出てきます。</p>
+    <p><strong>コネクタ</strong>は外部サービスとの接続です。Google Drive、Microsoft 365などがあります。Microsoft 365コネクタは2026年7月から書き込みにも対応し、メールの作成・整理、カレンダーの管理、OneDrive/SharePointのファイル作成・更新ができるようになりました（管理者による権限の承認と有効化が必要）。</p>
+
+    <h3>7. Teamプランでは使えないもの</h3>
+    <p>期待して探しても見つからない、という無駄足を避けるための一覧です。</p>
+    <table>
+      <tr><th>機能</th><th>提供範囲</th></tr>
+      <tr><td>Slack連携（Claude Tag）</td><td>Team・Enterprise（<b>当社はSlack未使用のため対象外</b>）</td></tr>
+      <tr><td>月次のふりかえり（Reflect）</td><td>Free・Pro・Maxのみ。<b>Teamは非対応</b></td></tr>
+      <tr><td>部署・グループ別の権限管理</td><td>Enterpriseのみ。Teamは組織全体で一括のオン/オフ</td></tr>
+      <tr><td>監査ログ、Compliance API、モデルの利用制限</td><td>Enterpriseのみ</td></tr>
+      <tr><td>HIPAA対応</td><td>Enterpriseのみ</td></tr>
+    </table>
+
+    <h3>8. 使用量の考え方</h3>
+    <p><strong>チャット、Cowork、Claude Design、Claude Codeは、すべて同じ使用量の枠を分け合います。</strong>「Designを使うと別料金がかかる」ということはありません。逆に言えば、Designで大きな制作物を何度も作り直すと、その分だけチャットに使える量が減ります。上限に達した場合、Teamプランでは管理者が追加の使用量を購入できます。</p>
+
+    <h3>9. まず何から始めるか</h3>
+    <p>全部を一度に覚えるのは無理なので、順番を提案します。</p>
+    <ul class="rp-steps">
+      <li><b>今週：チャットでファイルを1つ作る。</b>「この内容でPowerPointを作って」と頼んでみる。出力形式が変わるだけで、使い道の見え方が変わります。</li>
+      <li><b>来週：自分の定型作業を1つCoworkに渡す。</b>毎月・毎週やっている作業を1つだけ選ぶ。全部を渡そうとすると挫折します。</li>
+      <li><b>今月中：Claude Designで提案資料の表紙を作ってみる。</b>「2〜3案出して」と頼み、比べて選ぶ。デザインの知識は要りません。</li>
+    </ul>
+
+    <h3>10. 管理者にお願いしたい設定確認</h3>
+    <p>この記事の実効性に関わるので、以下3点の現状確認をお願いします。</p>
+    <ul class="rp-steps">
+      <li><b>組織設定 &gt; Office agents</b> ― アプリ横断の文脈共有（Teamは<b>既定オフ</b>）</li>
+      <li><b>組織設定 &gt; Cowork</b> ― クラウド実行（Teamは既定オン）と、コネクタの「常に許可」（既定オフ）</li>
+      <li><b>組織設定 &gt; Claude in Chrome</b> ― 拡張機能の有効化と許可サイトの設定</li>
+    </ul>
+
+    <div class="rp-gloss">
+      <span class="g-title">用語解説</span>
+      <div class="g-lead">本文に出てくる言葉です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>プロンプト</dt><dd>AIに出す指示文のこと。何を・どんな形で・誰向けに作るかを書くほど、狙ったものが出やすくなります。</dd></div>
+        <div class="g-row"><dt>アドイン</dt><dd>ExcelやPowerPointなど既存のソフトに後から機能を追加する小さなプログラムのこと。</dd></div>
+        <div class="g-row"><dt>コネクタ</dt><dd>ClaudeとGoogle DriveやMicrosoft 365などの外部サービスをつなぐ仕組み。つなぐと、そこにあるファイルを直接扱えます。</dd></div>
+        <div class="g-row"><dt>スキル</dt><dd>繰り返す作業の手順書をあらかじめClaudeに持たせておく仕組み。毎回同じ説明をしなくて済みます。</dd></div>
+        <div class="g-row"><dt>プラグイン</dt><dd>Coworkに追加できる機能のまとまり。管理者が組織内に配布できます。</dd></div>
+        <div class="g-row"><dt>デザインシステム</dt><dd>会社のロゴ・色・書体・余白などのルールをまとめたもの。設定しておくと制作物が自動でブランドに沿います。</dd></div>
+        <div class="g-row"><dt>クラウド実行</dt><dd>手元のパソコンではなく、提供元のコンピューター上でAIが作業すること。PCを閉じても処理が続きます。</dd></div>
+        <div class="g-row"><dt>ベータ提供</dt><dd>正式版の前の試験的な提供のこと。使えますが、仕様が変わったり不具合が残っていたりする場合があります。</dd></div>
+      </dl>
+    </div>
+
+    <div class="rp-src">
+      <span class="s-title">出典（Anthropic公式ドキュメント）</span>
+      <ul>
+        <li>リリースノート<br><a href="https://support.claude.com/en/articles/12138966-release-notes" target="_blank" rel="noopener">https://support.claude.com/en/articles/12138966-release-notes</a></li>
+        <li>Use Claude Cowork on Team and Enterprise plans<br><a href="https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" target="_blank" rel="noopener">https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans</a></li>
+        <li>Get started with Claude Design<br><a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></li>
+        <li>Use Claude for PowerPoint<br><a href="https://support.claude.com/en/articles/13521390-use-claude-for-powerpoint" target="_blank" rel="noopener">https://support.claude.com/en/articles/13521390-use-claude-for-powerpoint</a></li>
+        <li>Work across Microsoft 365 apps<br><a href="https://support.claude.com/en/articles/13892150-work-across-microsoft-365-apps" target="_blank" rel="noopener">https://support.claude.com/en/articles/13892150-work-across-microsoft-365-apps</a></li>
+        <li>プラン一覧<br><a href="https://claude.com/pricing" target="_blank" rel="noopener">https://claude.com/pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事はAnthropicの公式ドキュメントをもとに、Claudeが社内向けに整理したものです。機能の提供範囲やベータの状況は頻繁に変わります。2026年8月6日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
