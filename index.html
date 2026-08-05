@@ -39,24 +39,21 @@
     .fb-sum{font-size:13.8px;line-height:1.8;opacity:.95;}
     .fb-cta{display:inline-block;margin-top:11px;font-weight:700;font-size:13.5px;
       border-bottom:1.5px solid rgba(255,255,255,.55);padding-bottom:1px;}
-    .more-reads{margin:2px 0 26px}
-    .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11.5px;
-      letter-spacing:.14em;color:var(--primary-deep);margin:0 0 11px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;align-items:stretch;}
+    .more-reads{margin:0 0 20px}
+    .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
+      letter-spacing:.14em;color:var(--sub);margin:0 0 7px;padding-left:3px;}
+    .mr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
     @media (max-width:780px){.mr-grid{grid-template-columns:1fr}}
-    .mr-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
-      border-radius:15px;padding:15px 17px 14px;text-decoration:none;
-      box-shadow:0 2px 8px rgba(50,90,110,.05);
-      transition:transform .15s,box-shadow .15s,border-color .15s;}
-    .mr-card:hover{transform:translateY(-3px);box-shadow:0 9px 20px rgba(50,90,110,.13);
-      border-color:var(--primary);}
-    .mr-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
-      letter-spacing:.06em;color:#fff;background:#2f6f8f;padding:3px 10px;border-radius:999px;
-      align-self:flex-start;margin-bottom:9px;white-space:nowrap;}
-    .mr-card.guide .mr-tag{background:var(--c-tool);}
-    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:14px;
-      line-height:1.6;color:#1e4756;margin-bottom:10px;}
-    .mr-go{font-size:12px;font-weight:700;color:var(--primary-deep);margin-top:auto;}
+    .mr-card{display:flex;align-items:center;gap:9px;background:var(--card);
+      border:1px solid var(--line);border-radius:11px;padding:8px 11px;text-decoration:none;
+      transition:box-shadow .15s,border-color .15s;}
+    .mr-card:hover{box-shadow:0 4px 12px rgba(50,90,110,.11);border-color:var(--primary);}
+    .mr-badge{flex:none;width:20px;height:20px;border-radius:50%;background:#2f6f8f;color:#fff;
+      font-size:10.5px;line-height:20px;text-align:center;}
+    .mr-card.guide .mr-badge{background:var(--c-tool);}
+    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:12.5px;
+      line-height:1.4;color:#1e4756;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .mr-arrow{flex:none;margin-left:auto;color:var(--sub);font-size:13px;}
   </style>
   <a href="report-2026-08-ai-search-traffic.html" class="feature-banner">
     <div class="fb-head">
@@ -71,22 +68,23 @@
   <div class="more-reads">
     <div class="mr-title">ほかにも読めます</div>
     <div class="mr-grid">
-      <a class="mr-card" href="report-2026-08-sme-ai.html">
-        <span class="mr-tag">&#9998; 独自編集記事</span>
-        <span class="mr-name">中小企業のAI活用 ― 調査データと2つの導入事例から</span>
-        <span class="mr-go">読む &#8250;</span>
+      <a class="mr-card" href="report-2026-08-sme-ai.html" title="中小企業のAI活用 ― 調査データと2つの導入事例から">
+        <span class="mr-badge" aria-hidden="true">&#9998;</span>
+        <span class="mr-name">中小企業のAI活用</span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
-      <a class="mr-card" href="report-2026-08-ai-competition.html">
-        <span class="mr-tag">&#9998; 独自編集記事</span>
-        <span class="mr-name">欧米勢のAIと中国勢のAI、競争はいまどうなっているのか</span>
-        <span class="mr-go">読む &#8250;</span>
+      <a class="mr-card" href="report-2026-08-ai-competition.html" title="欧米勢のAIと中国勢のAI、競争はいまどうなっているのか">
+        <span class="mr-badge" aria-hidden="true">&#9998;</span>
+        <span class="mr-name">欧米勢と中国勢のAI競争</span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
-      <a class="mr-card guide" href="share-opus5.html">
-        <span class="mr-tag">社内向けガイド</span>
+      <a class="mr-card guide" href="share-opus5.html" title="Claude Opus 5の使い方（社内向けガイド）">
+        <span class="mr-badge" aria-hidden="true">&#9788;</span>
         <span class="mr-name">Claude Opus 5の使い方</span>
-        <span class="mr-go">読む &#8250;</span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
     </div>
+  </div>
   </div>
 
   <div id="topnews" class="topnews"></div>
