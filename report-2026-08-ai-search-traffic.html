@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「ググる」の中身が変わった ― AI検索とサイト流入の現在地｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#2f6f8f;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid var(--primary)}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#2f6f8f;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp-points{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:var(--chip);border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:var(--chip);font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:var(--primary-deep);display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:var(--primary-deep);display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{color:var(--primary-deep);word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:var(--primary-deep)}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月5日 作成</span>
+    </div>
+
+    <h2>「ググる」の中身が変わった ― AI検索とサイト流入の現在地</h2>
+    <div class="rp-lead">
+      検索結果の上に出てくるAIの回答を読んで、そのまま用が済んでしまう。この行動の変化が、Webサイトへの流入という当社の本業に直結する部分を揺らしています。何がどこまで起きているのか、数字の限界も含めて整理しました。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>2026年6月、<strong>ウェブ全体の通信の過半数が「人ではない」</strong>状態になりました。機械が多数派になったのは初めてです。</li>
+        <li>AIのクローラーは<strong>大量に読み取る一方、訪問者をほとんど返しません</strong>。従来の検索との交換条件が崩れています。</li>
+        <li>ただし<strong>グーグルは流入減少を否定</strong>しています。数字は測り方で大きく変わるため、断定は避けるべき局面です。</li>
+        <li>対策の軸は「検索順位を上げる」から<strong>「AIの回答に引用される」「検索を経由しない導線を持つ」</strong>へ移りつつあります。</li>
+      </ol>
+    </div>
+
+    <h3>1. 何が起きているのか</h3>
+    <p>グーグルは2025年以降、検索結果をAIとの対話に置き換える「AIモード」を導入しました。日本語版は2025年9月から提供されています。2026年5月の開発者会議では検索ボックス自体に25年ぶりの変更が加えられ、画像や動画を添えた検索や、AIに検索を代行させる機能が加わりました。</p>
+    <p>報道によれば、AI Overviews（AIによる概要）の利用者は月間25億人以上、AIモードの月間利用者は10億人を超えています。</p>
+    <p>そして2026年6月3日、コンテンツ配信大手クラウドフレアの最高経営責任者が、<strong>自動化された通信がウェブ全体の約57%を占め、人によるものが約43%になった</strong>とする自社データを公表しました。機械が多数派になったのは、インターネットの歴史で初めてです。同氏は、この逆転は自身の予想より1年以上早く訪れたと述べています。</p>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">約57%</span><span class="f-lab">ウェブ通信のうち機械によるもの（2026年6月）</span></div>
+      <div class="rp-fig"><span class="f-num">51.8%</span><span class="f-lab">AIクローラーの用途のうち「学習目的」（2026年5月）</span></div>
+      <div class="rp-fig"><span class="f-num">9.3%</span><span class="f-lab">同、「検索目的」</span></div>
+    </div>
+
+    <h3>2. クローラーは来る、しかし訪問者は返ってこない</h3>
+    <p>ここが従来の検索との決定的な違いです。</p>
+    <p>これまでの検索エンジンとサイト運営者の間には、暗黙の交換条件がありました。<strong>クローラーに記事を読ませる代わりに、検索結果から訪問者を送ってもらう</strong>という関係です。クラウドフレアはこれを「読み取ったページ数 ÷ 送り返した訪問者数」という比率で公開しています。</p>
+    <p>この比率が、グーグルの従来型検索ではおおむね<strong>5前後</strong>です。5ページ読み取るごとに1人を送り返している計算になります。ところがAI各社のクローラーは、<strong>数百から数万ページを読み取って、ようやく1人を送り返す</strong>水準にとどまります。読み取った内容はAIの回答の中で使われ、利用者は元のサイトを訪れないためです。</p>
+    <div class="rp-note">
+      <b>数字の扱いに注意：</b>この比率は集計期間と対象の取り方で大きく変わり、公開されている値は事業者ごと・時期ごとに数百倍の開きがあります。「AI各社は数百倍から数万倍」という桁感で捉えるのが妥当で、特定の数値を根拠に議論するのは避けたほうが安全です。なお、当社が使っているClaudeの開発元Anthropicのクローラーは、この比率が最も一方的な部類に入ると報告されています。
+    </div>
+    <p>さらに、AIクローラーの用途を見ると、2026年5月時点で<strong>約52%が学習目的</strong>、検索目的はわずか<strong>約9%</strong>でした。学習のための読み取りは、原理的に訪問者を返しません。</p>
+
+    <h3>3. 実際に減っているのか ― グーグルの反論</h3>
+    <p>ここは意見が分かれています。<strong>グーグルは流入減少という見方を否定しています。</strong></p>
+    <p>同社の検索担当幹部は2025年8月のブログで、外部サイトへ送り出すクリック数は「比較的安定している」とし、減少を報じる記事は不正確で、欠陥のある手法に基づいていると反論しました。AIによる要約はむしろ検索行動そのものを増やす、という立場です。ある調査で「利用時間の75%がAIモード内で完結している」とされた点についても、調査対象が小規模で日常的な行動を反映していないと指摘しています。</p>
+    <p>一方、実測を公表している側の数字もあります。ウィキペディアを運営するウィキメディア財団は2025年10月、ボットの判定方法を見直したうえで、<strong>人によるページ閲覧が前年同期比で約8%減った</strong>と公表しました（2025年3〜8月と前年の同期間の比較）。同財団は、生成AIとソーシャル動画が答えを直接返すようになったことを理由に挙げています。</p>
+    <div class="rp-note">
+      <b>混同しやすい数字：</b>報道でときどき見る「23%減」は、別の調査会社による3年間の推計で、期間も定義も異なります。8%と並べて語ると誤解を招きます。
+    </div>
+    <p><strong>当面は「立場によって見えている数字が違う」状態が続くと考えたほうがよさそうです。</strong>ただ、方向としては各社が同じ側を向いており、自社サイトの数字を自分で確認することが最も確実です。</p>
+
+    <h3>4. 押し返す動きも出ている</h3>
+    <p><strong>技術面から。</strong>クラウドフレアは、クローラーに課金する仕組みを2026年7月に拡張し、9月15日からは、広告収入で成り立つページに対して用途の混ざったクローラーを既定でブロックする方針を示しています（新規顧客などが対象）。検索目的は許可しつつ、学習目的は別途判断する、という切り分けを設定画面で行えるようにする狙いです。</p>
+    <p><strong>規制面から。</strong>英国の競争市場庁は2026年6月、国内で提供するAI検索についてグーグルに見直しを求めました。回答に情報源への明確なリンクを掲載すること、サイト運営者が自分のコンテンツをAIの要約に使わせない選択肢を用意することが柱で、後者はすでに各国での実装が進んでいます。</p>
+    <p><strong>コンテンツ提供者側から。</strong>ウィキメディア財団は、検索エンジンの外で読者とつながるため独自アプリやSNSでの発信を強化し、学習データ利用の対価をAI企業に求める動きにも出ています。</p>
+
+    <h3>5. 当社の業務でどう考えるか</h3>
+
+    <h4>「順位を上げる」だけでは足りなくなる</h4>
+    <p>従来のSEOは、検索結果で上位に出ることが目的でした。AIモードでは、そもそも青いリンクの一覧が表示されない場面があります。<strong>「上位に出る」ことに加えて「AIの回答の中で引用される」ことが必要</strong>になり、その2つは同じ作業では達成できません。</p>
+
+    <h4>「〜とは」型の記事から先に効かなくなる</h4>
+    <p>用語解説や一般的な手順の説明は、AIの回答だけで用が足ります。この種の記事から流入が落ちていくと考えられます。逆に、<strong>自社でしか出せない一次情報</strong>――独自の調査データ、実際の事例、具体的な数字――は、AIが引用する側になります。制作の力点を移す判断が要ります。</p>
+
+    <h4>検索を経由しない導線の比重を上げる</h4>
+    <p>メールマガジン、セミナー、指名検索、SNS。いずれも検索エンジンのアルゴリズム変更の影響を受けにくい導線です。当社がすでに手がけている領域でもあり、この比率をどこまで上げられるかが、今後の安定性を左右します。</p>
+
+    <h4>クローラーを止めるかどうかは慎重に</h4>
+    <p>AIクローラーをブロックすれば読み取りは止まりますが、<strong>同時にAIの回答からも自社が消えます。</strong>止めすぎると、これから増えるAI経由の発見機会を自ら閉じることになります。用途別に判断できる仕組みが整いつつあるので、一律に決めず、様子を見ながら調整するのが現実的です。</p>
+
+    <h4>まず自社の数字を見る</h4>
+    <p>ここまで挙げた数字は、いずれも海外の大規模サイトのものです。<strong>当社が運営するサイトや、支援している領域で同じことが起きているかは、実測しないと分かりません。</strong>検索経由の流入がどう推移しているか、AI系の参照元からの流入がどれくらいあるかを定点で見るところから始めるのが確実です。</p>
+
+    <div class="rp-gloss">
+      <span class="g-title">用語解説</span>
+      <div class="g-lead">本文に出てくる言葉です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>オープンウェブ</dt><dd>企業やメディア、大学などが自由に公開している、インターネット上の無数のサイト全体を指す言い方。</dd></div>
+        <div class="g-row"><dt>AIモード／AI Overviews</dt><dd>グーグル検索で、リンク一覧の代わりにAIが要約や対話形式で答える機能。前者は会話を続けられ、後者は結果の上に要約を出します。</dd></div>
+        <div class="g-row"><dt>ゼロクリック</dt><dd>検索した人がどのサイトもクリックせずに済んでしまう状態のこと。</dd></div>
+        <div class="g-row"><dt>クローラー</dt><dd>ウェブサイトを自動で巡回して中身を読み取るプログラム。検索の索引づくりやAIの学習に使われます。</dd></div>
+        <div class="g-row"><dt>読み取り対訪問比</dt><dd>クローラーが読み取ったページ数に対し、どれだけ訪問者を送り返したかの比率。数が大きいほど一方的な関係を意味します。</dd></div>
+        <div class="g-row"><dt>robots.txt（ロボッツテキスト）</dt><dd>サイトの入口に置く、クローラー向けの案内文。どのプログラムにどこを読ませるかを指定できます。</dd></div>
+        <div class="g-row"><dt>一次情報</dt><dd>他所からの引用ではなく、自分たちが直接調べたり体験したりして得た情報のこと。</dd></div>
+        <div class="g-row"><dt>指名検索</dt><dd>会社名やサービス名で直接検索されること。内容を探す検索と違い、AIの要約に置き換わりにくい導線です。</dd></div>
+      </dl>
+    </div>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>クーリエ・ジャポン「『ググる』はもはやインターネット検索を意味しない？ AIモードの矛盾」（2026年7月24日／ニューヨーク・タイムズ、Text by Kate Conger）※会員限定<br><a href="https://courrier.jp/news/archives/453100/" target="_blank" rel="noopener">https://courrier.jp/news/archives/453100/</a></li>
+        <li>Wikimedia Foundation「New User Trends on Wikipedia」（Diff、2025年10月17日）<br><a href="https://diff.wikimedia.org/2025/10/17/new-user-trends-on-wikipedia/" target="_blank" rel="noopener">https://diff.wikimedia.org/2025/10/17/new-user-trends-on-wikipedia/</a></li>
+        <li>DIGIDAY［日本版］「Google 検索刷新で流入激減。メディアが挑む脱トラフィック戦略」（2026年5月29日）<br><a href="https://digiday.jp/publishers/media-briefing-publishers-brace-themselves-for-the-zero-click-era-amid-googles-ai-search-overhaul/" target="_blank" rel="noopener">https://digiday.jp/publishers/media-briefing-publishers-brace-themselves-for-the-zero-click-era-amid-googles-ai-search-overhaul/</a></li>
+        <li>ミエルカ「【SEO激変】AIモード強制移行が始まった」（2026年3月／英CMAの規制とオプトアウトの経緯）<br><a href="https://mieru-ca.com/ai-seo/ai-mode-transition/" target="_blank" rel="noopener">https://mieru-ca.com/ai-seo/ai-mode-transition/</a></li>
+        <li>クローラーの通信比率・用途・読み取り対訪問比は、Cloudflare Radarの公開データを各種メディアが集計・報道したものに基づきます（2026年5〜7月時点）。<br><a href="https://radar.cloudflare.com/" target="_blank" rel="noopener">https://radar.cloudflare.com/</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。流入減少の実態については、測定する主体によって結論が異なります。本文ではグーグル側の反論も併記しており、特定の立場を支持する意図はありません。クローラーの比率など一部の数値は集計期間や定義によって大きく変動するため、桁感の把握にとどめてお読みください。2026年8月5日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
