@@ -73,11 +73,12 @@
 
   function cardHTML(n) {
     return "" +
-      '<article' + (isNew(n.date) ? ' class="is-new"' : "") + '>' +
+      '<article' + (isNew(n.date) ? ' class="is-new"' : (n.pickup ? ' class="is-pickup"' : "")) + '>' +
         '<div class="meta">' +
           '<span class="cat" style="background:' + (CAT_COLORS[n.category] || "var(--primary)") + '">' + esc(n.category) + '</span>' +
           '<span class="date">' + fmtDate(n.date) + ' 掲載</span>' +
           (isNew(n.date) ? '<span class="badge-new">NEW</span>' : "") +
+          (n.pickup ? '<span class="badge-pickup">再掲</span>' : "") +
         '</div>' +
         '<h3>' + esc(n.title) + '</h3>' +
         '<p>' + esc(n.summary) + '</p>' +
@@ -260,7 +261,7 @@
     getJSON("news.json")
       .then(function (data) {
         var cutoff = frontCutoff(FRONT_BUSINESS_DAYS);
-        NEWS_DATA = data.filter(function (n) { return n.date >= cutoff; });
+        NEWS_DATA = data.filter(function (n) { return n.date >= cutoff || n.pickup; });
         start();
         renderTop();
         renderLastUpdated();
