@@ -273,3 +273,12 @@
     padding:6px 16px;border-radius:999px;text-decoration:none;
   }
   .back-link:hover{background:rgba(255,255,255,.28)}
+
+  /* 再掲（少し前の記事をあらためて紹介する枠） */
+  .badge-pickup{
+    font-family:"M PLUS Rounded 1c",sans-serif;
+    font-size:11px;font-weight:800;letter-spacing:.08em;
+    color:#fff;background:#8a6a30;
+    padding:2px 10px;border-radius:999px;
+  }
+  article.is-pickup{border:1px solid #e8dcc2;background:#fffdf8}
