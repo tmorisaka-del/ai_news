@@ -175,17 +175,6 @@
     }).join("");
   }
 
-  function renderHeaderDateWeather() {
-    var dateEl = document.getElementById("t-date");
-    if (!dateEl) return;
-    var now = new Date();
-    var w = ["日","月","火","水","木","金","土"][now.getDay()];
-    dateEl.textContent = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日（" + w + "）";
-    var sep = document.querySelector(".t-sep");
-    if (sep) sep.style.display = "none";
-    var weatherEl = document.getElementById("t-weather");
-    if (weatherEl) weatherEl.style.display = "none";
-  }
 
   function fail(msg) {
     if (listEl) {
@@ -219,7 +208,6 @@
 
   /* ============ ページ別の初期化 ============ */
   if (CFG.mode === "archive") {
-    renderHeaderDateWeather(); // archiveでは #t-date が無ければ何もしません
     getJSON("archive-index.json")
       .then(function (index) {
         var months = (index.months || []).map(function (m) { return m.month; });
@@ -231,7 +219,6 @@
       })
       .catch(function (e) { console.error(e); fail("アーカイブ記事を読み込めませんでした。"); });
   } else {
-    renderHeaderDateWeather();
     getJSON("news.json")
       .then(function (data) {
         var cutoff = frontCutoff(FRONT_BUSINESS_DAYS);
