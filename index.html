@@ -6,7 +6,7 @@
 <title>AIニュースまとめ！（社内版）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -14,7 +14,6 @@
   <div class="header-inner">
     <h1>AIニュースまとめ！（社内版）</h1>
     <div class="today"><span id="t-date"></span><span class="t-sep">｜</span><span id="t-weather">…</span></div>
-    <div class="header-sub">ビジネス・経営にかかわるAIの動きを、わかりやすい解説つきでお届けする社内向けページです。</div>
     <div class="last-updated" style="margin-top:8px;font-size:12.5px;opacity:.9">最終更新：<span id="last-updated">—</span></div>
   </div>
 </header>
@@ -52,24 +51,30 @@
     .nt-sub{font-size:12.5px;color:var(--sub);line-height:1.6;display:block;margin-top:2px;}
     .nt-arrow{flex:none;margin-left:auto;color:#c07d00;font-size:15px;font-weight:700;}
     @media (max-width:640px){.notice{align-items:flex-start}.nt-arrow{display:none}}
-    .more-reads{margin:0 0 20px}
+    .more-reads{margin:0 0 22px}
     .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;
-      letter-spacing:.12em;color:var(--sub);margin:0 0 8px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:10px;}
+      letter-spacing:.12em;color:var(--sub);margin:0 0 9px;padding-left:3px;}
+    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:11px;}
     @media (max-width:560px){.mr-grid{grid-template-columns:1fr}}
     .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;
-      display:flex;align-items:center;gap:8px;background:var(--card);
+      display:flex;flex-direction:column;background:var(--card);
       border:1px solid var(--line);border-left:4px solid var(--mr-c);
-      border-radius:4px 12px 12px 4px;padding:11px 12px 11px 13px;text-decoration:none;
+      border-radius:4px 12px 12px 4px;padding:13px 15px 12px;text-decoration:none;
       transition:background .15s,box-shadow .15s,border-color .15s,transform .15s;}
     .mr-card:hover{background:var(--mr-t);border-color:var(--mr-c);
-      box-shadow:0 5px 15px rgba(50,90,110,.14);transform:translateX(3px);}
-    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:13.5px;
-      line-height:1.4;color:#1e4756;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-    .mr-go{flex:none;margin-left:auto;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-      font-size:11.5px;color:var(--mr-c);white-space:nowrap;}
+      box-shadow:0 6px 16px rgba(50,90,110,.15);transform:translateX(3px);}
+    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:14px;
+      line-height:1.5;color:#1e4756;margin-bottom:5px;}
+    .mr-desc{font-size:12.3px;line-height:1.6;color:var(--sub);margin-bottom:9px;}
+    .mr-go{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11.5px;
+      color:var(--mr-c);margin-top:auto;}
     .mr-go span{display:inline-block;transition:transform .15s;}
     .mr-card:hover .mr-go span{transform:translateX(3px);}
+    .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
+    .mr-card[href*="china-robots"]{--mr-c:#b3306b;--mr-t:#fcf0f5;}
+    .mr-card[href*="ai-search-traffic"]{--mr-c:#6b3fa0;--mr-t:#f4eefb;}
+    .mr-card[href*="sme-ai"]{--mr-c:#2d4a8a;--mr-t:#eef2fa;}
+    .mr-card[href*="ai-competition"]{--mr-c:#0e6f73;--mr-t:#ecf5f5;}
     .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
     .mr-card[href*="china-robots"]{--mr-c:#b3306b;--mr-t:#fcf0f5;}
     .mr-card[href*="ai-search-traffic"]{--mr-c:#6b3fa0;--mr-t:#f4eefb;}
@@ -99,27 +104,32 @@
   </a>
 
   <div class="more-reads">
-    <div class="mr-title">ほかの記事も読む</div>
+    <div class="mr-title">これまでの独自編集記事</div>
     <div class="mr-grid">
-      <a class="mr-card" href="report-2026-08-solo-business.html" title="一人で年商15億円、従業員はゼロ ― AIが変えた起業の最小単位">
-        <span class="mr-name">一人企業とAI</span>
-        <span class="mr-go">読む <span aria-hidden="true">&#8250;</span></span>
+      <a class="mr-card" href="report-2026-08-solo-business.html">
+        <span class="mr-name">一人で年商15億円、従業員はゼロ</span>
+        <span class="mr-desc">メール対応も返金処理もAIが担当。ただし赤字になった例、数カ月で行き詰まった例も。</span>
+        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
       </a>
-      <a class="mr-card" href="report-2026-08-china-robots.html" title="ロボットに仕事を教える仕事 ― 中国で人型ロボットが働き始めている">
-        <span class="mr-name">中国の人型ロボット</span>
-        <span class="mr-go">読む <span aria-hidden="true">&#8250;</span></span>
+      <a class="mr-card" href="report-2026-08-china-robots.html">
+        <span class="mr-name">ロボットに仕事を教える仕事</span>
+        <span class="mr-desc">中国では人型ロボットが薬局や工場で稼働中。動作を覚えさせる若者の月給は配達員並み。</span>
+        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
       </a>
-      <a class="mr-card" href="report-2026-08-ai-search-traffic.html" title="「ググる」の中身が変わった ― 検索からの流入をめぐる攻防">
-        <span class="mr-name">AI検索とサイト流入</span>
-        <span class="mr-go">読む <span aria-hidden="true">&#8250;</span></span>
+      <a class="mr-card" href="report-2026-08-ai-search-traffic.html">
+        <span class="mr-name">「ググる」の中身が変わった</span>
+        <span class="mr-desc">ウェブ通信の過半数がすでに人ではない。流入減少をめぐる各社の主張と対抗策を整理。</span>
+        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
       </a>
-      <a class="mr-card" href="report-2026-08-sme-ai.html" title="中小企業のAI活用 ― 調査データと2つの導入事例から">
-        <span class="mr-name">中小企業のAI活用</span>
-        <span class="mr-go">読む <span aria-hidden="true">&#8250;</span></span>
+      <a class="mr-card" href="report-2026-08-sme-ai.html">
+        <span class="mr-name">中小企業のAI活用、導入率は2割</span>
+        <span class="mr-desc">進んでいるのは工場でなく事務部門。うまくいった会社が最初に手をつけた業務とは。</span>
+        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
       </a>
-      <a class="mr-card" href="report-2026-08-ai-competition.html" title="欧米勢のAIと中国勢のAI、競争はいまどうなっているのか">
+      <a class="mr-card" href="report-2026-08-ai-competition.html">
         <span class="mr-name">欧米勢と中国勢のAI競争</span>
-        <span class="mr-go">読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-desc">性能差は約8カ月。しかし実際に使われている量では、中国製の公開モデルが約6割。</span>
+        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
       </a>
     </div>
   </div>
@@ -146,6 +156,6 @@
 </div>
 
 <script>window.PAGE_CONFIG = { mode: "index", newDays: 1, updatedAt: "2026年8月7日（金）" };</script>
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
