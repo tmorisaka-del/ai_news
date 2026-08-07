@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人間には見せない広告 ― Time誌がAIエージェント向けに広告を売り始めた｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#a8432a;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #a8432a}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#a8432a;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp-points{background:#fbeee9;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#a8432a;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #eed6ce;border-left:5px solid #a8432a;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#a8432a;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp-quote{border-left:4px solid #e0c3b8;background:#fdf7f5;padding:14px 20px;margin:18px 0;
+    font-size:14.5px;line-height:1.8;color:#5c3226;border-radius:0 10px 10px 0}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#fbeee9;font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#a8432a;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#a8432a;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{color:#a8432a;word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#a8432a}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月7日 作成</span>
+    </div>
+
+    <h2>人間には見せない広告 ― Time誌がAIエージェント向けに広告を売り始めた</h2>
+    <div class="rp-lead">
+      誰も見ない広告に、お金を払う会社が現れました。正確に言えば、人間は誰も見ません。読むのはAIです。米Time誌が始めたこの商売、突拍子もないようでいて、筋は通っています。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>Time誌が全ページを<strong>AIが読みやすい簡素な形式に作り替え</strong>、そこに広告を載せ始めました。</li>
+        <li>読者はAI。<strong>人間の目に触れることは想定されていません。</strong></li>
+        <li>狙いは<strong>「AIの回答の中身を変えること」</strong>。1人に届く広告と、AI全体に届く広告では規模が違う、という理屈です。</li>
+        <li>ただし効果は未検証。Time誌自身も<strong>「答えが出るまでの間の稼ぎ」</strong>という位置づけです。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>AIエージェント</dt><dd>人の代わりにウェブを巡回し、調べ物や手続きを進めるAI。人間の閲覧者とは別の「訪問者」として扱われます。</dd></div>
+        <div class="g-row"><dt>マークダウン</dt><dd>装飾を省いた文字だけの書き方。見た目は素っ気ないものの、機械にとっては構造が分かりやすくなります。</dd></div>
+        <div class="g-row"><dt>生成AI検索</dt><dd>リンク一覧ではなく、AIが要約や回答を返す形の検索。回答に自社が登場するかが新たな競争点になっています。</dd></div>
+        <div class="g-row"><dt>索引化（インデックス）</dt><dd>AIや検索エンジンが情報を読み取り、あとで取り出せるように整理して蓄えること。</dd></div>
+        <div class="g-row"><dt>クローキング</dt><dd>人間と機械に違う内容を見せる手法。従来の検索では不正行為とされ、順位を下げられる対象でした。</dd></div>
+        <div class="g-row"><dt>スポンサード表示</dt><dd>広告であることを明示する表記。内容と広告の区別をつけるための決まりごとです。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. まず、何をしたのか</h3>
+    <p>Time誌は2026年6月ごろから、<strong>自社の全ウェブページを「マークダウン版」に作り替え</strong>始めました。デザインも画像も落とした、文字だけの複製です。人間が見れば味気ない代物ですが、AIにとっては読みやすい。</p>
+    <p>狙いは単純です。読み取りやすくしておけば、生成AI検索の回答に自社の記事が採用される確率が上がるのではないか。そういう賭けでした。</p>
+    <p>そして7月30日、その簡素なページに<strong>広告を載せ始めた</strong>ことが報じられました。広告技術会社のMobianと組み、ページの変換と広告の生成を任せています。最初に買ったのはAlly Bankと、専門職団体のProject Management Institute。</p>
+
+    <h3>2. 「ボットはモノを買わない」と言っていた人が</h3>
+    <p>この仕組みを手がけるMobianの共同創業者は、以前は広告計測会社の経営者でした。当時の口ぐせは<strong>「ボットはモノを買わない」</strong>だったといいます。広告業界では長らく、ボットによる閲覧は「無駄」「不正」の代名詞でした。人間が見なければ意味がないからです。</p>
+    <p>その前提が変わった、というのが同氏の主張です。理屈はこうです。</p>
+    <div class="rp-quote">
+      人間1人に影響を与えても、それは1人ぶん。だがChatGPTに影響を与えれば、ChatGPT全体に影響しうる。あるブランドについてChatGPTが言うことが変われば、どんな広告出稿よりも大きい。
+    </div>
+    <p>AIが広告からブランドの情報を読み取り、索引化する。それがAIの回答の内容を形づくる。その回答を、今度は大勢の人間が読む。<strong>人間に直接届けるのではなく、人間が参照するAIのほうを書き換える</strong>という発想です。</p>
+
+    <h3>3. どんな広告なのか</h3>
+    <p>形式はかなり変わっています。</p>
+    <table>
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>見た目</td><td>質問と回答が並ぶFAQ形式。ブランドの情報とメッセージを書く</td></tr>
+      <tr><td>想定読者</td><td>AIシステム。人間ではない</td></tr>
+      <tr><td>掲載数</td><td>マークダウンのファイル1つにつき1本だけ</td></tr>
+      <tr><td>表示</td><td>広告であることを明示する</td></tr>
+      <tr><td>価格</td><td>通常より高い水準</td></tr>
+    </table>
+    <p>バナーでも動画でもなく、<strong>「AIに読ませたい事実の一覧」</strong>を置いているに近い形です。1ページに1本しか載せないという制限も、読み手がAIだからこそ意味を持ちます。情報が多すぎると、どれが重要か伝わらなくなるためでしょう。</p>
+    <p>Mobianの集計では、<strong>すでに約15%のブランドが自前のマークダウンページを運用</strong>しているとされます。人間向けと機械向け、2つのウェブを用意する動きが静かに広がっています。</p>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">約15%</span><span class="f-lab">自前のマークダウンページを持つブランド</span></div>
+      <div class="rp-fig"><span class="f-num">1本のみ</span><span class="f-lab">1ページあたりの広告掲載数</span></div>
+      <div class="rp-fig"><span class="f-num">2社</span><span class="f-lab">最初の広告主</span></div>
+    </div>
+
+    <h3>4. なぜこの順番だったのか</h3>
+    <p>Time誌の動きを時系列で並べると、行き当たりばったりではないことが分かります。</p>
+    <table>
+      <tr><th>時期</th><th>できごと</th></tr>
+      <tr><td>2024年12月</td><td>Scale AIと組み、恒例企画で対話型の体験を試す</td></tr>
+      <tr><td>2025年11月</td><td>102年分の記事約75万点を学習させた「TIME AI Agent」を公開。13言語に対応</td></tr>
+      <tr><td>2026年6月ごろ</td><td>全ページをマークダウン版へ変換</td></tr>
+      <tr><td>2026年7月30日</td><td>そのページにAIエージェント向け広告を掲載</td></tr>
+    </table>
+    <p>同誌はOpenAI、Perplexity、Amazonなど複数のAI企業とも契約を結んでいます。<strong>読者が記事に直接来なくなるなら、記事が使われる場所そのものに入り込む</strong>という一貫した動きです。</p>
+
+    <h3>5. 冷静に見ておきたい点</h3>
+
+    <h4>効果はまだ誰にも分からない</h4>
+    <p>報じたDigiday自身が、マークダウンページが流入減少への防波堤としてどこまで機能するかは<strong>まだ判断がついていない</strong>と書いています。Time誌の側も、答えが出るまでの間、増え続けるボットの訪問から収益を絞り出すための手段、という位置づけです。壮大な戦略というより、様子を見ながらの実験に近いといえます。</p>
+
+    <h4>人間と機械に違うものを見せる、という危うさ</h4>
+    <p>従来の検索では、人間と機械に異なる内容を見せる行為は不正とされ、順位を下げられる対象でした。今回の取り組みは、同じ記事の簡素版を用意しているだけなので性質は異なりますが、<strong>「機械にだけ見せる情報」に広告が入ってくると、その境目は微妙になります。</strong>各社がこれをどう扱うかは、まだ定まっていません。</p>
+
+    <h4>広告の質を誰が担保するのか</h4>
+    <p>人間が見ない広告は、人間による確認も働きにくくなります。誇張や誤りが入り込んだとき、それを読み取ったAIが回答に反映すれば、影響は広告1本の範囲では収まりません。<strong>規模が大きいという長所は、そのまま危うさでもあります。</strong></p>
+
+    <h3>6. 何が変わろうとしているのか</h3>
+    <p>ウェブは長いあいだ、人間に見せるための場所でした。見出しを工夫し、写真を選び、読みやすく組む。すべて人間の目を前提にした技術です。</p>
+    <p>いま起きているのは、その隣に<strong>機械のためのウェブが作られ始めた</strong>ということです。装飾がなく、構造だけがあり、読み手はAI。そこに広告という商売まで生まれた。</p>
+    <p>ウェブの通信の過半数がすでに人間以外のものになっている、という調査もあります。訪問者の多数派が機械なのだとすれば、その多数派に向けた場所と商売が生まれるのは、考えてみれば自然な成り行きなのかもしれません。</p>
+    <div class="rp-note">
+      <b>あわせて読む：</b>AI検索によって人間の訪問がどう減っているか、その全体像は「<a href="report-2026-08-ai-search-traffic.html">「ググる」の中身が変わった ― 検索からの流入をめぐる攻防</a>」で扱っています。この記事はその続きにあたる話です。
+    </div>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>Digiday「Time has started serving ads to AI agents」（2026年7月30日、By Sara Guaglione）<br><a href="https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/" target="_blank" rel="noopener">https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/</a></li>
+        <li>tipsheet「ChatGPT ads get agents」（2026年8月、Mobian側の発表内容を含む）<br><a href="https://tipsheet.ai/news/chatgpt-ads-agents/" target="_blank" rel="noopener">https://tipsheet.ai/news/chatgpt-ads-agents/</a></li>
+        <li>The State of AI Marketing「Time is selling ads to AI agents on markdown pages」（2026年8月）<br><a href="https://www.stateofaimarketing.co/news/time-ads-for-ai-agents/" target="_blank" rel="noopener">https://www.stateofaimarketing.co/news/time-ads-for-ai-agents/</a></li>
+        <li>Axios「Exclusive: Time launches new AI agent」（TIME AI Agentの概要）<br><a href="https://www.axios.com/2025/11/10/time-ai-agent-ask" target="_blank" rel="noopener">https://www.axios.com/2025/11/10/time-ai-agent-ask</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は英語の海外報道を含む複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです（海外報道より当ページで和訳・要約）。第2章の枠内はMobian経営者の発言の趣旨をまとめたもので、逐語の翻訳ではありません。マークダウンページや同種の広告の効果は検証の途中であり、評価が定まった手法ではない点にご留意ください。2026年8月7日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
