@@ -22,13 +22,13 @@
 <div class="wrap">
 
   <style>
-    .feature-banner{display:block;background:linear-gradient(120deg,#1f4d6e,#2f7f92);color:#fff;
+    .feature-banner{display:block;background:linear-gradient(120deg,#0d5f3a,#14876b);color:#fff;
       text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:4px 0 10px;
-      box-shadow:0 6px 18px rgba(31,77,110,.26);transition:transform .15s,box-shadow .15s;}
-    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(31,77,110,.34);}
+      box-shadow:0 6px 18px rgba(13,95,58,.24);transition:transform .15s,box-shadow .15s;}
+    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,95,58,.32);}
     .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
     .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12.5px;
-      letter-spacing:.07em;color:#12455f;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
+      letter-spacing:.07em;color:#0b3d26;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
     .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em;
       color:#fff;background:var(--sun);padding:3px 11px;border-radius:999px;
       animation:fbpulse 1.6s ease-in-out infinite;}
@@ -62,9 +62,13 @@
       border:1px solid var(--line);border-radius:11px;padding:8px 11px;text-decoration:none;
       transition:box-shadow .15s,border-color .15s;}
     .mr-card:hover{box-shadow:0 4px 12px rgba(50,90,110,.11);border-color:var(--primary);}
-    .mr-badge{flex:none;width:20px;height:20px;border-radius:50%;background:#2f6f8f;color:#fff;
+    .mr-badge{flex:none;width:20px;height:20px;border-radius:50%;background:#7a8794;color:#fff;
       font-size:10.5px;line-height:20px;text-align:center;}
     .mr-card.guide .mr-badge{background:var(--c-tool);}
+    .mr-card[href*="china-robots"] .mr-badge{background:#b3306b;}
+    .mr-card[href*="ai-search-traffic"] .mr-badge{background:#6b3fa0;}
+    .mr-card[href*="sme-ai"] .mr-badge{background:#2d4a8a;}
+    .mr-card[href*="ai-competition"] .mr-badge{background:#0e6f73;}
     .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:12.5px;
       line-height:1.4;color:#1e4756;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     .mr-arrow{flex:none;margin-left:auto;color:var(--sub);font-size:13px;}
