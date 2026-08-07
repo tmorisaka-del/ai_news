@@ -22,13 +22,13 @@
 <div class="wrap">
 
   <style>
-    .feature-banner{display:block;background:linear-gradient(120deg,#0d5f3a,#14876b);color:#fff;
+    .feature-banner{display:block;background:linear-gradient(120deg,#8a3220,#b5563a);color:#fff;
       text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:4px 0 10px;
-      box-shadow:0 6px 18px rgba(13,95,58,.24);transition:transform .15s,box-shadow .15s;}
-    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,95,58,.32);}
+      box-shadow:0 6px 18px rgba(138,50,32,.24);transition:transform .15s,box-shadow .15s;}
+    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(138,50,32,.32);}
     .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
     .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12.5px;
-      letter-spacing:.07em;color:#0b3d26;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
+      letter-spacing:.07em;color:#5c1e10;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
     .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em;
       color:#fff;background:var(--sun);padding:3px 11px;border-radius:999px;
       animation:fbpulse 1.6s ease-in-out infinite;}
@@ -55,8 +55,7 @@
     .more-reads{margin:0 0 20px}
     .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
       letter-spacing:.14em;color:var(--sub);margin:0 0 7px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
-    @media (max-width:1000px){.mr-grid{grid-template-columns:repeat(2,1fr)}}
+    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:9px;}
     @media (max-width:560px){.mr-grid{grid-template-columns:1fr}}
     .mr-card{display:flex;align-items:center;gap:9px;background:var(--card);
       border:1px solid var(--line);border-radius:11px;padding:8px 11px;text-decoration:none;
@@ -69,6 +68,7 @@
     .mr-card[href*="ai-search-traffic"] .mr-badge{background:#6b3fa0;}
     .mr-card[href*="sme-ai"] .mr-badge{background:#2d4a8a;}
     .mr-card[href*="ai-competition"] .mr-badge{background:#0e6f73;}
+    .mr-card[href*="solo-business"] .mr-badge{background:#0f7a4a;}
     .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:12.5px;
       line-height:1.4;color:#1e4756;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     .mr-arrow{flex:none;margin-left:auto;color:var(--sub);font-size:13px;}
@@ -85,19 +85,24 @@
     <span class="nt-arrow">&#8250;</span>
   </a>
 
-  <a href="report-2026-08-solo-business.html" class="feature-banner">
+  <a href="report-2026-08-ai-agent-ads.html" class="feature-banner">
     <div class="fb-head">
       <span class="fb-tag">&#9998; Claude独自編集記事</span>
       <span class="fb-new">NEW</span>
     </div>
-    <div class="fb-title">一人で年商15億円、従業員はゼロ ― AIが変えた起業の最小単位</div>
-    <div class="fb-sum">従業員を雇わないまま年商100万ドルを超える事業者が、米国で2年のあいだに倍増しました。メール対応も顧客対応も返金処理もAIが担い、人を雇う理由だった作業から先に置き換わっています。ただし利用量に応じた課金で赤字になった例、数カ月で行き詰まった例、全体の中央値はむしろ下がっているという統計まで含めて整理しました。</div>
+    <div class="fb-title">人間には見せない広告 ― Time誌がAIエージェント向けに広告を売り始めた</div>
+    <div class="fb-sum">誰も見ない広告に、お金を払う会社が現れました。正確には、人間は誰も見ません。読むのはAIです。米Time誌は全ページをAIが読みやすい簡素な形式に作り替え、そこに広告を載せ始めました。狙いはAIの回答の中身を変えること。「ボットはモノを買わない」と言っていた人物が、いまボット向けの広告を売っています。</div>
     <span class="fb-cta">詳しく読む &#8250;</span>
   </a>
 
   <div class="more-reads">
     <div class="mr-title">ほかにも読めます</div>
     <div class="mr-grid">
+      <a class="mr-card" href="report-2026-08-solo-business.html" title="一人で年商15億円、従業員はゼロ ― AIが変えた起業の最小単位">
+        <span class="mr-badge" aria-hidden="true">&#9998;</span>
+        <span class="mr-name">一人企業とAI</span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
+      </a>
       <a class="mr-card" href="report-2026-08-china-robots.html" title="ロボットに仕事を教える仕事 ― 中国で人型ロボットが働き始めている">
         <span class="mr-badge" aria-hidden="true">&#9998;</span>
         <span class="mr-name">中国の人型ロボット</span>
