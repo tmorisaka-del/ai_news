@@ -177,40 +177,14 @@
 
   function renderHeaderDateWeather() {
     var dateEl = document.getElementById("t-date");
-    var weatherEl = document.getElementById("t-weather");
     if (!dateEl) return;
     var now = new Date();
-    dateEl.textContent = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日（" + WD[now.getDay()] + "）";
-    if (!weatherEl) return;
-
-    function codeToWeather(c) {
-      if (c === 0) return ["☀️", "快晴"];
-      if (c === 1) return ["🌤️", "晴れ"];
-      if (c === 2) return ["⛅", "晴れ時々くもり"];
-      if (c === 3) return ["☁️", "くもり"];
-      if (c === 45 || c === 48) return ["🌫️", "霧"];
-      if (c >= 51 && c <= 57) return ["🌦️", "霧雨"];
-      if (c >= 61 && c <= 67) return ["🌧️", "雨"];
-      if (c >= 71 && c <= 77) return ["🌨️", "雪"];
-      if (c >= 80 && c <= 82) return ["🌦️", "にわか雨"];
-      if (c === 85 || c === 86) return ["🌨️", "雪"];
-      if (c >= 95) return ["⛈️", "雷雨"];
-      return ["🌡️", "天気"];
-    }
-
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=35.66&longitude=139.75&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=Asia%2FTokyo")
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        var w = codeToWeather(d.current.weather_code);
-        var t = Math.round(d.current.temperature_2m);
-        var hi = Math.round(d.daily.temperature_2m_max[0]);
-        var lo = Math.round(d.daily.temperature_2m_min[0]);
-        weatherEl.textContent = "東京 " + w[0] + " " + w[1] + " " + t + "℃（最高" + hi + "℃／最低" + lo + "℃）";
-      })
-      .catch(function () {
-        weatherEl.textContent = "";
-        if (weatherEl.previousElementSibling) weatherEl.previousElementSibling.style.display = "none";
-      });
+    var w = ["日","月","火","水","木","金","土"][now.getDay()];
+    dateEl.textContent = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日（" + w + "）";
+    var sep = document.querySelector(".t-sep");
+    if (sep) sep.style.display = "none";
+    var weatherEl = document.getElementById("t-weather");
+    if (weatherEl) weatherEl.style.display = "none";
   }
 
   function fail(msg) {
