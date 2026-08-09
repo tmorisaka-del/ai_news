@@ -55,7 +55,7 @@
       letter-spacing:.12em;color:var(--sub);margin:0 0 9px;padding-left:3px;}
     .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:11px;}
     @media (max-width:560px){.mr-grid{grid-template-columns:1fr}}
-    .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;
+    .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;position:relative;
       display:flex;flex-direction:column;background:var(--card);
       border:1px solid var(--line);border-left:4px solid var(--mr-c);
       border-radius:4px 12px 12px 4px;padding:13px 15px 12px;text-decoration:none;
@@ -63,7 +63,13 @@
     .mr-card:hover{background:var(--mr-t);border-color:var(--mr-c);
       box-shadow:0 6px 16px rgba(50,90,110,.15);transform:translateX(3px);}
     .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:14px;
-      line-height:1.5;color:#1e4756;margin-bottom:5px;}
+      line-height:1.5;color:#1e4756;margin-bottom:5px;padding-right:46px;}
+    .mr-new{position:absolute;top:11px;right:13px;
+      font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10px;letter-spacing:.08em;
+      color:#fff;background:var(--sun);padding:2px 9px;border-radius:999px;
+      animation:mrpulse 1.6s ease-in-out infinite;}
+    @keyframes mrpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+    @media (prefers-reduced-motion: reduce){.mr-new{animation:none}}
     .mr-desc{font-size:12.3px;line-height:1.6;color:var(--sub);margin-bottom:9px;}
     .mr-go{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11.5px;
       color:var(--mr-c);margin-top:auto;}
@@ -106,6 +112,7 @@
     <div class="mr-title">これまでの独自編集記事</div>
     <div class="mr-grid">
       <a class="mr-card" href="report-2026-08-solo-business.html">
+        <span class="mr-new">NEW</span>
         <span class="mr-name">一人で年商15億円、従業員はゼロ</span>
         <span class="mr-desc">メール対応も返金処理もAIが担当。ただし赤字になった例、数カ月で行き詰まった例も。</span>
         <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
