@@ -42,6 +42,14 @@
   @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
   .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
   .rp-note b{color:#c07d00}
+  .rp-cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 18px}
+  @media (max-width:640px){.rp-cmp{grid-template-columns:1fr}}
+  .c-box{border:1px solid #eed6ce;border-radius:10px;overflow:hidden;background:#fff}
+  .c-head{background:#fbeee9;padding:7px 13px;font-size:11.5px;font-weight:700;color:#a8432a;
+    font-family:"M PLUS Rounded 1c",sans-serif;letter-spacing:.04em}
+  .c-box pre{margin:0;padding:12px 13px;font-size:11.5px;line-height:1.7;white-space:pre-wrap;
+    word-break:break-all;color:#3d4a55;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace}
   .rp-quote{border-left:4px solid #e0c3b8;background:#fdf7f5;padding:14px 20px;margin:18px 0;
     font-size:14.5px;line-height:1.8;color:#5c3226;border-radius:0 10px 10px 0}
   .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
@@ -90,7 +98,7 @@
     <div class="rp-points">
       <span class="pt-title">この記事の要点</span>
       <ol>
-        <li>Time誌が全ページを<strong>AIが読みやすい簡素な形式に作り替え</strong>、そこに広告を載せ始めました。</li>
+        <li>Time誌が全ページを<strong>AIが読みやすい簡素な形式（マークダウン）に作り替え</strong>、そこに広告を載せ始めました。形式については本文の冒頭で解説します。</li>
         <li>読者はAI。<strong>人間の目に触れることは想定されていません。</strong></li>
         <li>狙いは<strong>「AIの回答の中身を変えること」</strong>。1人に届く広告と、AI全体に届く広告では規模が違う、という理屈です。</li>
         <li>ただし効果は未検証。Time誌自身も<strong>「答えが出るまでの間の稼ぎ」</strong>という位置づけです。</li>
@@ -109,6 +117,44 @@
         <div class="g-row"><dt>スポンサード表示</dt><dd>広告であることを明示する表記。内容と広告の区別をつけるための決まりごとです。</dd></div>
       </dl>
     </div>
+
+    <h3>その前に：マークダウンとは何か</h3>
+    <p>この話は「マークダウン」が分からないと入ってきません。先に押さえておきます。</p>
+    <p>私たちが普段見ているウェブページは<strong>HTML</strong>という書き方で作られています。文字の大きさ、色、配置、広告の枠、メニュー。人間に見せるための指示が大量に混ざっており、記事の中身はその中に埋もれています。</p>
+    <p>一方<strong>マークダウン</strong>は、記号だけで文書の構造を表す簡素な書き方です。行頭の「#」が見出し、「-」が箇条書き、「**」で囲むと太字。それだけです。同じ内容を並べると違いがはっきりします。</p>
+    <div class="rp-cmp">
+      <div class="c-box">
+        <div class="c-head">HTML（人間に見せる用）</div>
+        <pre>&lt;div class="article-body"&gt;
+  &lt;h2 style="font-size:24px;
+      color:#333"&gt;AI向け広告とは&lt;/h2&gt;
+  &lt;p class="lead"&gt;読み手はAIです。&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1ページに1本だけ&lt;/li&gt;
+    &lt;li&gt;FAQ形式&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+      </div>
+      <div class="c-box">
+        <div class="c-head">マークダウン（AIに読ませる用）</div>
+        <pre>## AI向け広告とは
+
+読み手はAIです。
+
+- 1ページに1本だけ
+- FAQ形式</pre>
+      </div>
+    </div>
+    <p>中身は同じですが、右側には見た目の指示がありません。<strong>AIにとっては、この違いが3つの意味を持ちます。</strong></p>
+    <ul class="rp-steps">
+      <li><b>読み飛ばす手間がいらない</b>　装飾の指示やメニュー、広告枠を除いて本文を探し当てる作業が不要になります。</li>
+      <li><b>構造がはっきりする</b>　どこが見出しで、どこが箇条書きか。記号だけで決まっているため、解釈を間違えにくくなります。</li>
+      <li><b>分量が減り、安く速く読める</b>　AIは読み込んだ文字量に応じて費用と時間がかかります。装飾を落とすと、同じ内容でも量が大きく減ります。</li>
+    </ul>
+    <div class="rp-note">
+      <b>身近な例：</b>ChatGPTやClaudeの回答で、見出しや箇条書き、太字がきれいに整って出てくるのを見たことがあるはずです。あれはAIがマークダウンで書いたものを、画面側が整えて表示しています。<strong>AIにとって、もともと馴染みのある書き方</strong>だということです。
+    </div>
+    <p><strong>「マークダウン版のページ」とは、同じ記事の装飾を全部落とした複製を、別に用意しておくこと</strong>を指します。人間は普段どおりのページを見て、AIはマークダウン版を読む。Time誌が全ページに対して行ったのは、この二重化です。そして<strong>AIしか読まないページができたので、そこにAI向けの広告を置いた</strong>——というのが、この記事の話です。</p>
 
     <h3>1. まず、何をしたのか</h3>
     <p>Time誌は2026年6月ごろから、<strong>自社の全ウェブページを「マークダウン版」に作り替え</strong>始めました。デザインも画像も落とした、文字だけの複製です。人間が見れば味気ない代物ですが、AIにとっては読みやすい。</p>
