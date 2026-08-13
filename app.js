@@ -73,11 +73,11 @@
 
   function cardHTML(n) {
     return "" +
-      '<article' + (isNew(n.date) ? ' class="is-new"' : (n.pickup ? ' class="is-pickup"' : "")) + '>' +
+      '<article' + (isNew(n.postedAt || n.date) ? ' class="is-new"' : (n.pickup ? ' class="is-pickup"' : "")) + '>' +
         '<div class="meta">' +
           '<span class="cat" style="background:' + (CAT_COLORS[n.category] || "var(--primary)") + '">' + esc(n.category) + '</span>' +
           '<span class="date">' + fmtDate(n.date) + ' 掲載</span>' +
-          (isNew(n.date) ? '<span class="badge-new">NEW</span>' : "") +
+          (isNew(n.postedAt || n.date) ? '<span class="badge-new">NEW</span>' : "") +
           (n.pickup ? '<span class="badge-pickup">再掲</span>' : "") +
         '</div>' +
         '<h3>' + esc(n.title) + '</h3>' +
