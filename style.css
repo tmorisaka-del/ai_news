@@ -100,17 +100,15 @@
   /* 6分割グリッド：通常カード=2枠（3列並び）／NEWカード=3枠（2列並び） */
   .grid{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
     align-items:start;
   }
-  .grid > article{grid-column:span 2}
   @media (max-width:1024px){
-    .grid{grid-template-columns:repeat(4,1fr)}
+    .grid{grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:640px){
     .grid{grid-template-columns:1fr}
-    .grid > article{grid-column:span 1}
   }
 
   article{
@@ -141,31 +139,26 @@
 
   /* 新着記事カードを大きく表示（3枠分の幅＝2つずつ並ぶ） */
   .grid > article.is-new{
-    grid-column:span 3;
     border:2px solid var(--sun);
     background:#fffdf7;
     box-shadow:0 4px 16px rgba(255,176,32,.18);
     padding:26px 28px 20px;
   }
   article.is-new:hover{box-shadow:0 10px 24px rgba(255,176,32,.26)}
-  article.is-new .cat{font-size:12.5px;padding:4px 14px}
-  article.is-new .date{font-size:13px}
+  article.is-new .cat{font-size:11.5px;padding:3px 12px}
+  article.is-new .date{font-size:12px}
   article.is-new .badge-new{
     font-size:12.5px;letter-spacing:.1em;
     color:#5c3d00;background:#ffcf4d;
     padding:3px 13px;
   }
-  article.is-new h3{font-size:21px;line-height:1.5;margin-bottom:12px}
-  article.is-new p{font-size:15px}
-  article.is-new .hint{font-size:14px;padding:12px 16px}
+  article.is-new h3{font-size:17.5px;line-height:1.55;margin-bottom:10px}
+  article.is-new p{font-size:13.8px}
+  article.is-new .hint{font-size:13.2px;padding:11px 15px}
   @media (max-width:1024px){
-    .grid > article.is-new{grid-column:span 4}
   }
   @media (max-width:640px){
-    .grid > article.is-new{grid-column:span 1}
     article.is-new{padding:20px 20px 16px}
-    article.is-new h3{font-size:18px}
-    article.is-new p{font-size:14px}
   }
   article h3{
     font-family:"M PLUS Rounded 1c",sans-serif;
