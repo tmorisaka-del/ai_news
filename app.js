@@ -222,7 +222,7 @@
     getJSON("news.json")
       .then(function (data) {
         var cutoff = frontCutoff(FRONT_BUSINESS_DAYS);
-        NEWS_DATA = data.filter(function (n) { return n.date >= cutoff || n.pickup; });
+        NEWS_DATA = data.filter(function (n) { return n.date >= cutoff || (n.postedAt || n.date) >= cutoff || n.pickup; });
         start();
         renderTop();
         renderLastUpdated();
