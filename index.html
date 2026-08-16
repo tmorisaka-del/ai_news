@@ -50,31 +50,23 @@
     .nt-sub{font-size:12.5px;color:var(--sub);line-height:1.6;display:block;margin-top:2px;}
     .nt-arrow{flex:none;margin-left:auto;color:#c07d00;font-size:15px;font-weight:700;}
     @media (max-width:640px){.notice{align-items:flex-start}.nt-arrow{display:none}}
-    .more-reads{margin:0 0 22px}
-    .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;
-      letter-spacing:.12em;color:var(--sub);margin:0 0 9px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:11px;}
+    .more-reads{margin:0 0 18px}
+    .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
+      letter-spacing:.13em;color:var(--sub);margin:0 0 7px;padding-left:3px;}
+    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:8px;}
     @media (max-width:560px){.mr-grid{grid-template-columns:1fr}}
-    .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;position:relative;
-      display:flex;flex-direction:column;background:var(--card);
+    .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;
+      display:flex;align-items:center;gap:8px;background:var(--card);
       border:1px solid var(--line);border-left:4px solid var(--mr-c);
-      border-radius:4px 12px 12px 4px;padding:13px 15px 12px;text-decoration:none;
-      transition:background .15s,box-shadow .15s,border-color .15s,transform .15s;}
+      border-radius:3px 10px 10px 3px;padding:9px 11px 9px 12px;text-decoration:none;
+      transition:background .15s,box-shadow .15s,border-color .15s;}
     .mr-card:hover{background:var(--mr-t);border-color:var(--mr-c);
-      box-shadow:0 6px 16px rgba(50,90,110,.15);transform:translateX(3px);}
-    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:14px;
-      line-height:1.5;color:#1e4756;margin-bottom:5px;padding-right:46px;}
-    .mr-new{position:absolute;top:11px;right:13px;
-      font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10px;letter-spacing:.08em;
-      color:#fff;background:var(--sun);padding:2px 9px;border-radius:999px;
-      animation:mrpulse 1.6s ease-in-out infinite;}
-    @keyframes mrpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-    @media (prefers-reduced-motion: reduce){.mr-new{animation:none}}
-    .mr-desc{font-size:12.3px;line-height:1.6;color:var(--sub);margin-bottom:9px;}
-    .mr-go{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11.5px;
-      color:var(--mr-c);margin-top:auto;}
-    .mr-go span{display:inline-block;transition:transform .15s;}
-    .mr-card:hover .mr-go span{transform:translateX(3px);}
+      box-shadow:0 4px 12px rgba(50,90,110,.12);}
+    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:13px;
+      line-height:1.45;color:#1e4756;}
+    .mr-arrow{flex:none;margin-left:auto;color:var(--mr-c);font-size:14px;font-weight:700;
+      transition:transform .15s;}
+    .mr-card:hover .mr-arrow{transform:translateX(3px);}
     .mr-card[href*="ai-incidents"]{--mr-c:#8c2f39;--mr-t:#f9ecee;}
     .mr-card[href*="ai-agent-ads"]{--mr-c:#a8432a;--mr-t:#fbeee9;}
     .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
@@ -117,39 +109,32 @@
     <div class="mr-grid">
       <a class="mr-card" href="report-2026-08-ai-incidents.html">
         <span class="mr-name">AIが実在の企業に侵入した</span>
-        <span class="mr-desc">危険だと自ら認識しながら、止まらなかった。7月に相次いだ2件の事故を検証。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-ai-agent-ads.html">
         <span class="mr-name">人間には見せない広告</span>
-        <span class="mr-desc">Time誌がAIエージェント向けに広告を販売。ただし広告会社の受け止めは冷静だった。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-solo-business.html">
         <span class="mr-new">NEW</span>
         <span class="mr-name">一人で年商15億円、従業員はゼロ</span>
-        <span class="mr-desc">メール対応も返金処理もAIが担当。ただし赤字になった例、数カ月で行き詰まった例も。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-china-robots.html">
         <span class="mr-name">ロボットに仕事を教える仕事</span>
-        <span class="mr-desc">中国では人型ロボットが薬局や工場で稼働中。動作を覚えさせる若者の月給は配達員並み。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-ai-search-traffic.html">
         <span class="mr-name">「ググる」の中身が変わった</span>
-        <span class="mr-desc">ウェブ通信の過半数がすでに人ではない。流入減少をめぐる各社の主張と対抗策を整理。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-sme-ai.html">
         <span class="mr-name">中小企業のAI活用、導入率は2割</span>
-        <span class="mr-desc">進んでいるのは工場でなく事務部門。うまくいった会社が最初に手をつけた業務とは。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
       <a class="mr-card" href="report-2026-08-ai-competition.html">
         <span class="mr-name">欧米勢と中国勢のAI競争</span>
-        <span class="mr-desc">性能差は約8カ月。しかし実際に使われている量では、中国製の公開モデルが約6割。</span>
-        <span class="mr-go">続きを読む <span aria-hidden="true">&#8250;</span></span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
       </a>
     </div>
   </div>
