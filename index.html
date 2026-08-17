@@ -20,13 +20,13 @@
 <div class="wrap">
 
   <style>
-    .feature-banner{display:block;background:linear-gradient(120deg,#4d5622,#77843a);color:#fff;
+    .feature-banner{display:block;background:linear-gradient(120deg,#9c332e,#c4645c);color:#fff;
       text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:4px 0 10px;
-      box-shadow:0 6px 18px rgba(77,86,34,.26);transition:transform .15s,box-shadow .15s;}
-    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(77,86,34,.34);}
+      box-shadow:0 6px 18px rgba(156,51,46,.26);transition:transform .15s,box-shadow .15s;}
+    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(156,51,46,.34);}
     .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
     .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12.5px;
-      letter-spacing:.07em;color:#2e3410;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
+      letter-spacing:.07em;color:#4d1512;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
     .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em;
       color:#fff;background:var(--sun);padding:3px 11px;border-radius:999px;
       animation:fbpulse 1.6s ease-in-out infinite;}
@@ -67,6 +67,7 @@
     .mr-arrow{flex:none;margin-left:auto;color:var(--mr-c);font-size:14px;font-weight:700;
       transition:transform .15s;}
     .mr-card:hover .mr-arrow{transform:translateX(3px);}
+    .mr-card[href*="ai-bubble"]{--mr-c:#5f6b2a;--mr-t:#f2f4e8;}
     .mr-card[href*="ai-incidents"]{--mr-c:#8c2f39;--mr-t:#f9ecee;}
     .mr-card[href*="ai-agent-ads"]{--mr-c:#a8432a;--mr-t:#fbeee9;}
     .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
@@ -74,6 +75,7 @@
     .mr-card[href*="ai-search-traffic"]{--mr-c:#6b3fa0;--mr-t:#f4eefb;}
     .mr-card[href*="sme-ai"]{--mr-c:#2d4a8a;--mr-t:#eef2fa;}
     .mr-card[href*="ai-competition"]{--mr-c:#0e6f73;--mr-t:#ecf5f5;}
+    .mr-card[href*="ai-bubble"]{--mr-c:#5f6b2a;--mr-t:#f2f4e8;}
     .mr-card[href*="ai-incidents"]{--mr-c:#8c2f39;--mr-t:#f9ecee;}
     .mr-card[href*="ai-agent-ads"]{--mr-c:#a8432a;--mr-t:#fbeee9;}
     .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
@@ -94,19 +96,23 @@
     <span class="nt-arrow">&#8250;</span>
   </a>
 
-  <a href="report-2026-08-ai-bubble.html" class="feature-banner">
+  <a href="report-2026-08-japan-ai.html" class="feature-banner">
     <div class="fb-head">
       <span class="fb-tag">&#9998; Claude独自編集記事</span>
       <span class="fb-new">NEW</span>
     </div>
-    <div class="fb-title">AIバブルは弾けるのか ― 弾けても、仕事のやり方は元に戻らない</div>
-    <div class="fb-sum">1件のデータセンターに80兆円。顧客に貸すための資金枠に80兆円。桁が日常の感覚を離れるにつれ、弾けるのではという問いが繰り返されています。答えは出せませんが、論争の中身は整理できます。国際決済銀行の警告から、導入企業が出し始めた具体的な数字まで、両論を並べました。</div>
+    <div class="fb-title">日本のAIは、規模で勝てない場所で勝ちにいっている</div>
+    <div class="fb-sum">1件のデータセンターに80兆円。その額を聞いた後で「日本は」と考えると気が重くなるかもしれません。ですが、勝負している場所が違います。少ない計算資源で成果を出す手法で世界的な学術誌に採択された東京の企業、政府が選んだ国産7モデルと18万人規模の実証、体を持つAIでの日本の土俵。具体的な名前と数字で並べました。</div>
     <span class="fb-cta">詳しく読む &#8250;</span>
   </a>
 
   <div class="more-reads">
     <div class="mr-title">これまでの独自編集記事</div>
     <div class="mr-grid">
+      <a class="mr-card" href="report-2026-08-ai-bubble.html">
+        <span class="mr-name">AIバブルは弾けるのか</span>
+        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
+      </a>
       <a class="mr-card" href="report-2026-08-ai-incidents.html">
         <span class="mr-name">AIが実在の企業に侵入した</span>
         <span class="mr-arrow" aria-hidden="true">&#8250;</span>
