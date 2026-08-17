@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本のAIは、規模で勝てない場所で勝ちにいっている｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=10">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#b8453f;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #b8453f}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#b8453f;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#b8453f}
+  .rp-points{background:#fbeeed;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#b8453f;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #f0d7d5;border-left:5px solid #b8453f;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#b8453f;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#fbeeed;font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#b8453f;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#b8453f;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#b8453f;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#b8453f}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月18日 作成</span>
+    </div>
+
+    <h2>日本のAIは、規模で勝てない場所で勝ちにいっている</h2>
+    <div class="rp-lead">
+      1件のデータセンターに80兆円。その額を聞いた後で「日本は」と考えると、気が重くなるかもしれません。ですが、勝負している場所が違います。少ない計算資源で成果を出す方法、日本語と現場に密着した設計、そして手足を持つAI。日本のAI開発でいま何が起きているのかを、具体的な名前と数字で並べます。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>東京発のSakana AIは、<strong>計算資源を大量に積まない開発手法</strong>で世界的な学術誌に採択され、創業1年余りで企業価値10億ドルを超えました。</li>
+        <li>政府が<strong>国産AI 7モデルを選定</strong>。今月から全府省庁・約18万人規模での試用が始まっています。</li>
+        <li>「一から自分たちで作る」会社が複数あります。NTTとPreferred Networksは<strong>海外モデルに頼らない開発</strong>を貫いています。</li>
+        <li>実は最も強いのは<strong>現場で使わせる力</strong>かもしれません。導入事例の具体性では他国に引けを取りません。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>大規模言語モデル（LLM）</dt><dd>大量の文章を学習し、文章を理解したり作ったりできるAIの本体部分のこと。</dd></div>
+        <div class="g-row"><dt>フルスクラッチ開発</dt><dd>他社が公開したモデルを土台にせず、一から自前で作ること。手間はかかりますが、中身を完全に把握できます。</dd></div>
+        <div class="g-row"><dt>進化的モデルマージ</dt><dd>性質の違う複数のAIを掛け合わせ、世代交代を繰り返して優れた組み合わせをAI自身に探させる手法。</dd></div>
+        <div class="g-row"><dt>フィジカルAI</dt><dd>画面の中だけでなく、ロボットなどの体を通じて現実世界で作業するAIのこと。</dd></div>
+        <div class="g-row"><dt>オンプレミス</dt><dd>外部のクラウドではなく、自社の建物の中に置いた機器で動かす形。情報を外に出さずに済みます。</dd></div>
+        <div class="g-row"><dt>ベンチマーク</dt><dd>AIの性能を測る共通のテスト。試験の種類によって得意・不得意が出ます。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. 「札束の殴り合い」に参加しない道を選んだ会社</h3>
+    <p>2023年に東京で設立されたSakana AIは、元グーグルの研究者らが立ち上げた会社です。創業から1年あまりで企業価値が10億ドルを超え、2025年11月時点では約26.5億ドルと評価されています。</p>
+    <p>注目されているのは規模ではなく<strong>やり方</strong>です。同社の「進化的モデルマージ」は、性質の違う複数のAIを掛け合わせ、生物の進化のように世代交代を繰り返して、最も優れた組み合わせをAI自身に探させる手法です。従来は技術者の勘に頼っていた作業を、自動で何百世代も試させます。</p>
+    <p>この方法で作られた軽量モデルが、当時のはるかに巨大なモデルを日本語の数学能力で上回ったという成果が報告されました。手法は学術誌<strong>『Nature Machine Intelligence』</strong>にも採択されています。</p>
+    <div class="rp-note">
+      <b>なぜこれが日本にとって重要か：</b>計算資源を大量に投じる競争は、電力と資金の勝負になります。エネルギー資源に乏しい日本にとって、<strong>「少ない資源で高い性能を出す」という方向は理にかなっています。</strong>米エヌビディアや国内大手からも評価を得ており、規模の競争から降りることが敗北を意味しないことを示しています。
+    </div>
+    <p>同社は2026年に入って商用の段階へ進み、複数モデルの集合知を使う「Fugu」、調査を代行する「Marlin」を提供しています。8月13日には無料のチャットサービスを更新し、誰でも試せる範囲を広げました。</p>
+
+    <h3>2. 政府が国産モデルを選び、18万人規模で試している</h3>
+    <p>デジタル庁は2026年3月、政府職員向けの生成AI環境「ガバメントAI 源内」で使う国産モデルとして、15件の応募から<strong>7つを選定</strong>しました。</p>
+    <table>
+      <tr><th>モデル</th><th>開発</th><th>特徴</th></tr>
+      <tr><td>tsuzumi 2</td><td>NTT</td><td>一から自前で開発。1台の機器で動く軽量設計にこだわる</td></tr>
+      <tr><td>PLaMo 2.0 Prime</td><td>Preferred Networks</td><td>一から自前で開発。日本語の指標で高い評価</td></tr>
+      <tr><td>cotomi v3</td><td>NEC</td><td>30万字規模の長文を扱える</td></tr>
+      <tr><td>Takane 32B</td><td>富士通</td><td>軽量化と特化型の技術が武器</td></tr>
+      <tr><td>Sarashina2 mini</td><td>ソフトバンク</td><td>小型で日本語に強い</td></tr>
+      <tr><td>ELYZA-JP-70B</td><td>ELYZA（KDDI）</td><td>海外の公開モデルを日本語で鍛え直した</td></tr>
+      <tr><td>CC Gov-LLM</td><td>―</td><td>行政向け</td></tr>
+    </table>
+    <p>同時に、全府省庁39機関・<strong>約18万人</strong>の政府職員へ広げる大規模な実証も発表されました。2026年5月に開始、<strong>8月から国産モデルの試用</strong>、2027年1月に評価結果を公表、4月から優れたモデルを実際に調達する、という日程が引かれています。</p>
+    <p>掛け声ではなく、予算と日付のついた計画が動いている段階です。政府での採用実績は、民間が導入を判断する際の材料にもなります。</p>
+
+    <h3>3. 「一から作る」を貫いている会社がある</h3>
+    <p>国産と呼ばれるモデルには2つの流儀があります。海外の公開モデルを土台にして日本語を鍛え直す方法と、<strong>一から自前で作る</strong>方法です。</p>
+    <p>後者を貫いているのがNTTのtsuzumiとPreferred NetworksのPLaMoです。手間も費用もかかりますが、中身を完全に把握できるため、規制や調達の要件で「国内開発であること」が求められる場面では、この2つが選択肢になります。</p>
+    <p>Preferred Networksは深層学習の枠組み「Chainer」で世界的に知られた会社で、自動運転や創薬でもAIを手がけています。金融に特化したモデルも投入しており、<strong>技術の蓄積を専門領域に接続する動き</strong>が進んでいます。150を超える自治体への展開も報告されています。</p>
+    <p>NTTのtsuzumiは、1台の機器で動く軽量設計にこだわっています。外部のクラウドに出さずに使いたい企業や役所にとって、この設計は実務上の意味を持ちます。</p>
+
+    <h3>4. 体を持つAIでは、もともと日本に土俵がある</h3>
+    <p>画面の中の競争では規模がものを言いますが、<strong>現実世界で物を動かすAI</strong>となると話が変わります。産業用ロボットで日本は長く世界有数の地位を保ってきました。</p>
+    <p>2026年に入ってからの動きを並べます。</p>
+    <ul class="rp-steps">
+      <li><b>川崎重工・ファナック・安川電機</b>が連携し、触覚データを含む共通の学習用基盤を構築すると発表</li>
+      <li><b>ZEALS</b>が8月5日、日本の屋内に合わせて小さく作った人型ロボット「D1」を発表。転倒を防ぐため二足歩行ではなく台車型を採用し、2026年度内に100台の量産を目指す</li>
+      <li><b>三菱自動車</b>が東京大学発の企業と組み、2027年に月1000台の製造体制を目指す</li>
+      <li><b>村田製作所</b>などが京都で新団体を立ち上げ、2026年度内に災害現場への実装を目指す</li>
+    </ul>
+    <p>中国勢が価格と量で先行しているのは事実です。ただ日本勢は、<strong>日本の現場の形に合わせる、安全性を確保する</strong>という別の軸で入ろうとしています。台数で競わず、使われる場所を絞って実績を積む戦い方です。</p>
+
+    <h3>5. 実は、いちばん強いのはここかもしれない</h3>
+    <p>モデルそのものの性能は海外勢が先行しています。しかし<strong>「現場で本当に使わせる」段階まで来ている事例</strong>の具体性では、日本企業は相当のところにいます。このページで扱ってきた事例を並べます。</p>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">49.5万時間</span><span class="f-lab">メルカリが実現した効率化。残る余地77万時間も特定</span></div>
+      <div class="rp-fig"><span class="f-num">10倍</span><span class="f-lab">首都高でAIを月100回以上使う社員の増加（1年で）</span></div>
+      <div class="rp-fig"><span class="f-num">約7分の1</span><span class="f-lab">NECが役員会議向けの分析にかかる時間を短縮</span></div>
+    </div>
+    <p>ワークマンは撮影が間に合わない商品画像を生成AIで補い、通知の開封率が1.5倍になった例を挙げています。味噌メーカーのハナマルキでは、レシピ開発の担当者本人が約400件の資料を検索する仕組みを自作しました。ライザップはAIで浮いた人員500人を建設分野へ振り向けています。</p>
+    <p>いずれも<strong>「導入しました」で終わらず、時間や件数まで数えている</strong>点が共通しています。何をどう使うかを詰める力は、モデルを作る力とは別の能力です。</p>
+
+    <h3>6. 正直に書いておくこと</h3>
+    <p>気持ちよく終わらせるために都合の良い話だけを並べるのは、この記事の役に立ちません。踏まえておくべき点も書きます。</p>
+    <p><strong>汎用の性能では海外勢が先行しています。</strong>国産モデルの比較記事の多くが、汎用のベンチマークで海外製を上回るのは難しいと率直に書いています。用途で使い分けるのが現実的で、機密情報や行政文書は国産、コーディングや英語混在の作業は海外製、という棲み分けが実際に行われています。</p>
+    <p><strong>海外勢が日本市場に本格参入しています。</strong>国産モデルの「本拠地」であるはずの日本語・国内対応という領域にも、海外企業が拠点を構えて入ってきました。</p>
+    <p><strong>性能差が縮まっていないという指摘もあります。</strong>広がっている可能性を指摘する分析も出ています。</p>
+    <div class="rp-note">
+      <b>それでも：</b>勝ち筋は「全部で勝つ」ことではありません。少ない資源で成果を出す手法、日本語と現場に合った設計、体を持つAI、そして使わせる力。<strong>選んだ場所で勝つという戦い方は、すでに始まっています。</strong>
+    </div>
+
+    <h3>7. 何を見ておけばよいか</h3>
+    <ul class="rp-steps">
+      <li><b>2027年1月</b>　政府が国産7モデルの評価結果を公表します。実際に使われた結果が出る、最初の大きな節目です。</li>
+      <li><b>2027年4月</b>　評価の高かったモデルの調達が始まります。ここで名前が挙がったモデルは、民間でも選びやすくなります。</li>
+      <li><b>人型ロボットの量産</b>　ZEALSの100台、三菱自動車の月1000台。計画が実際に動くかどうかが試されます。</li>
+      <li><b>導入事例の数字</b>　削減時間や売上への寄与が積み上がるか。ここが日本の強みなら、数字で示され続けるはずです。</li>
+    </ul>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>日経ビジネス「サカナAI、日本発ユニコーンの実像 『規模の競争』と一線を画す独自戦略」（2026年1月）<br><a href="https://business.nikkei.com/atcl/gen/19/00081/121700904/" target="_blank" rel="noopener">https://business.nikkei.com/atcl/gen/19/00081/121700904/</a></li>
+        <li>Qiita「2026年、日本は『フィジカルAI』で再起する」（進化的モデルマージの学術誌採択に言及、2026年2月）<br><a href="https://qiita.com/mhamadajp/items/45fac1827abab63b369d" target="_blank" rel="noopener">https://qiita.com/mhamadajp/items/45fac1827abab63b369d</a></li>
+        <li>フィデックス「【2026年版】国産LLM7選｜デジタル庁『源内』が選んだAIモデルを完全解説」（2026年6月）<br><a href="https://www.fidx.co.jp/" target="_blank" rel="noopener">https://www.fidx.co.jp/</a></li>
+        <li>AI Tools Hub「国産・日本語特化LLM法人ガイド」（海外製との使い分けに関する整理、2026年5月）<br><a href="https://aibloomly.com/blog/japanese-llm-for-enterprise" target="_blank" rel="noopener">https://aibloomly.com/blog/japanese-llm-for-enterprise</a></li>
+        <li>Sakana AI（日本語版ウィキペディア／同社の技術概要）<br><a href="https://ja.wikipedia.org/wiki/Sakana_AI" target="_blank" rel="noopener">https://ja.wikipedia.org/wiki/Sakana_AI</a></li>
+        <li>本ページ掲載の各記事（メルカリ、首都高、NEC、ワークマン、ハナマルキ、ライザップ、ZEALS、Sakana AI）</li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。日本の取り組みを紹介することを主眼としていますが、海外勢が先行している点や、性能差に関する厳しい見方も第6章に記載しています。モデルの性能評価は測定する試験によって結果が変わり、各社の公称値と第三者の測定が混在している点にもご留意ください。政府による評価結果は2027年1月に公表される予定です。2026年8月18日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
