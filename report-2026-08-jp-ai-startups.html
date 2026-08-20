@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半導体から経理まで ― 日本のAIスタートアップ5社｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=10">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#7d5a12;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #7d5a12}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#7d5a12;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#7d5a12}
+  .rp-points{background:#f8f2e5;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#7d5a12;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #ecdfbf;border-left:5px solid #7d5a12;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#7d5a12;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#f8f2e5;font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#7d5a12;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#7d5a12;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#7d5a12;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#7d5a12}
+  .rp-co{border:1px solid var(--line);border-radius:14px;padding:16px 20px 6px;margin:16px 0 22px;background:#fbfdfe}
+  .rp-co dl{display:grid;grid-template-columns:88px 1fr;gap:7px 14px;margin:0;font-size:13.3px;line-height:1.7}
+  .rp-co dt{font-weight:700;color:#7d5a12}
+  .rp-co dd{margin:0}
+  @media (max-width:560px){.rp-co dl{grid-template-columns:74px 1fr;font-size:12.8px}}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月20日 作成</span>
+    </div>
+
+    <h2>半導体から経理まで ― 日本のAIスタートアップ5社</h2>
+    <div class="rp-lead">
+      「日本のAI企業」と聞いて、いくつ社名が浮かぶでしょうか。実際には、半導体を設計する会社、建設現場の図面を読ませる会社、病院の問診をタブレットに置き換えた会社、経理の請求書処理を自動化した会社が、それぞれ別の層で事業を成り立たせています。5社を、扱う領域が重ならないように選んで並べました。数字はすべて公開情報からのものです。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>5社は<strong>まったく違う層で戦っています</strong>。半導体、基盤モデル、産業特化、医療、バックオフィス。競合というより、積み重なった別々の階です。</li>
+        <li>大型調達で赤字を掘るのが定番ですが、<strong>創業以来ずっと黒字という会社</strong>もあります。型はひとつではありません。</li>
+        <li>読者にいちばん近いのは<strong>経理まわりの会社</strong>です。稟議・経費精算・請求書という、社内の誰もが触る場所にAIが入っています。</li>
+        <li>「導入しました」で止まらず、<strong>削減時間や導入社数まで数字で出している</strong>のが共通点でした。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>ユニコーン</dt><dd>企業価値が10億ドル（およそ1,500億円）を超える、株式を公開していない会社のこと。</dd></div>
+        <div class="g-row"><dt>シリーズA・B</dt><dd>資金集めの段階を示す呼び方。A、B、Cと進むほど事業が育ち、金額も大きくなります。</dd></div>
+        <div class="g-row"><dt>ARR</dt><dd>毎年継続して入ってくる収益の合計。一度きりの売上を含まないため、事業の地力が見えます。</dd></div>
+        <div class="g-row"><dt>基盤モデル</dt><dd>いろいろな用途に使い回せる、AIの土台となる大きなモデル。ChatGPTやClaudeの中身にあたる部分です。</dd></div>
+        <div class="g-row"><dt>AIエージェント</dt><dd>一問一答で答えるだけでなく、目標を伝えると自分で段取りを考えて作業を進めるAI。</dd></div>
+        <div class="g-row"><dt>業界特化型SaaS</dt><dd>建設なら建設、医療なら医療と、ひとつの業界の仕事の流れに合わせて作り込んだクラウドサービス。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. どうやって5社を選んだか</h3>
+    <p>「注目の企業」という見出しは、たいてい選び方が書かれていません。ここでは先に基準を出しておきます。</p>
+    <ul class="rp-steps">
+      <li><b>独立した会社であること</b>　大手の連結子会社は外しました。日本語AIで知られるELYZAはKDDIの連結子会社になっているため、今回は対象外としています。</li>
+      <li><b>直近1年以内に動きがあること</b>　資金調達、大手との提携、事業数値の公表など、確認できる材料があること。</li>
+      <li><b>事業の中身が説明できること</b>　何を売って誰が使っているのかが、専門知識なしで分かること。</li>
+      <li><b>領域が重ならないこと</b>　似た会社を5社並べても地図になりません。層が違う順に並べました。</li>
+    </ul>
+    <div class="rp-note">
+      <b>先にお断り：</b>この記事は投資を勧めるものではありません。企業価値や調達額は、その会社が優れているかどうかではなく、<strong>投資家が今どこにお金を置いているかを示す数字</strong>として載せています。日本のAI開発の戦い方そのものについては、<a href="report-2026-08-japan-ai.html">前回の記事「日本のAIは、規模以外の勝ち方を選んだ」</a>で扱いました。この記事は会社ごとの事業の中身に絞ります。
+    </div>
+
+    <h3>2. Sakana AI ― 基盤モデルの層</h3>
+    <div class="rp-co">
+      <dl>
+        <dt>設立</dt><dd>2023年7月／東京・港区</dd>
+        <dt>事業</dt><dd>生成AIの基盤モデル研究・開発、企業向けAI</dd>
+        <dt>直近</dt><dd>2026年上半期の国内スタートアップ調達ランキングで首位（310億円）</dd>
+      </dl>
+    </div>
+    <p>元グーグルの研究者らが東京で立ち上げた会社です。共同創業者のライオン・ジョーンズ氏は、いまの生成AIの土台になっている技術を提案した論文の共著者にあたります。</p>
+    <p>特徴は、性能競争に真正面から参加しない点です。巨額を投じてモデルを巨大化させる路線を取らず、<strong>すでにある複数のモデルを掛け合わせて新しい能力を引き出す</strong>手法を軸にしています。計算資源が少なくて済むぶん、開発費が抑えられます。</p>
+    <p>資金面では、2025年11月のシリーズBで約200億円を集め、増資後の企業価値は約4,000億円となりました。日経新聞によれば、国内の未上場スタートアップとして過去最高の水準です。2026年に入ってからはグーグルとの提携、米シティグループからの出資、三菱電機からの出資が続いています。</p>
+    <p>製品としては、複数のAIを状況に応じて使い分ける「Fugu」、調査を代行する「Marlin」を提供しており、金融から産業・製造・行政へと顧客の裾野を広げる段階に入っています。</p>
+
+    <h3>3. Preferred Networks ― 半導体まで自前で作る層</h3>
+    <div class="rp-co">
+      <dl>
+        <dt>設立</dt><dd>2014年3月／東京大学発</dd>
+        <dt>事業</dt><dd>AI半導体、計算基盤、生成AI基盤モデル、業務ソリューション</dd>
+        <dt>直近</dt><dd>2026年3月、GMOインターネットグループと資本業務提携</dd>
+      </dl>
+    </div>
+    <p>5社のなかで最も下の層、つまり<strong>AIを動かす計算機そのもの</strong>を作っている会社です。神戸大学と共同開発した「MN-Core」というAI専用の半導体を持ち、これを積んだスーパーコンピュータが、消費電力あたりの性能を競う世界ランキングで1位を3度取っています。</p>
+    <p>半導体だけではありません。日本語に強い基盤モデル「PLaMo」を、他社のモデルを土台にせず一から作っています。半導体・計算基盤・モデル・現場向けサービスを一社で通しでそろえている会社は、国内では他に見当たりません。</p>
+    <p>資金は2024年12月にSBIグループを中心に総額190億円（出資と融資の合計）、その後も追加の調達を重ねています。開発中の次世代半導体「MN-Core L1000」では、生成AIを使うときの処理を既存の製品比で最大10倍速くすることを目標に掲げています。</p>
+    <div class="rp-note">
+      <b>ここが実務に近い：</b>同社のPLaMoは2026年4月、滋賀大学が全学生・全教職員向けに導入しました。国内の大学では初とされています。<strong>「外部のクラウドに情報を出さずにAIを使いたい」という需要</strong>が、大学や役所を中心に確実にあることを示す事例です。
+    </div>
+
+    <h3>4. 燈（あかり） ― 建設・製造の現場に入り込む層</h3>
+    <div class="rp-co">
+      <dl>
+        <dt>設立</dt><dd>2021年2月／東京大学・松尾研究室出身</dd>
+        <dt>事業</dt><dd>建設・製造・物流向けの業界特化型AI SaaS、DX支援</dd>
+        <dt>直近</dt><dd>2026年1月、三菱電機から50億円を調達。企業価値1,051億円</dd>
+      </dl>
+    </div>
+    <p>5社のなかで最も新しく、そして最も変わった型の会社です。創業は2021年、代表の野呂侑希氏は東大在学中に起業しました。</p>
+    <p>変わっているのは資金の作り方です。AIスタートアップの定番は、まず大型調達をして赤字を掘りながら製品を磨くという順番ですが、燈は<strong>2026年1月の三菱電機からの50億円が初めての大型調達</strong>でした。それまでは自社の売上だけで事業を回しています。2025年10月には経団連にも入会しました。入会には純資産1億円以上、3期以上連続で赤字を出していないことなどの条件があります。</p>
+    <p>事業は建設業から始まりました。請求書処理をデジタル化する「Digital Billder」や、設計図書を読み込ませた建設業向けのAIなど、汎用のChatGPTでは歯が立たない専門用語の世界に絞り込んでいます。大成建設、大東建託、長谷工コーポレーション、戸田建設といった大手ゼネコンでの開発実績があり、2026年7月には業界特化型AI SaaSの累計導入企業が1,500社を超えたと発表しました。同月には製造業向けのAIが、主要な国家試験13種で合格水準に達したことも公表しています。</p>
+    <p>三菱電機との提携では、工場の自動化・無人化を担う仕組みの共同開発を掲げています。建設現場で職人の勘をAIに落とし込んだやり方を、製造業へ横展開する構想です。</p>
+
+    <h3>5. Ubie（ユビー） ― 医療現場の層</h3>
+    <div class="rp-co">
+      <dl>
+        <dt>設立</dt><dd>2017年5月／医師とエンジニアが共同創業</dd>
+        <dt>事業</dt><dd>医療機関向けAI問診・生成AI、生活者向け症状検索</dd>
+        <dt>直近</dt><dd>2026年7月、国立病院機構での初の導入事例を公表</dd>
+      </dl>
+    </div>
+    <p>医師の阿部吉倫氏と、エンジニア出身の久保恒太氏が共同で創業しました。紙の問診票をタブレットに置き換える「ユビーAI問診」が主力で、患者の答えに応じてAIが次の質問を組み立て、回答を医師が使う言葉に直して電子カルテへ渡します。</p>
+    <p>導入の規模が具体的です。2026年1月時点で、AI問診はシリーズ累計で全国47都道府県・1,800以上の医療機関に、文章生成や音声認識をまとめた「ユビー生成AI」は大学病院を含む100病院超に入っています。一般向けの症状検索サービスは月に1,300万人以上が使っています。</p>
+    <p>効果の出し方も数字で示されています。2026年7月に公表された九州がんセンターの事例では、初診時のカルテ入力が10分短縮され、議事録の作成が70%削減されたとしています。国立病院機構としては初の導入だと発表されました。</p>
+    <p>資金は累計180億円超（2025年5月時点）。2024年には米グーグルが出資しています。2025年5月には日本政策金融公庫の制度を使った10億円の長期融資も受けており、<strong>出資と融資を組み合わせる調達</strong>を選んでいます。</p>
+
+    <h3>6. LayerX ― 経理・バックオフィスの層</h3>
+    <div class="rp-co">
+      <dl>
+        <dt>設立</dt><dd>2018年／代表はニュースアプリGunosyの創業者</dd>
+        <dt>事業</dt><dd>バックオフィス向けAIサービス「バクラク」、企業向けAI基盤</dd>
+        <dt>直近</dt><dd>2026年1月末時点で全社ARR100億円を達成</dd>
+      </dl>
+    </div>
+    <p>5社のなかで、読者の日常業務にいちばん近い会社です。稟議、経費精算、請求書の受け取りと発行、法人カード、勤怠管理。「バクラク」シリーズはこの領域をひとまとめに扱い、累計15,000社を超える企業が使っています。</p>
+    <p>いま同社が力を入れているのは、単なる自動入力ではなくAIエージェントです。取引先のサイトから請求書や領収書を自動で取ってくる機能、申請内容を自動で点検する機能、支出データからコスト削減案を出す機能などが順次追加されています。<strong>経理担当者が手作業でこなしていた「集める・確認する」の部分</strong>を丸ごと置き換えにいく設計です。</p>
+    <p>数字の伸びは明快で、2026年1月末に全社のARRが100億円に到達しました。ARR1億円からここまで4年という速さです。2025年9月には米国のTCVを中心にシリーズBで150億円を調達しており、TCVにとっては日本のスタートアップへの初めての投資でした。2026年夏には契約書まわりを扱う「バクラク契約管理」も加わる予定です。</p>
+
+    <h3>7. 5社を並べて見えること</h3>
+    <table>
+      <tr><th>会社</th><th>層</th><th>直近の代表的な数字</th></tr>
+      <tr><td>Sakana AI</td><td>基盤モデル</td><td>企業価値 約4,000億円／上半期調達 首位</td></tr>
+      <tr><td>Preferred Networks</td><td>半導体〜モデル</td><td>省電力性能の世界ランキング 1位を3回</td></tr>
+      <tr><td>燈</td><td>産業特化</td><td>企業価値 1,051億円／導入 1,500社超</td></tr>
+      <tr><td>Ubie</td><td>医療</td><td>AI問診 1,800医療機関／月間1,300万人</td></tr>
+      <tr><td>LayerX</td><td>バックオフィス</td><td>ARR 100億円／導入 15,000社超</td></tr>
+    </table>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">4,000億円</span><span class="f-lab">Sakana AIの企業価値（国内未上場で過去最高水準）</span></div>
+      <div class="rp-fig"><span class="f-num">15,000社</span><span class="f-lab">バクラクの累計導入企業数</span></div>
+      <div class="rp-fig"><span class="f-num">1,800</span><span class="f-lab">ユビーAI問診の導入医療機関数</span></div>
+    </div>
+    <p>並べてみると、日本のAIスタートアップは<strong>汎用の賢さで海外勢と正面からぶつかる道をほとんど選んでいない</strong>ことが分かります。半導体の電力効率、建設業の専門用語、病院の問診票、経理の請求書。いずれも、外から来た汎用AIがそのままでは入りづらい場所です。</p>
+    <p>もうひとつ共通しているのは、成果を数字で出していることです。導入社数、削減時間、削減率。<strong>「AIを導入しました」で止めず、何がどれだけ変わったかまで数えている</strong>点は、社内でAI活用の効果を説明する場面でもそのまま参考になります。稟議書に「効率化されました」と書くより、「1件あたり何分短縮」と書くほうが通るのと同じことです。</p>
+
+    <h3>8. 注意しておくこと</h3>
+    <p>都合の良い数字だけを並べると読み違えのもとになるので、いくつか付け加えます。</p>
+    <p><strong>企業価値は評価であって実績ではありません。</strong>ここに挙げた金額は、投資家がその時点で付けた値段です。売上や利益とは別のものですし、次の調達で下がることもあります。</p>
+    <p><strong>資金は少数の会社に集中しています。</strong>2026年上半期の国内スタートアップの調達では、大型案件への偏りが強まったと報じられています。裏を返せば、資金が回らないAI企業も増えているということです。この5社は、選別を通った側にいる会社という見方もできます。</p>
+    <p><strong>数字の出どころは各社の発表が中心です。</strong>導入社数や削減時間は、多くが企業側の公表値です。第三者が検証したものではない点は割り引いて読む必要があります。</p>
+    <p><strong>この5社が「正解」ではありません。</strong>営業支援のナレッジワーク、通話解析のRevComm、自動運転のTuringなど、同じくらい動きのある会社は他にもあります。層が重ならないことを優先した結果として、この5社になりました。</p>
+
+    <h3>9. 何を見ておけばよいか</h3>
+    <ul class="rp-steps">
+      <li><b>Preferred Networksの上場</b>　同社は以前から上場の意向を示しています。国産AI企業が公開市場でどう評価されるか、最初の実例になります。</li>
+      <li><b>燈と三菱電機の共同開発</b>　建設で通用したやり方が製造業でも通じるのか。産業特化型の型が広がるかどうかの試金石です。</li>
+      <li><b>LayerXのARRの伸び</b>　バックオフィス向けAIがどこまで需要を掘れるのか。読者の会社にもいずれ関わってくる数字です。</li>
+      <li><b>調達の集中度</b>　大型案件への偏りが続くのか、裾野に戻るのか。ここが変わると、国内のAIサービスの選択肢の数も変わります。</li>
+    </ul>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>日本経済新聞「サカナAIが310億円で首位、東大発の燈4位 上半期スタートアップ調達」（2026年7月）<br><a href="https://www.nikkei.com/article/DGXZQOUC146I50U6A710C2000000/" target="_blank" rel="noopener">https://www.nikkei.com/article/DGXZQOUC146I50U6A710C2000000/</a></li>
+        <li>日本経済新聞「サカナAIの企業価値4000億円、国内スタートアップ最高に 200億円を調達」（2025年11月）<br><a href="https://www.nikkei.com/article/DGXZQOUC137OW0T11C25A1000000/" target="_blank" rel="noopener">https://www.nikkei.com/article/DGXZQOUC137OW0T11C25A1000000/</a></li>
+        <li>Preferred Networks「総額190億円の資金調達を実施」（2024年12月）<br><a href="https://www.preferred.jp/ja/news/pr20241223" target="_blank" rel="noopener">https://www.preferred.jp/ja/news/pr20241223</a></li>
+        <li>Preferred Networks「生成AI向けプロセッサーMN-Core L1000の開発を開始」<br><a href="https://www.preferred.jp/ja/news/pr20241115" target="_blank" rel="noopener">https://www.preferred.jp/ja/news/pr20241115</a></li>
+        <li>燈株式会社プレスリリース「三菱電機から50億円の資金調達を実施。企業評価額は1,000億円超に」（2026年1月29日）<br><a href="https://prtimes.jp/main/html/rd/p/000000055.000083531.html" target="_blank" rel="noopener">https://prtimes.jp/main/html/rd/p/000000055.000083531.html</a></li>
+        <li>テレ東BIZ「東大発スタートアップ『燈』 企業価値1000億円超 三菱電機から資金調達」（2026年1月29日）<br><a href="https://txbiz.tv-tokyo.co.jp/readings/2764" target="_blank" rel="noopener">https://txbiz.tv-tokyo.co.jp/readings/2764</a></li>
+        <li>Ubie株式会社プレスリリース「『ユビー生成AI』、大学病院10施設以上を含む全国100病院へ導入」（2026年2月）<br><a href="https://prtimes.jp/main/html/rd/p/000000198.000048083.html" target="_blank" rel="noopener">https://prtimes.jp/main/html/rd/p/000000198.000048083.html</a></li>
+        <li>厚生労働省 健診等情報利活用ワーキンググループ Ubie株式会社 登壇資料（2026年3月5日）<br><a href="https://www.mhlw.go.jp/content/10904750/001665817.pdf" target="_blank" rel="noopener">https://www.mhlw.go.jp/content/10904750/001665817.pdf</a></li>
+        <li>LayerX「ARR100億円を達成——AIエージェント事業が成長を牽引」（2026年3月18日）<br><a href="https://layerx.co.jp/news/20260318/" target="_blank" rel="noopener">https://layerx.co.jp/news/20260318/</a></li>
+        <li>LayerX「シリーズBで150億円を調達」（2025年9月1日）<br><a href="https://layerx.co.jp/news/20250901-3/" target="_blank" rel="noopener">https://layerx.co.jp/news/20250901-3/</a></li>
+        <li>INITIAL／スピーダ「総額増の裏で深まる選別――2026年上半期スタートアップ資金調達動向」<br><a href="https://initial.inc/articles/japan-startup-finance-2026h1" target="_blank" rel="noopener">https://initial.inc/articles/japan-startup-finance-2026h1</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。投資の判断を勧めるものではありません。企業価値・調達額・導入社数などの数値は、報道および各社の公表値であり、多くは第三者による検証を経ていません。また、企業価値は評価時点のものであり、売上や利益を示すものではありません。取り上げた5社は「層が重ならないこと」を基準に選んだもので、優劣の順位付けではありません。2026年8月20日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
