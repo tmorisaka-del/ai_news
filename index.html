@@ -20,10 +20,18 @@
 <div class="wrap">
 
   <style>
-    .feature-banner{display:block;background:linear-gradient(120deg,#463526,#7a614a);color:#fff;
-      text-decoration:none;border-radius:18px;padding:21px 26px 23px;margin:4px 0 10px;
-      box-shadow:0 6px 18px rgba(70,53,38,.26);transition:transform .15s,box-shadow .15s;}
-    .feature-banner:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(70,53,38,.34);}
+    .fb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:-38px 0 12px;}
+    @media (max-width:820px){.fb-row{grid-template-columns:1fr;gap:10px}}
+    .feature-banner{display:flex;flex-direction:column;color:#fff;
+      text-decoration:none;border-radius:18px;padding:19px 22px 21px;margin:0;
+      transition:transform .15s,box-shadow .15s;}
+    .feature-banner.fb-a{background:linear-gradient(120deg,#463526,#7a614a);
+      box-shadow:0 6px 18px rgba(70,53,38,.26);}
+    .feature-banner.fb-b{background:linear-gradient(120deg,#1e5344,#3d8a72);
+      box-shadow:0 6px 18px rgba(30,83,68,.26);}
+    .feature-banner:hover{transform:translateY(-2px);}
+    .feature-banner.fb-a:hover{box-shadow:0 10px 26px rgba(70,53,38,.36);}
+    .feature-banner.fb-b:hover{box-shadow:0 10px 26px rgba(30,83,68,.36);}
     .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
     .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12.5px;
       letter-spacing:.07em;color:#4d1512;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
@@ -33,9 +41,9 @@
     @keyframes fbpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
     @media (prefers-reduced-motion: reduce){.fb-new{animation:none}}
     .fb-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-      font-size:clamp(17px,2.6vw,20px);line-height:1.5;margin-bottom:8px;}
-    .fb-sum{font-size:13.8px;line-height:1.8;opacity:.95;}
-    .fb-cta{display:inline-block;margin-top:11px;font-weight:700;font-size:13.5px;
+      font-size:clamp(16px,2.2vw,18.5px);line-height:1.5;margin-bottom:8px;}
+    .fb-sum{font-size:13.2px;line-height:1.75;opacity:.95;}
+    .fb-cta{display:inline-block;margin-top:auto;padding-top:11px;font-weight:700;font-size:13.5px;
       border-bottom:1.5px solid rgba(255,255,255,.55);padding-bottom:1px;}
     #topnews{margin:-38px 0 14px}
     .notice{display:flex;align-items:center;gap:13px;background:#fff8ea;
@@ -92,15 +100,26 @@
     <span class="nt-arrow">&#8250;</span>
   </a>
 
-  <a href="report-2026-08-book-scanning.html" class="feature-banner">
-    <div class="fb-head">
-      <span class="fb-tag">&#9998; Claude独自編集記事</span>
-      <span class="fb-new">NEW</span>
-    </div>
-    <div class="fb-title">数百万冊の本が、背を切られてAIに読まれた</div>
-    <div class="fb-sum">古本屋から本を買う。背表紙を油圧式の裁断機で切り落とす。ページをスキャナーに通す。紙はリサイクル業者へ回す。この工程が数百万冊分、秘密裏に繰り返されていました。裁判所は適法と判断しています。それでも批判は収まっていません。この記事を書いているClaudeの開発元が、その中心にいます。</div>
-    <span class="fb-cta">詳しく読む &#8250;</span>
-  </a>
+  <div class="fb-row">
+    <a href="report-2026-08-book-scanning.html" class="feature-banner fb-a">
+      <div class="fb-head">
+        <span class="fb-tag">&#9998; Claude独自編集記事</span>
+        <span class="fb-new">NEW</span>
+      </div>
+      <div class="fb-title">数百万冊の本が、背を切られてAIに読まれた</div>
+      <div class="fb-sum">古本屋から本を買い、背表紙を裁断機で切り落とし、スキャン後に紙を処分する。この工程が数百万冊分、秘密裏に繰り返されていました。裁判所は適法と判断しています。それでも批判は収まっていません。</div>
+      <span class="fb-cta">詳しく読む &#8250;</span>
+    </a>
+    <a href="report-2026-08-ai-content-quality.html" class="feature-banner fb-b">
+      <div class="fb-head">
+        <span class="fb-tag">&#9998; Claude独自編集記事</span>
+        <span class="fb-new">NEW</span>
+      </div>
+      <div class="fb-title">AIで作ったから嫌われるのではない、薄いから嫌われる</div>
+      <div class="fb-sum">「AIっぽい」と感じた発注担当者の半数が、問い合わせをやめていました。ところが信頼が下がったと答えたのは1割だけ。嫌われているのはAIではありません。制作の仕事に直接効く調査です。</div>
+      <span class="fb-cta">詳しく読む &#8250;</span>
+    </a>
+  </div>
 
   <div class="more-reads">
     <div class="mr-title">これまでの独自編集記事</div>
