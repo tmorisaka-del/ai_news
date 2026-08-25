@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIで作ったから嫌われるのではない、薄いから嫌われる｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=10">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#2f6f5a;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #2f6f5a}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#2f6f5a;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#2f6f5a}
+  .rp-points{background:#e9f4f0;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#2f6f5a;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #cfe3db;border-left:5px solid #2f6f5a;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#2f6f5a;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#e9f4f0;font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#2f6f5a;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#2f6f5a;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#2f6f5a;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#2f6f5a}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月25日 作成</span>
+    </div>
+
+    <h2>AIで作ったから嫌われるのではない、薄いから嫌われる</h2>
+    <div class="rp-lead">
+      「AIっぽい」と感じた発注担当者の半数が、問い合わせや資料請求をやめていました。ところが同じ調査で、AI生成だと分かって信頼が下がったと答えた人は1割しかいません。矛盾しているように見えますが、理由を聞くと筋が通ります。嫌われているのはAIではありませんでした。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>「AIっぽい」と感じた人の<strong>49.1%</strong>が問い合わせや資料請求をやめていました。</li>
+        <li>ところが<strong>信頼や好感が下がったと答えたのは1割</strong>だけ。AI生成そのものは嫌われていません。</li>
+        <li>「AIっぽい」と感じる最大の理由は<strong>「中身が薄く、調べれば分かる内容しか書いていない」53.6%</strong>。</li>
+        <li>つまり<strong>「AIっぽい」は薄さの言い換え</strong>です。人が書いても薄ければ同じ結果になります。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>BtoB</dt><dd>企業が企業に対して商品やサービスを売る取引のこと。個人向けと比べて検討期間が長く、複数人で判断します。</dd></div>
+        <div class="g-row"><dt>オウンドメディア</dt><dd>自社で運営する記事媒体。広告枠を買うのではなく、自前の場所で情報を発信します。</dd></div>
+        <div class="g-row"><dt>資料請求（ホワイトペーパー）</dt><dd>導入を検討する担当者に向けた詳しい資料。連絡先と引き換えに配布し、商談のきっかけにします。</dd></div>
+        <div class="g-row"><dt>一次情報</dt><dd>他所からの引用ではなく、自分たちが直接調べたり体験したりして得た情報のこと。</dd></div>
+        <div class="g-row"><dt>AI検索</dt><dd>リンク一覧ではなくAIが要約や回答を返す形の検索。BtoBの比較検討でも使われ始めています。</dd></div>
+        <div class="g-row"><dt>電子透かし</dt><dd>人の目には見えない印をデータに埋め込み、機械で読み取れるようにする技術。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. 数字が示していること</h3>
+    <p>エンジニア向け事業を手がけるTWOSTONE＆Sonsが2026年8月4日、BtoB商材の比較検討や発注に携わる担当者を対象にした調査結果を公表しました。</p>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">約9割</span><span class="f-lab">コンテンツに「AIっぽさ」を感じた経験がある</span></div>
+      <div class="rp-fig"><span class="f-num">49.1%</span><span class="f-lab">それを感じて問い合わせ・資料請求をやめた</span></div>
+      <div class="rp-fig"><span class="f-num">約1割</span><span class="f-lab">信頼や好感が「下がる」と答えた人</span></div>
+    </div>
+    <p>この3つを並べると、おかしなことになっています。<strong>半数が行動をやめているのに、信頼が下がったという人は1割しかいない。</strong>AIで作ったこと自体に嫌悪感を持っている人は、実は少数派なのです。</p>
+    <p>行動としては、問い合わせや資料請求をやめた人が49.1%、競合他社の情報を調べに行った人が38.2%でした。<strong>離れるだけでなく、他社を見に行っています。</strong></p>
+
+    <h3>2. では、何が嫌われているのか</h3>
+    <p>「AIっぽい」と感じる理由を聞いた結果が、答えになっています。</p>
+    <table>
+      <tr><th>「AIっぽい」と感じる要素</th><th>割合</th></tr>
+      <tr><td>中身が薄く、調べれば分かる内容しか書いていない</td><td>53.6%</td></tr>
+      <tr><td>整いすぎていて、人の温度を感じない</td><td>46.4%</td></tr>
+    </table>
+    <p>1位は文体の話ではありません。<strong>情報の中身の話です。</strong>調べれば分かることしか書いていない。そこに独自の材料がない。それを読んだ人が「これはAIが書いたな」と受け取っている、という順序です。</p>
+    <div class="rp-note">
+      <b>ここが核心：</b>「AIっぽい」は<strong>薄さの言い換え</strong>として使われています。ということは、<strong>人が書いても薄ければ同じ結果になります。</strong>逆に、AIで作っても中身が厚ければ問題にならない。読み手が見ているのは制作の手段ではなく、書かれている内容です。
+    </div>
+
+    <h3>3. どこで気づかれやすいか</h3>
+    <table>
+      <tr><th>コンテンツの種類</th><th>「AIっぽい」と感じた割合</th></tr>
+      <tr><td>動画広告・Web動画（AIアバター、自動生成のナレーション）</td><td>59.1%</td></tr>
+      <tr><td>Web広告・バナー広告（生成AIによる画像やイラスト）</td><td>50.9%</td></tr>
+      <tr><td>オウンドメディアの記事・コラム</td><td>42.7%</td></tr>
+    </table>
+    <p>上位2つは映像と画像です。目と耳に訴えるものほど気づかれやすい。特にAIアバターや自動生成のナレーションは、違和感が残りやすいようです。</p>
+    <p>文章も42.7%と低くはありません。<strong>種類を問わず、4割から6割が気づいている</strong>と考えたほうが実態に近いと言えます。</p>
+
+    <h3>4. 信頼される条件は、はっきりしている</h3>
+    <p>同じ調査で、コンテンツを信頼できると感じる特徴も聞いています。</p>
+    <ul class="rp-steps">
+      <li><b>課題が直接関連しており「まさに自分のことだ」と思える</b>　57.3%</li>
+      <li><b>ここでしか読めない視点や専門性がある</b>　約5割</li>
+    </ul>
+    <p>どちらも<strong>「読み手の状況をどれだけ具体的に押さえているか」</strong>と<strong>「他所にない材料を持っているか」</strong>という話です。AIが自動で用意できる部分ではありません。</p>
+    <p>裏返すと、AIに任せてよい部分もはっきりします。構成を整える、表現を直す、複数の案を出す、体裁をそろえる。<strong>手を動かす部分は任せて、何を書くかを決める部分に人が時間を使う。</strong>この配分が答えになります。</p>
+
+    <h3>5. 「隠せばよい」ではない</h3>
+    <p>気づかれると離脱されるなら、気づかれないようにすればよいのではないか。この方向は行き止まりです。</p>
+    <p>まず、<strong>気づかれない工夫と、中身を厚くする工夫は同じもの</strong>です。具体的な事例や数字を入れれば、薄さは消え、同時に「AIっぽさ」も消えます。表面だけ人間らしく整えても、調べれば分かる内容しか書いていないという事実は変わりません。</p>
+    <p>さらに、隠すこと自体が難しくなっています。Anthropicは8月10日、Claudeが生成した文章に機械だけが読み取れる印を埋め込む方針を明らかにしました。EUとカリフォルニア州では8月2日から、AI生成物への表示を求める規定が動いています。<strong>表示する方向へ制度が進んでいる以上、隠す前提の設計は長持ちしません。</strong></p>
+
+    <h3>6. 発注側もAIで調べている</h3>
+    <p>もう一つ、この調査と合わせて見ておきたい変化があります。<strong>BtoBの比較検討そのものが、AI経由に移りつつある</strong>という点です。</p>
+    <p>複数の調査で、購買の担当者がAI検索を使う割合は3割台から9割台まで幅がありますが、いずれも無視できない規模だという結論では一致しています。ある調査会社は、2028年までにBtoB購買の大半がAIを介するようになると予測しています。</p>
+    <p>ここに、この記事の主題が効いてきます。<strong>AIが要約に使うのも、他所にない具体的な情報です。</strong>調べれば分かることしか書いていないページは、AIにとっても引用する理由がありません。人に薄いと思われる文章は、AIにも選ばれにくい。<strong>対策は一つで済みます。</strong></p>
+
+    <h3>7. 明日からできること</h3>
+    <ul class="rp-steps">
+      <li><b>数字と固有名詞を入れる</b>　いつ、どこで、誰が、いくつ。ここが埋まっていれば薄いとは言われません。</li>
+      <li><b>自分たちしか知らないことを1つ入れる</b>　実際にやってみた結果、失敗した経緯、社内で計測した数値。他所から持ってこられない材料です。</li>
+      <li><b>読み手を1人に絞る</b>　「まさに自分のことだ」と思わせるには、誰に向けて書いているかを決める必要があります。</li>
+      <li><b>映像と画像はとくに慎重に</b>　もっとも気づかれやすい領域です。AIアバターや自動生成のナレーションは、用途を選んで使う判断が要ります。</li>
+    </ul>
+    <p>この調査から読み取れることは、実はAIの話ではありません。<strong>薄いコンテンツは前から嫌われていた。</strong>AIによって薄いものを大量に作れるようになった結果、それが目立つようになった、というだけのことです。</p>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>＠IT（アイティメディア）「『AI生成コンテンツ、実は嫌いではない』 だが『客の半分が去る』本当の理由」（2026年8月12日）<br><a href="https://atmarkit.itmedia.co.jp/ait/articles/2608/12/news040.html" target="_blank" rel="noopener">https://atmarkit.itmedia.co.jp/ait/articles/2608/12/news040.html</a></li>
+        <li>TWOSTONE＆Sons「BtoB商材の比較検討者に聞く"AIっぽさ"受容調査」（2026年8月4日、PR TIMES）<br><a href="https://prtimes.jp/main/html/rd/p/000000373.000015060.html" target="_blank" rel="noopener">https://prtimes.jp/main/html/rd/p/000000373.000015060.html</a></li>
+        <li>BtoB購買におけるAI検索の利用実態に関する各種調査の整理（2026年7月）<br><a href="https://ai-search.techsuite.co.jp/14968/" target="_blank" rel="noopener">https://ai-search.techsuite.co.jp/14968/</a></li>
+        <li>本ページ掲載の各記事（Claudeの電子透かし、EU AI法の透明性義務、AI検索とサイト流入）</li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。中心に据えた調査は有効回答が限られており、BtoBの比較検討・発注担当者という特定の層を対象としています。数値の解釈にあたっては、対象と設問をあわせてご確認ください。BtoB購買でのAI検索利用率は調査によって大きな幅があります。2026年8月25日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
