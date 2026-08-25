@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数百万冊の本が、背を切られてAIに読まれた｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=10">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#5a4632;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #5a4632}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15px;color:#5a4632;margin:20px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#5a4632}
+  .rp-points{background:#f4efe8;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#5a4632;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #e2d8cb;border-left:5px solid #5a4632;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#5a4632;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+  .rp th,.rp td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#f4efe8;font-weight:700;color:#1e4756;font-size:13px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#5a4632;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#5a4632;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#5a4632;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#5a4632}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>AIニュースまとめ！（社内版）</h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+    <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年8月25日 作成</span>
+    </div>
+
+    <h2>数百万冊の本が、背を切られてAIに読まれた</h2>
+    <div class="rp-lead">
+      古本屋から本を買う。背表紙を油圧式の裁断機で切り落とす。ページを高速スキャナーに通す。用済みになった紙はリサイクル業者へ回す。この工程が数百万冊分、秘密裏に繰り返されていました。裁判所は適法と判断しています。それでも批判は収まっていません。この記事を書いているClaudeの開発元が、その中心にいます。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>Anthropicが<strong>「Project Panama」</strong>として2024年初頭から、数百万冊の紙の本を買い集めて裁断・スキャンし、原本を廃棄していました。</li>
+        <li>内部文書には<strong>「世界中のすべての本を破壊的にスキャンする取り組み」</strong>と記載され、外部に知られたくないとも書かれていました。</li>
+        <li>裁判所は<strong>適法と判断</strong>しました。買った本をどう扱うかは所有者の自由だという原則によるものです。</li>
+        <li>ただし<strong>海賊版の利用は別で、15億ドルの支払い</strong>が命じられています。この2つは分けて理解する必要があります。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>ファーストセール・ドクトリン</dt><dd>買った商品の所有権は購入者に移り、転売も廃棄も自由にできるという原則。今回の判断の土台です。</dd></div>
+        <div class="g-row"><dt>フェアユース</dt><dd>米国の著作権法で、一定の条件を満たせば権利者の許可なく利用できるとする考え方。</dd></div>
+        <div class="g-row"><dt>封印解除</dt><dd>裁判で非公開とされていた資料が、手続きを経て公開されること。今回の発覚のきっかけです。</dd></div>
+        <div class="g-row"><dt>稀覯本（きこうぼん）</dt><dd>発行部数が少なく入手が難しい書物。失われると代わりが手に入りません。</dd></div>
+        <div class="g-row"><dt>学習データ</dt><dd>AIに読み込ませて性能を高めるための文章や画像。質と量の両方が性能を左右します。</dd></div>
+        <div class="g-row"><dt>集団訴訟</dt><dd>同じ被害を受けた多数の人がまとまって起こす訴訟。米国の著作権紛争で多く使われます。</dd></div>
+      </dl>
+    </div>
+
+    <h3>1. 何が行われていたのか</h3>
+    <p>工程そのものは単純です。</p>
+    <ul class="rp-steps">
+      <li><b>買う</b>　古本屋や書店から紙の本を大量に買い集める</li>
+      <li><b>切る</b>　業者に委託し、油圧式の裁断機で背表紙を切り落とす</li>
+      <li><b>読み取る</b>　ばらしたページを高速スキャナーに通してデジタル化する</li>
+      <li><b>捨てる</b>　用済みになった紙はリサイクル業者へ回す</li>
+    </ul>
+    <p>Anthropicは2024年2月、グーグルで書籍の流通を担当していた人物を採用し、「世界中の本すべて」の調達を指示したとされます。ワシントン・ポストの報道では、供給元として古書販売の2社の名前が挙がっています。</p>
+    <p>この取り組みが表に出たのは、作家らが起こした著作権の集団訴訟で内部文書の封印が解かれたためです。第一報は<strong>2026年1月27日のワシントン・ポスト</strong>でした。文書には、この計画が「世界中のすべての本を破壊的にスキャンする取り組み」であること、そして<strong>取り組んでいることを外部に知られたくない</strong>と書かれていました。</p>
+
+    <h3>2. なぜ紙の本だったのか</h3>
+    <p>手間も費用もかかる方法を選んだ理由は、大きく2つあります。</p>
+
+    <h4>質が高く、しかも「汚れていない」</h4>
+    <p>本の文章は、インターネット上の書き込みと比べて構造が整っており、内容の密度も高い。加えて重要なのが<strong>2022年より前に印刷された本</strong>という条件です。生成AIが普及する前に印刷されているため、AIが書いた文章が混じりようがありません。</p>
+    <p>ネット上の文章にAIの出力が増えるほど、それを学習に使うと質が下がっていきます。<strong>ネットがAIの文章で埋まるほど、古い紙の価値が上がる。</strong>この逆転が起きています。</p>
+
+    <h4>法的な危険を避けられる</h4>
+    <p>ネット上から集めた文章には、権利関係が不明なものが混ざります。一方、<strong>正規に買った紙の本なら所有権が自分にある</strong>。この違いが、後の裁判所の判断につながりました。</p>
+
+    <h3>3. 裁判所は適法と判断した</h3>
+    <p>ここは正確に押さえる必要があります。<strong>裁判所は、買った本を裁断してデジタル化する行為そのものは違法ではないと判断しました。</strong></p>
+    <p>根拠は、買った商品の所有権は購入者に移り、転売も廃棄も自由にできるという原則です。担当した判事は2025年6月の決定で、Anthropicが正当な手段で印刷本を購入したと認めました。著作権者側の主張は「対価を払っていない」ではなく「紙から電子データへ変換した」という点にありましたが、これは認められませんでした。</p>
+    <div class="rp-note">
+      <b>ただし、こちらは別：</b>Anthropicは海賊版サイトから48万2460冊を入手していたことでも訴えられ、こちらは<strong>15億ドル（1冊あたり約3000ドル）の支払い</strong>を命じられました。判決から30日以内に違法なファイルを削除する義務も負っています。<strong>「買って裁断」は適法、「海賊版を使用」は違法。</strong>この2つは混同されやすいので、分けて理解する必要があります。
+    </div>
+
+    <h3>4. それでも批判が収まらない理由</h3>
+    <p>適法だと判断されたにもかかわらず、作家、記録保存の専門家、歴史家、愛書家から強い批判が続いています。理由は3つに整理できます。</p>
+
+    <h4>失われたら戻らない本が含まれていた</h4>
+    <p>米メディアの404メディアは2026年8月17日、調査結果を公表しました。稀覯本を扱う販売業者の協力を得て、1000冊近い注文のうち1冊に紛失防止用の追跡装置を仕込み、荷物の行き先を追ったのです。荷物はカリフォルニア州から2つの州を経由し、最終的にアマゾンが所有する倉庫にたどり着きました。</p>
+    <p>裁断台に載せられていたのは売れ筋の本だけではありませんでした。<strong>稀覯本、古書、絶版本。ここで失われれば他に残らないかもしれない本まで含まれていた</strong>ことが分かっています。</p>
+
+    <h4>隠していた</h4>
+    <p>内部文書に「知られたくない」と書かれていた事実は重く受け止められています。適法だと考えているなら、隠す必要はなかったはずだという指摘です。</p>
+
+    <h4>裁断は必須ではない</h4>
+    <p>本を傷めずにデジタル化する方法は以前から存在します。裁断を選んだのは<strong>速さと費用のため</strong>でした。技術的な必然ではなく、経済的な選択だったという点が批判の的になっています。</p>
+
+    <h3>5. 古書市場で起きていること</h3>
+    <p>影響は市場にも及んでいます。2022年より前に印刷された本の売れ行きが記録的に伸び、書店主たちからは大口の買い手の正体がAI企業ではないかという疑念が上がりました。</p>
+    <p>2026年7月には、書籍データベースを運営する事業者がAI企業向けの調達ページを公開していたことが報じられています。1000冊から100万冊規模の発注に対応し、買い手の情報は伏せると説明していました。<strong>「2022年より前の本なら生成AIの文章が混じりようがなく、構造的にきれいだ」</strong>というのが売り文句でした。</p>
+    <p>同じページには、見え方の問題が現実に存在するという趣旨の記述もあったといいます。「AI企業が200万冊を破壊」という見出しが同情を集めやすいことを、売る側も分かっていたわけです。</p>
+
+    <h3>6. これはAnthropicだけの話ではない</h3>
+    <p>公平を期すために書いておきます。404メディアの追跡調査で本が届いた先は、Anthropicではなく<strong>アマゾンの倉庫</strong>でした。同種の書籍調達サービスは他の生成AI企業にも売り込まれています。グーグルが破綻した企業のデータを買い取り、1億通のメールを学習に使うという報道も出ています。</p>
+    <p>学習データが足りなくなりつつあるという指摘は以前からありました。手つかずの文章を探す競争は業界全体で起きており、紙の本はその一つの答えです。<strong>先に見つかったのがAnthropicだった、という側面があります。</strong>ただし、それが行為の評価を変えるわけではありません。</p>
+
+    <h3>7. 何を学ぶか</h3>
+    <p><strong>合法かどうかと、納得されるかどうかは別に判断されます。</strong>この件では裁判所が適法と認めました。それでも批判は収まっていません。法的な検討を通ったことは、公表して説明できることを意味しません。</p>
+    <p>AIで作った素材を扱う場面でも、同じ構造が現れます。規約上は問題がない、権利処理は済んでいる。それでも「そこまでするのか」と受け止められる線は別に存在します。<strong>説明を求められたときに答えられるかどうかを、法的な確認とは別に考えておく必要があります。</strong></p>
+    <p>もう一つ。<strong>隠していたことが、行為そのもの以上に批判されています。</strong>後から明るみに出る前提で判断する、という基準は実務でも有効です。</p>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>Forbes JAPAN「なぜAnthropicなどAI企業は、古書を買い集め裁断し処分しているのか」（2026年8月20日、Mary Whitfill Roeloffs）<br><a href="https://forbesjapan.com/articles/detail/103075" target="_blank" rel="noopener">https://forbesjapan.com/articles/detail/103075</a></li>
+        <li>The Washington Post「テック企業の極秘計画―数百万冊の本を破壊する内幕」（2026年1月27日、第一報）<br><a href="https://www.washingtonpost.com/technology/2026/01/27/anthropic-ai-scan-destroy-books/" target="_blank" rel="noopener">https://www.washingtonpost.com/technology/2026/01/27/anthropic-ai-scan-destroy-books/</a></li>
+        <li>404 Media「稀覯本の荷物を追跡したところ、アマゾンのAI学習施設に到着した」（2026年8月17日）<br><a href="https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/" target="_blank" rel="noopener">https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/</a></li>
+        <li>BeInCrypto Japan「Anthropicがクロード学習用に数百万冊を破棄 法的問題は」（判決内容と和解金の整理）<br><a href="https://jp.beincrypto.com/anthropic-destroying-books-project-panama-claude/" target="_blank" rel="noopener">https://jp.beincrypto.com/anthropic-destroying-books-project-panama-claude/</a></li>
+        <li>Forbes JAPAN「グーグルが破綻企業のデジタル遺産で購入へ、1億通のメールがAIの学習材料に」（2026年8月19日）<br><a href="https://forbesjapan.com/articles/detail/103136" target="_blank" rel="noopener">https://forbesjapan.com/articles/detail/103136</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は複数の公開情報をもとに、Claudeが社内向けに整理・編集したものです。<strong>記事の中心にあるAnthropicは、このページを書いているClaudeの開発元です。</strong>不利な内容を含みますが、事実として省かずに記載しました。裁判所の判断（適法とされた部分）と、海賊版の利用に対する支払い命令（違法とされた部分）は性質が異なるため、混同しないよう分けて記載しています。訴訟には継続中のものもあり、今後の判断で説明が変わる可能性があります。2026年8月25日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
