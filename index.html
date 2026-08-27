@@ -58,35 +58,15 @@
     .nt-sub{font-size:12.5px;color:var(--sub);line-height:1.6;display:block;margin-top:2px;}
     .nt-arrow{flex:none;margin-left:auto;color:#c07d00;font-size:15px;font-weight:700;}
     @media (max-width:640px){.notice{align-items:flex-start}.nt-arrow{display:none}}
-    .more-reads{margin:0 0 18px}
-    .mr-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:10.5px;
-      letter-spacing:.13em;color:var(--sub);margin:0 0 7px;padding-left:3px;}
-    .mr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:9px;}
-    @media (max-width:560px){.mr-grid{grid-template-columns:1fr}}
-    .mr-card{--mr-c:#7a8794;--mr-t:#f3f6f8;
-      display:flex;align-items:center;gap:8px;background:var(--card);
-      border:1px solid var(--line);border-left:4px solid var(--mr-c);
-      border-radius:3px 10px 10px 3px;padding:9px 11px 9px 12px;text-decoration:none;
-      transition:background .15s,box-shadow .15s,border-color .15s;}
-    .mr-card:hover{background:var(--mr-t);border-color:var(--mr-c);
-      box-shadow:0 4px 12px rgba(50,90,110,.12);}
-    .mr-name{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:13px;
-      line-height:1.5;color:#1e4756;}
-    .mr-arrow{flex:none;margin-left:auto;color:var(--mr-c);font-size:14px;font-weight:700;
-      transition:transform .15s;}
-    .mr-card:hover .mr-arrow{transform:translateX(3px);}
-    .mr-card[href*="ai-fear"]{--mr-c:#1f6b8a;--mr-t:#f4f6f7;}
-    .mr-card[href*="ai-bubble"]{--mr-c:#5f6b2a;--mr-t:#f2f4e8;}
-    .mr-card[href*="ai-incidents"]{--mr-c:#8c2f39;--mr-t:#f9ecee;}
-    .mr-card[href*="ai-agent-ads"]{--mr-c:#a8432a;--mr-t:#fbeee9;}
-    .mr-card[href*="solo-business"]{--mr-c:#0f7a4a;--mr-t:#eef7f2;}
-    .mr-card[href*="china-robots"]{--mr-c:#b3306b;--mr-t:#fcf0f5;}
-    .mr-card[href*="ai-search-traffic"]{--mr-c:#6b3fa0;--mr-t:#f4eefb;}
-    .mr-card[href*="sme-ai"]{--mr-c:#2d4a8a;--mr-t:#eef2fa;}
-    .mr-card[href*="ai-competition"]{--mr-c:#0e6f73;--mr-t:#ecf5f5;}
-    .mr-card[href*="jp-ai-startups"]{--mr-c:#7d5a12;--mr-t:#f4f6f7;}
-    .mr-card[href*="japan-ai"]{--mr-c:#b8453f;--mr-t:#fbeeed;}
-    .mr-card[href*="jp-ai-startups"]{--mr-c:#7d5a12;--mr-t:#f8f2e5;}
+    .more-link{display:flex;align-items:center;gap:10px;background:var(--card);
+      border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:0 0 20px;
+      text-decoration:none;transition:background .15s,box-shadow .15s,border-color .15s;}
+    .more-link:hover{background:var(--chip);border-color:var(--primary);
+      box-shadow:0 4px 12px rgba(50,90,110,.10);}
+    .ml-text{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:13.5px;color:#1e4756;}
+    .ml-count{font-size:11.5px;color:var(--sub);background:var(--chip);padding:2px 9px;border-radius:999px;}
+    .ml-go{margin-left:auto;color:var(--primary-deep);font-size:15px;font-weight:700;transition:transform .15s;}
+    .more-link:hover .ml-go{transform:translateX(3px);}
   </style>
 
   <div id="topnews" class="topnews"></div>
@@ -112,55 +92,11 @@
     </a>
   </div>
 
-  <div class="more-reads">
-    <div class="mr-title">これまでの独自編集記事</div>
-    <div class="mr-grid">
-      <a class="mr-card" href="report-2026-08-ai-fear.html">
-        <span class="mr-name">「仕事を奪われる」日本15%、米国71%</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-jp-ai-startups.html">
-        <span class="mr-name">日本のAI企業5社、大金なしで黒字</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-japan-ai.html">
-        <span class="mr-name">80兆円は出せない日本の勝ち筋</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-ai-bubble.html">
-        <span class="mr-name">AIバブル、同じ週に「80兆円」が二度</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-ai-incidents.html">
-        <span class="mr-name">AIが実在企業に侵入、気づいても続行</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-ai-agent-ads.html">
-        <span class="mr-name">人に見せないAI向け広告が売れ始めた</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-solo-business.html">
-        <span class="mr-name">一人で年商15億円、従業員はゼロ</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-china-robots.html">
-        <span class="mr-name">ロボットに仕事を教える仕事、月給14万円</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-ai-search-traffic.html">
-        <span class="mr-name">ウェブ訪問者の過半数はもう人ではない</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-sme-ai.html">
-        <span class="mr-name">中小企業の導入率2割、成功例の第一歩</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-      <a class="mr-card" href="report-2026-08-ai-competition.html">
-        <span class="mr-name">中国AIは8か月遅れ、なのに利用量6割</span>
-        <span class="mr-arrow" aria-hidden="true">&#8250;</span>
-      </a>
-    </div>
-  </div>
+  <a class="more-link" href="reports.html">
+    <span class="ml-text">これまでの独自編集記事をすべて見る</span>
+    <span class="ml-count">全13本</span>
+    <span class="ml-go" aria-hidden="true">&#8250;</span>
+  </a>
 
   <div id="list" class="grid"></div>
 
