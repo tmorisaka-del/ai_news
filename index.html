@@ -20,31 +20,25 @@
 <div class="wrap">
 
   <style>
-    .fb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px;}
-    @media (max-width:820px){.fb-row{grid-template-columns:1fr;gap:10px}}
-    .feature-banner{display:flex;flex-direction:column;color:#fff;
-      text-decoration:none;border-radius:18px;padding:19px 22px 21px;margin:0;
+    .fb-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px;}
+    @media (max-width:820px){.fb-row{grid-template-columns:1fr;gap:8px}}
+    .feature-banner{display:flex;flex-direction:column;justify-content:center;color:#fff;
+      text-decoration:none;border-radius:13px;padding:12px 16px 13px;margin:0;
       transition:transform .15s,box-shadow .15s;}
     .feature-banner.fb-a{background:linear-gradient(120deg,#463526,#7a614a);
-      box-shadow:0 6px 18px rgba(70,53,38,.26);}
+      box-shadow:0 3px 10px rgba(70,53,38,.18);}
     .feature-banner.fb-b{background:linear-gradient(120deg,#1e5344,#3d8a72);
-      box-shadow:0 6px 18px rgba(30,83,68,.26);}
+      box-shadow:0 3px 10px rgba(30,83,68,.18);}
     .feature-banner:hover{transform:translateY(-2px);}
-    .feature-banner.fb-a:hover{box-shadow:0 10px 26px rgba(70,53,38,.36);}
-    .feature-banner.fb-b:hover{box-shadow:0 10px 26px rgba(30,83,68,.36);}
-    .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:9px;}
-    .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12.5px;
-      letter-spacing:.07em;color:#4d1512;background:#ffe9a8;padding:4px 15px;border-radius:999px;white-space:nowrap;}
-    .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em;
-      color:#fff;background:var(--sun);padding:3px 11px;border-radius:999px;
-      animation:fbpulse 1.6s ease-in-out infinite;}
-    @keyframes fbpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-    @media (prefers-reduced-motion: reduce){.fb-new{animation:none}}
-    .fb-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;
-      font-size:clamp(16px,2.2vw,18.5px);line-height:1.5;margin-bottom:8px;}
-    .fb-sum{font-size:13.2px;line-height:1.75;opacity:.95;}
-    .fb-cta{display:inline-block;margin-top:auto;padding-top:11px;font-weight:700;font-size:13.5px;
-      border-bottom:1.5px solid rgba(255,255,255,.55);padding-bottom:1px;}
+    .feature-banner.fb-a:hover{box-shadow:0 7px 18px rgba(70,53,38,.28);}
+    .feature-banner.fb-b:hover{box-shadow:0 7px 18px rgba(30,83,68,.28);}
+    .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:6px;}
+    .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:10.5px;
+      letter-spacing:.06em;color:#4d1512;background:#ffe9a8;padding:2px 10px;border-radius:999px;white-space:nowrap;}
+    .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.08em;
+      color:#fff;background:var(--sun);padding:2px 8px;border-radius:999px;}
+    .fb-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;
+      font-size:clamp(13.5px,1.7vw,15px);line-height:1.55;margin:0;}
     #topnews{margin:-38px 0 14px}
     .notice{display:flex;align-items:center;gap:13px;background:#fff8ea;
       border:1px solid #f2dfae;border-radius:14px;padding:13px 18px;margin:0 0 16px;
@@ -78,8 +72,6 @@
         <span class="fb-new">NEW</span>
       </div>
       <div class="fb-title">AIに読ませるため、数百万冊の本が裁断された　そして裁判所は「適法」と判断した</div>
-      <div class="fb-sum">古本屋から本を買い、背表紙を裁断機で切り落とし、スキャン後に紙を処分する。この工程が数百万冊分、秘密裏に繰り返されていました。裁判所は適法と判断しています。それでも批判は収まっていません。</div>
-      <span class="fb-cta">詳しく読む &#8250;</span>
     </a>
     <a href="report-2026-08-ai-content-quality.html" class="feature-banner fb-b">
       <div class="fb-head">
@@ -87,8 +79,6 @@
         <span class="fb-new">NEW</span>
       </div>
       <div class="fb-title">「AIっぽい」と感じた客の半数が去った　ただし、嫌われていたのはAIではなかった</div>
-      <div class="fb-sum">「AIっぽい」と感じた発注担当者の半数が、問い合わせをやめていました。ところが信頼が下がったと答えたのは1割だけ。嫌われているのはAIではありません。制作の仕事に直接効く調査です。</div>
-      <span class="fb-cta">詳しく読む &#8250;</span>
     </a>
   </div>
 
