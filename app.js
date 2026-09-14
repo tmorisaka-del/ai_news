@@ -149,9 +149,19 @@
   }
 
   function renderTop() {
-    // 今日のトップニュース枠は運用方針により廃止（常に非表示）
     var el = document.getElementById("topnews");
-    if (el) { el.style.display = "none"; el.innerHTML = ""; }
+    if (!el) return;
+    var tops = NEWS_DATA.filter(function (n) { return n.topReason; })
+      .sort(function (a, b) { return b.date.localeCompare(a.date); });
+    if (!tops.length) { el.style.display = "none"; el.innerHTML = ""; return; }
+    var n = tops[0];
+    el.style.display = "";
+    el.innerHTML = "" +
+      '<span class="tn-label">☀ 今日のトップニュース</span>' +
+      '<h2>' + esc(n.title) + '</h2>' +
+      '<div class="tn-summary">' + esc(n.summary) + '</div>' +
+      '<div class="tn-reason"><b>注目ポイント：</b>' + esc(n.topReason) + '</div>' +
+      '<div class="tn-src">出典：<a href="' + esc(n.source.url) + '" target="_blank" rel="noopener">' + esc(n.source.label) + '</a></div>';
   }
 
   function renderArchiveList(days) {
