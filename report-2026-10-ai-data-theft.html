@@ -87,7 +87,7 @@
 
     <div class="rp-meta">
       <span class="rp-tag">&#9998; Claude独自編集記事</span>
-      <span class="rp-date">2026年10月9日 作成</span>
+      <span class="rp-date">2026年10月9日 作成／10月10日 追記</span>
     </div>
 
     <h2>AIを経由して情報が盗まれる7つの手口　会話を抜き取る拡張機能は約9万人が入れていた</h2>
@@ -102,6 +102,7 @@
         <li>利用者に落ち度がない手口があります。<strong>攻撃者が文書やWebページに仕込んだ指示を、AIが読んで実行してしまう</strong>ものです。</li>
         <li>調査チームMalExt Sentryは、AIとのやり取りそのものを抜き取る<strong>ブラウザ拡張</strong>を見つけました。約9万人が導入していました。</li>
         <li>別の調査（Outtake）では、AIエージェントの外部とのやり取りを<strong>完全に把握して制御できている組織は4%</strong>でした。</li>
+        <li>今週（10月5〜9日）に公表された漏えいの原因に、AIは挙がっていない。既知の弱点を突くまでの時間と費用は、AIで確実に下がった。</li>
       </ol>
     </div>
 
@@ -191,7 +192,33 @@
       <b>Five Eyesの要請：</b>5か国の機関の長は共同声明で、サイバーリスクはもはや技術部門だけの問題ではなく中核的な事業リスクであり<strong>経営層の責任だ</strong>としました。統制が存在するだけでは足りず、実際の事故の最中にそれが機能すると確信できることを求めています。声明が挙げた実践は、攻撃対象の縮小、修正の迅速化、古いシステムへの対処、アクセス制御の強化、そして<strong>侵害が起きる前提での事前準備</strong>の5点です。
     </div>
 
-    <h3>5. 読むときの注意</h3>
+    <h3>5. 今週の漏えいにAIは挙がっていない　攻撃は速く、安くなった</h3>
+
+    <h4>今週の漏えい</h4>
+    <p>10月5〜9日に公表された漏えいは、手口1〜6に当たらない。会社が公表した原因は、従来型の入口だ。原因にAIを挙げた会社はない。経路が未公表の事案では、AIの使用も確認されていない。手口7（AIが攻撃を動かす）は実在するが、今週の日本の事案と結びつける根拠はない。</p>
+    <table>
+      <tr><th>公表された原因</th><th>事案</th></tr>
+      <tr><td>ソフトウェアの脆弱性・機能の悪用</td><td>GMOリサーチ&amp;AI、ミスターマックス</td></tr>
+      <tr><td>委託先経由</td><td>大和証券</td></tr>
+      <tr><td>認証情報の不正取得</td><td>楽天ドライブ</td></tr>
+      <tr><td>ランサムウェア</td><td>IDCフロンティア</td></tr>
+      <tr><td>経路が未公表</td><td>ブックオフ、NewsPicks、焼肉きんぐ、ローソンID</td></tr>
+    </table>
+
+    <h4>日本だけが狙われているわけではない</h4>
+    <p>日本だけが特別に狙われている証拠はない。同じ型のWebシステムへの侵入は、海外でも増えている。マクニカは海外13の国・地域で99件を確認し、韓国が30件で最多だ。日経は、9月からの約1か月に世界で延べ3億人超の漏えいが公表されたと報じた。</p>
+    <p>日本の数字が高く出る調査はある。LexisNexis Risk Solutionsは、オンライン取引の攻撃率を日本3.1%、世界平均1.6%とした。測っているのは取引への不正で、漏えいの件数ではない。公表件数は報告制度で変わる。日本は個人情報保護法で、一定の漏えいに個人情報保護委員会への報告が義務づけられていて、被害が表に出やすい。警察庁の2026年上半期のランサムウェア被害は123件で半期最多、前年同期の116件から約6%の増加だ。</p>
+
+    <h4>AIで何が変わったか</h4>
+    <p>AIは、既知の弱点を突くまでの時間と費用を確実に下げた。</p>
+    <p><strong>回数。</strong>Gambit Securityが調べた攻撃者は、1標的あたり平均約25ドル（約4000円）で攻撃した。9月10日からの6日間に105件の攻撃を始め、少なくとも27社で侵害を確認している。</p>
+    <p><strong>速さ。</strong>Anthropicのレッドチームは、自社のモデルで、Firefoxの修正済み脆弱性18件のうち8件を、公開された修正の差分だけから約12時間で、コードを実行できるエクスプロイトにした。CrowdStrikeは、手順が公開済みの脆弱性の悪用の88%が、公開から48時間以内だったと報告している。</p>
+    <p><strong>成功率。</strong>OpenAIの自社測定では、ExploitBenchで新モデルが100%、前モデルが78.5%だった。既知の脆弱性を動作するエクスプロイトにできるかを測る試験で、防御された本番環境の成功率ではない。</p>
+    <p>AIは同じ攻撃を繰り返さない。標的ごとに調べて経路を組み立て、失敗すれば別の経路を試す。何万回でも試せるのは、人手が要らないからだ。標的に必要な前提条件がなければ、自律攻撃は失敗する。Unit 42が確認している。</p>
+    <p>弱点のない標的への成功率が上がったことを示す測定は、確認できた範囲にない。測定の大半は開発元の自己測定だ。</p>
+    <p>備えの中身は変わらない。Five Eyesが挙げた攻撃対象の縮小、修正の迅速化、アクセス制御の強化を、速く進める。</p>
+
+    <h3>6. 読むときの注意</h3>
     <p>この記事で扱った事例には、性質の異なるものが混ざっています。IPAの報告書は事例の情報区分を示しており、この記事も同じ区分で整理します。</p>
     <table>
       <tr><th>区分</th><th>該当する事例</th><th>読み方</th></tr>
@@ -211,12 +238,21 @@
         <li>CISA「Five Eyes cyber security agencies statement」（2026年6月23日）<br><a href="https://www.cisa.gov/news-events/news/five-eyes-cyber-security-agencies-statement" target="_blank" rel="noopener">https://www.cisa.gov/news-events/news/five-eyes-cyber-security-agencies-statement</a></li>
         <li>Sysdig「JADEPUFFER: Agentic ransomware for automated database extortion」（2026年7月2日）<br><a href="https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion" target="_blank" rel="noopener">https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion</a></li>
         <li>Vectra「2026年のAI詐欺：その手口と検知方法」／cacco「AIを悪用したサイバー攻撃事例まとめ」（Arupの事例）<br><a href="https://ja.vectra.ai/topics/ai-scams" target="_blank" rel="noopener">https://ja.vectra.ai/topics/ai-scams</a><br><a href="https://cacco.co.jp/frauddetection/media/fraud-access/29118/" target="_blank" rel="noopener">https://cacco.co.jp/frauddetection/media/fraud-access/29118/</a></li>
+        <li>株式会社ウェステリア「2026年の情報漏洩・不正アクセス・ランサムウェア事案一覧」（2026年10月9日時点）<br><a href="https://westeria.jp/security-incidents/2026/" target="_blank" rel="noopener">https://westeria.jp/security-incidents/2026/</a></li>
+        <li>GIGAZINE「自律型AIエージェントが1件あたり激安4000円台で数百のオンラインサイトを延々と攻撃し続けている」（2026年10月7日、Gambit Securityの報告を紹介）<br><a href="https://gigazine.net/news/20261007-ai-agents-autonomous-attack/" target="_blank" rel="noopener">https://gigazine.net/news/20261007-ai-agents-autonomous-attack/</a></li>
+        <li>Anthropic「Measuring LLMs' impact on N-day exploits」（2026年6月9日）<br><a href="https://red.anthropic.com/2026/n-days/" target="_blank" rel="noopener">https://red.anthropic.com/2026/n-days/</a></li>
+        <li>CrowdStrike「2026 Threat Hunting Report」<br><a href="https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/" target="_blank" rel="noopener">https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/</a></li>
+        <li>OpenAI「GPT-6 Astra」<br><a href="https://openai.com/ja-JP/index/gpt-6-astra/" target="_blank" rel="noopener">https://openai.com/ja-JP/index/gpt-6-astra/</a></li>
+        <li>日本経済新聞「不正アクセスが世界で急増、9月以降に情報漏洩3億人 攻撃にAIの影」（2026年10月8日）※会員限定<br><a href="https://www.nikkei.com/article/DGXZQOUC0728W0X01C26A0000000/" target="_blank" rel="noopener">https://www.nikkei.com/article/DGXZQOUC0728W0X01C26A0000000/</a></li>
+        <li>ai-revolution「AIを悪用したサイバー攻撃で情報漏えいが急増？」（マクニカの調査を引用、2026年10月9日）<br><a href="https://ai-revolution.co.jp/media/ai-cyberattacks-japan-data-breaches/" target="_blank" rel="noopener">https://ai-revolution.co.jp/media/ai-cyberattacks-japan-data-breaches/</a></li>
+        <li>FUJISOFT「狙われる日本 ― なぜ狙われるのか？」（LexisNexis Risk Solutionsの2026年版報告を解説）<br><a href="https://www.fsi.co.jp/blog/15921/" target="_blank" rel="noopener">https://www.fsi.co.jp/blog/15921/</a></li>
+        <li>ai-toptier「サイバー攻撃は日本だけ？止まらない被害を世界の統計と事例で調べてみた」（警察庁の2026年上半期の統計を引用）<br><a href="https://www.ai-toptier.com/blog-post/cyberattack-japan-world-statistics" target="_blank" rel="noopener">https://www.ai-toptier.com/blog-post/cyberattack-japan-world-statistics</a></li>
         <li>本ページ掲載の記事（RIZAPの事例、2026年9月4日）</li>
       </ul>
     </div>
 
     <div class="rp-disc">
-      この記事は、IPAが公表した報告書と各社の公表資料をもとに、Claudeが社内向けに整理・編集したものです。<strong>攻撃の再現手順は記載していません。</strong>仕組みの説明は、防ぐ側が何に備えるかを判断するために必要な範囲にとどめています。本文で名前の挙がっているAnthropicは、このページを書いているClaudeの開発元であり、第2章の手口4では自社サービスが悪用された側、第4章では対策の手引きを出した側として登場します。事例には実被害が観測されたものと検証環境での実証が混在しており、第5章に区分を示しました。2026年10月9日時点の情報です。
+      この記事は、IPAが公表した報告書と各社の公表資料をもとに、Claudeが社内向けに整理・編集したものです。<strong>攻撃の再現手順は記載していません。</strong>仕組みの説明は、防ぐ側が何に備えるかを判断するために必要な範囲にとどめています。本文で名前の挙がっているAnthropicは、このページを書いているClaudeの開発元であり、第2章の手口4では自社サービスが悪用された側、第4章では対策の手引きを出した側として登場します。事例には実被害が観測されたものと検証環境での実証が混在しており、第6章に区分を示しました。2026年10月9日時点の情報です。第5章は10月10日に追記しました。
     </div>
 
     <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
