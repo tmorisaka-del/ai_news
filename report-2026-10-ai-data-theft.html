@@ -98,11 +98,11 @@
     <div class="rp-points">
       <span class="pt-title">この記事の要点</span>
       <ol>
-        <li>AIの導入で社内のID（アカウント）数が大きく増えた組織の侵害率は<strong>43%</strong>でした。増えていない組織は11%でした（Netwrix調査）。</li>
+        <li>AIの利用で、AI用のアカウントが大きく増えた組織の過去1年の侵害率は<strong>43%</strong>でした。増えていない組織は11%でした（Netwrix調査）。</li>
         <li>利用者に落ち度がない手口があります。<strong>攻撃者が文書やWebページに仕込んだ指示を、AIが読んで実行してしまう</strong>ものです。</li>
-        <li>調査チームMalExt Sentryは、AIとのやり取りそのものを抜き取る<strong>ブラウザ拡張</strong>を見つけました。約9万人が導入していました。</li>
+        <li>小さなオープンソースの調査プロジェクトMalExt Sentryは、AIとのやり取りそのものを抜き取る<strong>ブラウザ拡張</strong>を見つけました。約9万人が導入していました。</li>
         <li>別の調査（Outtake）では、AIエージェントの外部とのやり取りを<strong>完全に把握して制御できている組織は4%</strong>でした。</li>
-        <li>今週（10月5〜9日）に公表された漏えいの原因に、AIは挙がっていない。既知の弱点を突くまでの時間と費用は、AIで確実に下がった。</li>
+        <li>今週（10月5〜9日）に公表された漏えいの原因に、AIは挙がっていない。公開済みの脆弱性を悪用して侵入するまでの時間と費用は、AIで確実に下がった。</li>
       </ol>
     </div>
 
@@ -116,16 +116,19 @@
         <div class="g-row"><dt>認証情報</dt><dd>システムに入るための鍵にあたる情報。利用者名とパスワード、接続用の符号などを指します。</dd></div>
         <div class="g-row"><dt>サプライチェーン攻撃</dt><dd>取引先や、業務で使う部品・ソフトの配布元を侵害し、その先の利用者へ被害を広げる攻撃。</dd></div>
         <div class="g-row"><dt>egress制御</dt><dd>社内から外部へ出ていく通信を、許可した宛先だけに限る仕組みのこと。</dd></div>
+        <div class="g-row"><dt>脆弱性</dt><dd>ソフトウェアの欠陥のこと。攻撃者はここから侵入する。修正版が出るまで、公開された欠陥は狙われる。</dd></div>
+        <div class="g-row"><dt>エクスプロイト</dt><dd>脆弱性を突いて侵入するための、攻撃用のプログラム。</dd></div>
       </dl>
     </div>
 
     <h3>1. まず規模を確かめる</h3>
-    <p>セキュリティ企業Netwrixが2026年初めに世界1,889組織・2,317人の専門家へ行った調査で、次の差が出ました。</p>
+    <p>Netwrix社が2026年初めに世界1,889組織・2,317人の専門家へ行った調査で、次の差が出ました。</p>
     <div class="rp-figs">
-      <div class="rp-fig"><span class="f-num">43%</span><span class="f-lab">AI導入でアカウント数が大きく増えた組織の過去1年の侵害率</span></div>
-      <div class="rp-fig"><span class="f-num">11%</span><span class="f-lab">AI導入がアカウント構成に影響していない組織の侵害率</span></div>
+      <div class="rp-fig"><span class="f-num">43%</span><span class="f-lab">AIでアカウントが大きく増えた組織の過去1年の侵害率</span></div>
+      <div class="rp-fig"><span class="f-num">11%</span><span class="f-lab">AIがアカウント構成に影響していない組織の侵害率</span></div>
       <div class="rp-fig"><span class="f-num">4%</span><span class="f-lab">別の調査（Outtake）：AIエージェントの外部連携を完全に把握し制御できている組織</span></div>
     </div>
+    <p>AIでアカウントが増えるのは、社員が増えるからではない。AIエージェント（人に代わって作業を進めるAI）やCopilotを使うには、会社がそのためのアカウントを作る必要がある。このアカウントが、社員に代わってメール、ファイル、社内システムへアクセスする。Netwrix社は、人ではないアカウントを「非人間ID」と呼び、増え方が最も速いのはAIエージェントだと説明している。非人間IDを十分に管理できていない組織は76%だった。Netwrix社はアカウントとデータの管理を守る製品を売る会社で、調査の対象もその分野だ。</p>
     <p>同社CEOのGrady Summers氏は、この4倍の差を管理の成熟度では説明できないと述べています。同氏は、AIを導入した組織のほうが、データの棚卸しや社内のシャドーAIの把握といった基本項目ではむしろ先行していたと説明しています。</p>
     <p>Outtakeの支援でCybersecurity Insidersが行った調査では、意思決定者1,138人のうち<strong>47%が、経営層や自社ブランドを装う音声クローンや偽動画を確認または疑った</strong>と答えています（確認18%、疑い29%）。同じ調査で、AIエージェントの外部とのやり取りを完全に把握し制御できていると答えたのは4%でした。</p>
 
@@ -136,7 +139,7 @@
     <p>攻撃者がAIの読む文書に指示を仕込む手口です。AIを使う人が不正な操作をしていなくても成立します。</p>
     <div class="rp-case">
       <p><strong>Microsoft 365 Copilotの事例（SearchLeak）</strong><br>
-      セキュリティ企業Varonisが2026年6月15日に公表した研究結果です。細工されたリンクを<strong>利用者がクリックするだけ</strong>で、Copilotが本人の権限でメールを検索し、その中身を画像の読み込み先に埋め込んで外部へ送ってしまう連鎖を実証しました。対象はメール、認証コード、予定表、SharePoint、OneDriveの内容です。Microsoftは修正済みで、CVE-2026-42824を採番し、利用者側の対応は不要としています。Varonisによれば、Microsoftは最大の重大度を付けましたが、MSRCの掲載値は基本値6.5です。実際に悪用された被害は、IPAの報告書に記載がありません。</p>
+      セキュリティ企業Varonisが2026年6月15日に公表した研究結果です。細工されたリンクを<strong>利用者がクリックするだけ</strong>で、Copilotが本人の権限でメールを検索し、その中身を画像の読み込み先に埋め込んで外部へ送ってしまう連鎖を実証しました。対象はメール、認証コード、予定表、SharePoint、OneDriveの内容です。Microsoftは修正済みで、利用者側の対応は不要としています。実際に悪用された被害は、IPAの報告書に記載がありません。</p>
     </div>
     <div class="rp-case">
       <p><strong>GitHubの事例（GitLost）</strong><br>
@@ -147,7 +150,8 @@
     </div>
 
     <h4>手口2　AIとの会話そのものを抜き取られる</h4>
-    <p>調査チームMalExt Sentryが2026年6月13日に公表した事例です。広告ブロッカーを装うブラウザ拡張2件が、<strong>ChatGPT、Claude、Gemini、Copilotなど8つのサービスの会話全文を複製し、運営者のサーバへ送信していました。</strong>利用者数は合わせて約9万人です。</p>
+    <p>MalExt Sentryが2026年6月13日に公表した事例です。MalExt Sentryは会社ではない。GitHubのユーザー名 toborrm9 が公開している、小さなオープンソースのプロジェクトだ。ブラウザ拡張の不正を検出する無料ツールと、不正な拡張のデータベースを公開している。ツールのChromeストアでの利用者は878人だった（調査時点）。報告は海外の複数のメディアが伝え、IPAも報告書に収録した。拡張機能のストア運営者や別の調査機関による確認は、この記事の調査では見つからなかった。</p>
+    <p>広告ブロッカーを装うブラウザ拡張2件が、<strong>ChatGPT、Claude、Gemini、Copilotなど8つのサービスの会話全文を複製し、運営者のサーバへ送信していました。</strong>利用者数は合わせて約9万人です。</p>
     <p>このとき、会話IDやモデル名、契約区分も一緒に送っていました。MalExt Sentryは、利用者への説明が導入時の一般的な文言にとどまり、<strong>Firefox版は「データ収集なし」と宣言しながら、実際には同等の収集機能を積んでいた</strong>と指摘しています。</p>
 
     <h4>手口3　AI開発ツールの認証情報が狙われる</h4>
@@ -210,12 +214,12 @@
     <p>日本の数字が高く出る調査はある。LexisNexis Risk Solutionsは、オンライン取引の攻撃率を日本3.1%、世界平均1.6%とした。測っているのは取引への不正で、漏えいの件数ではない。公表件数は報告制度で変わる。日本は個人情報保護法で、一定の漏えいに個人情報保護委員会への報告が義務づけられていて、被害が表に出やすい。警察庁の2026年上半期のランサムウェア被害は123件で半期最多、前年同期の116件から約6%の増加だ。</p>
 
     <h4>AIで何が変わったか</h4>
-    <p>AIは、既知の弱点を突くまでの時間と費用を確実に下げた。</p>
+    <p>AIは、すでに公開された脆弱性を悪用して侵入するまでの時間と費用を、確実に下げた。</p>
     <p><strong>回数。</strong>Gambit Securityが調べた攻撃者は、1標的あたり平均約25ドル（約4000円）で攻撃した。9月10日からの6日間に105件の攻撃を始め、少なくとも27社で侵害を確認している。</p>
-    <p><strong>速さ。</strong>Anthropicのレッドチームは、自社のモデルで、Firefoxの修正済み脆弱性18件のうち8件を、公開された修正の差分だけから約12時間で、コードを実行できるエクスプロイトにした。CrowdStrikeは、手順が公開済みの脆弱性の悪用の88%が、公開から48時間以内だったと報告している。</p>
-    <p><strong>成功率。</strong>OpenAIの自社測定では、ExploitBenchで新モデルが100%、前モデルが78.5%だった。既知の脆弱性を動作するエクスプロイトにできるかを測る試験で、防御された本番環境の成功率ではない。</p>
-    <p>AIは同じ攻撃を繰り返さない。標的ごとに調べて経路を組み立て、失敗すれば別の経路を試す。何万回でも試せるのは、人手が要らないからだ。標的に必要な前提条件がなければ、自律攻撃は失敗する。Unit 42が確認している。</p>
-    <p>弱点のない標的への成功率が上がったことを示す測定は、確認できた範囲にない。測定の大半は開発元の自己測定だ。</p>
+    <p><strong>速さ。</strong>Anthropicのレッドチームは、自社のモデルで、Firefoxの修正済みの脆弱性18件のうち8件を、修正前と修正後の違いだけから約12時間で、外部から命令を実行できるエクスプロイトにした。CrowdStrikeは、手順が公開済みの脆弱性の悪用の88%が、公開から48時間以内だったと報告している。</p>
+    <p><strong>成功率。</strong>OpenAIの自社測定では、ExploitBenchで新モデルが100%、前モデルが78.5%だった。公開済みの脆弱性から、実際に動くエクスプロイトを作れるかを測る試験だ。守りを固めた本番環境での成功率ではない。</p>
+    <p>AIは同じ攻撃を繰り返さない。標的ごとに調べて経路を組み立て、失敗すれば別の経路を試す。何万回でも試せるのは、人手が要らないからだ。攻撃に必要な条件が標的になければ、AIの自律攻撃は失敗する。Unit 42が確認している。</p>
+    <p>この記事の調査では、欠陥のない標的がAIで破られやすくなったことを示す測定は見つからなかった。測定の大半は、AIの開発元が自社で測ったものだ。</p>
     <p>備えの中身は変わらない。Five Eyesが挙げた攻撃対象の縮小、修正の迅速化、アクセス制御の強化を、速く進める。</p>
 
     <h3>6. 読むときの注意</h3>
@@ -224,9 +228,9 @@
       <tr><th>区分</th><th>該当する事例</th><th>読み方</th></tr>
       <tr><td>実際の被害や悪用が観測されたもの</td><td>PromptSnatcher、偽広告、CHAINDROP、RIZAP、JADEPUFFER、Arupの偽ビデオ会議</td><td>すでに起きています</td></tr>
       <tr><td>研究者が欠陥を見つけて公表し、修正済みのもの</td><td>SearchLeak</td><td>実被害の記載は、IPAの報告書にありません</td></tr>
-      <tr><td>研究者の検証環境での再現</td><td>GitLost</td><td>条件が揃えば成立しますが、実被害の報告はありません</td></tr>
+      <tr><td>研究者の検証環境での再現</td><td>GitLost</td><td>検証環境で成立した。実被害の事案ではない</td></tr>
     </table>
-    <p>GitLostについてNoma Labsは、対象組織が当該機能を運用し、特定の権限の組み合わせを設定している場合に限ると条件を明記しています。<strong>すべての組織が今すぐ危ないという話ではありません。</strong></p>
+    <p>GitLostが成立する条件は、GitHubのAIエージェント機能（Agentic Workflows）を使い、投稿の内容を読んで動くエージェントに、組織内の他のリポジトリを読む権限と、コメントを書く権限を同時に渡している設定だ。Noma Labsがこの条件を明記している。<strong>読む権限と書く権限を、同じAIエージェントに同時に渡していないか、確認する。</strong></p>
 
     <div class="rp-src">
       <span class="s-title">出典</span>
@@ -247,6 +251,8 @@
         <li>ai-revolution「AIを悪用したサイバー攻撃で情報漏えいが急増？」（マクニカの調査を引用、2026年10月9日）<br><a href="https://ai-revolution.co.jp/media/ai-cyberattacks-japan-data-breaches/" target="_blank" rel="noopener">https://ai-revolution.co.jp/media/ai-cyberattacks-japan-data-breaches/</a></li>
         <li>FUJISOFT「狙われる日本 ― なぜ狙われるのか？」（LexisNexis Risk Solutionsの2026年版報告を解説）<br><a href="https://www.fsi.co.jp/blog/15921/" target="_blank" rel="noopener">https://www.fsi.co.jp/blog/15921/</a></li>
         <li>ai-toptier「サイバー攻撃は日本だけ？止まらない被害を世界の統計と事例で調べてみた」（警察庁の2026年上半期の統計を引用）<br><a href="https://www.ai-toptier.com/blog-post/cyberattack-japan-world-statistics" target="_blank" rel="noopener">https://www.ai-toptier.com/blog-post/cyberattack-japan-world-statistics</a></li>
+        <li>MalExt Sentry「PromptSnatcher: AdBlocker stealing AI Chats」（2026年6月13日）<br><a href="https://malext.io/reports/PromptSnatcher/" target="_blank" rel="noopener">https://malext.io/reports/PromptSnatcher/</a></li>
+        <li>Netwrix「2026 Data and Identity Security Report」／Cybersecurity Dive「Companies are failing to keep up with AI's identity sprawl」<br><a href="https://netwrix.com/en/resources/research/2026-data-and-identity-security-report/" target="_blank" rel="noopener">https://netwrix.com/en/resources/research/2026-data-and-identity-security-report/</a><br><a href="https://www.cybersecuritydive.com/news/ai-identity-security-visibility-gaps-netwrix/822491/" target="_blank" rel="noopener">https://www.cybersecuritydive.com/news/ai-identity-security-visibility-gaps-netwrix/822491/</a></li>
         <li>本ページ掲載の記事（RIZAPの事例、2026年9月4日）</li>
       </ul>
     </div>
