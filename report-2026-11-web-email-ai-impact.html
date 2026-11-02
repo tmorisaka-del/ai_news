@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebマーケティングはAIで打撃を受けたのか　検索からの訪問は減ったが、広告費は伸びている　メールは、開封率が当てにならなくなった｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=11">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#9c2d2d;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #9c2d2d}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15.5px;color:#9c2d2d;margin:24px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#9c2d2d}
+  .rp-points{background:#f8ecec;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #ecd4d4;border-left:5px solid #9c2d2d;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp-case{border:1px solid var(--line);border-left:4px solid #9c2d2d;border-radius:0 12px 12px 0;
+    padding:4px 20px 12px;margin:14px 0;background:#fdfafa}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.3px}
+  .rp th,.rp td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#f8ecec;font-weight:700;color:#1e4756;font-size:12.8px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#9c2d2d;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#9c2d2d;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#9c2d2d}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1><a href="./" title="トップページへ戻る" style="color:inherit;text-decoration:none">AIニュースまとめ！（社内版）</a></h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+        <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年11月2日 作成</span>
+    </div>
+
+    <h2>WebマーケティングはAIで打撃を受けたのか　検索からの訪問は減ったが、広告費は伸びている　メールは、開封率が当てにならなくなった</h2>
+    <div class="rp-lead">
+      結論から書きます。打撃を受けた部分と、受けていない部分が、混ざっています。Webマーケティングでは、検索からの訪問が減りました。一方、日本のネット広告費は、2025年に10.8%増えました。メールマーケティングでは、開封率という物差しが、当てにならなくなりました。メールの収益が減ったというデータは、見つかりませんでした。この記事は、両方の証拠を並べます。メールの調査の多くは、メール配信サービスの会社のものです。数字の出どころの限界も、書きます。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>打撃を受けているのは、情報を調べる検索からの訪問です。AIの要約が出ると、検索結果のリンクを押す人は、15%から8%に減りました（Pew Research Center）。出版社のGoogle検索からの訪問は、1年で世界で33%減りました（ロイター研究所）。日本では、AIの概要が出る情報収集型の検索で、1位のページのクリック率が62.7%下がったという推計があります（Ahrefs）。</li>
+        <li>広告費は、減っていません。日本のネット広告費は、2025年に4兆459億円で、前年から10.8%増え、総広告費の過半数になりました（電通）。Googleの検索関連の売上は、2026年7〜9月期に12%増でした。ただし、伸び率は、19%、17%、12%と、3四半期続けて鈍っています。</li>
+        <li>AI経由の訪問は、量が小さく、成果は割れます。検索からの訪問は、AIアシスタントからの訪問の39倍でした。成果の件数は、検索が100件に対して、AIが3.2件です（SEOWorks）。AI経由のほうが成果率の高いサイトが多い一方、37%のサイトでは、低くなりました。</li>
+        <li>メールで打撃を受けたのは、開封率です。AppleのMail Privacy Protectionは、開封の数を15〜20ポイント水増しします（Klaviyo）。Gmailは、2026年1月に、AIによる要約とAI Inboxを導入しました。開封の数は、人が読んだ数の目安になりません。</li>
+        <li>メールの収益が減ったというデータは、見つかりませんでした。Litmusの2026年版の調査（マーケティング担当者500人超）では、投資1ドルあたりの収益が、平均36ドルでした。ただし、これは自己申告の数字です。AIを深く取り入れた組織は、12%でした。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>検索連動型広告</dt><dd>検索した言葉に合わせて、検索結果に表示される広告。リスティング広告とも呼びます。</dd></div>
+        <div class="g-row"><dt>クリック率（CTR）</dt><dd>表示された回数のうち、実際にクリックされた割合。</dd></div>
+        <div class="g-row"><dt>開封率</dt><dd>送ったメールのうち、開かれた割合。開封は、メールに埋め込んだ小さな画像が読み込まれたことで数えます。</dd></div>
+        <div class="g-row"><dt>Mail Privacy Protection</dt><dd>Appleのメールアプリの機能。送られてきたメールの画像を、利用者が開く前に自動で読み込みます。そのため、開封の数が増えて見えます。</dd></div>
+        <div class="g-row"><dt>AI Inbox</dt><dd>Gmailの新しい受信箱の表示。AIが、今日対応すべきメールを選び、受信箱の上部に表示します。</dd></div>
+        <div class="g-row"><dt>送信ドメイン認証</dt><dd>送信元のドメインが本物であることを、受信側が確かめるための設定。SPF、DKIM、DMARCがあります。</dd></div>
+        <div class="g-row"><dt>ROI（投資収益率）</dt><dd>かけた費用に対して、得られた成果の割合。</dd></div>
+      </dl>
+    </div>
+    <h3>1. 打撃を受けた部分と、受けていない部分　先に結論の表</h3>
+    <p>「打撃を受けたか」への答えは、何を指すかで変わります。この記事は、次の表のとおり、領域ごとに分けて見ます。</p>
+    <table>
+      <tr><th>領域</th><th>打撃の有無</th><th>根拠</th></tr>
+      <tr><td>Web：検索からの訪問（情報収集型）</td><td>打撃あり</td><td>クリックが減っている。日本でも、推計で6割低下</td></tr>
+      <tr><td>Web：広告費</td><td>打撃は確認できない</td><td>日本のネット広告費は10.8%増。ただし、Googleの検索広告の伸びは鈍化</td></tr>
+      <tr><td>Web：AI経由の訪問</td><td>まだ小さい</td><td>検索の39倍の差。成果率は、サイトによって割れる</td></tr>
+      <tr><td>メール：開封率</td><td>打撃あり</td><td>物差しとして当てにならない</td></tr>
+      <tr><td>メール：収益</td><td>減ったという証拠は、見つからなかった</td><td>自己申告のROIは高い。ただし、調査の多くは、配信会社のもの</td></tr>
+    </table>
+    <h3>2. 打撃を受けているのは、調べものの検索からの訪問　Pew、ロイター研究所、Ahrefs</h3>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">15%→8%</span><span class="f-lab">AIの要約が出ると、通常のリンクを押す割合が下がった（Pew、米国、2025年3月）</span></div>
+      <div class="rp-fig"><span class="f-num">33%減</span><span class="f-lab">出版社のGoogle検索からの訪問。2024年11月から1年（ロイター研究所、世界）</span></div>
+      <div class="rp-fig"><span class="f-num">62.7%低下</span><span class="f-lab">AIの概要が出る情報収集型の検索で、1位のページのクリック率（Ahrefs、日本、2026年6月、推計）</span></div>
+    </div>
+    <p>検索からの訪問が減っていることは、複数の調査で確認できます。詳しくは、11月2日に公開した記事「Reddit株が29%下がった理由」にまとめました。</p>
+    <p>ロイター研究所は、減った分のうち、AIの概要がどれだけかは、はっきりしないと書いています。Googleは、検索のクリックの総数は、比較的安定していると、説明しています。それでも、情報を調べる検索で、サイトに来る人が減っていることは、調査の数字が一致しています。</p>
+    <h3>3. 広告費は、減っていない　日本は10.8%増、Googleの検索広告は12%増</h3>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">4兆459億円</span><span class="f-lab">2025年の日本のネット広告費。前年から10.8%増。総広告費の50.2%で、初めて過半数（電通）</span></div>
+      <div class="rp-fig"><span class="f-num">1兆2,814億円</span><span class="f-lab">2025年の検索連動型広告費。前年から7.4%増（電通）</span></div>
+      <div class="rp-fig"><span class="f-num">12%増</span><span class="f-lab">Googleの検索関連の売上。2026年7〜9月期、633.5億ドル。前期は17%増、前々期は19%増（Alphabet）</span></div>
+    </div>
+    <p>電通の「2025年 日本の広告費」によると、総広告費は8兆623億円で、前年から5.1%増えました。ネット広告費は、4兆459億円で、初めて4兆円を超えました。検索連動型広告費は、1兆2,814億円で、ネット広告の媒体費の38.7%を占めます。電通は、2026年のネット広告の媒体費を、3兆5,840億円（8.3%増）と予測しています。</p>
+    <p>Alphabetの2026年7〜9月期の決算は、10月28日に発表されました。検索関連の売上は、633.5億ドルで、前年同期から12%増えました。ただし、前の四半期（633.3億ドル）とは、ほぼ同じ金額です。伸び率は、19%、17%、12%と、鈍っています。</p>
+    <p>Googleの幹部は、AIモードの広告の収益化が、従来の検索より低いことが、伸びを抑えた理由の1つだと述べました。為替の影響なども挙げています。検索への質問の数は、前年から過去5年で最も大きく増えたと、ピチャイCEOは説明しています。Googleは、AIモードの質問の多くは、追加の質問だと説明しています。</p>
+    <p>外部のサイトやアプリの広告枠を使うGoogle Networkの売上は、74.6億ドルで、約1%増でした。サイトに広告を載せて収入を得る会社にとっては、検索広告と、別の動きです。Metaの広告売上は、同じ四半期に26%増でした。</p>
+    <h3>4. AI経由の訪問は、検索の39分の1　成果率は高い傾向があるが、サイトによって割れる</h3>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">39倍</span><span class="f-lab">検索からの訪問は、AIアシスタントからの訪問の39倍（SEOWorks）</span></div>
+      <div class="rp-fig"><span class="f-num">100対3.2</span><span class="f-lab">検索が100件の成果を出す間に、AIは3.2件（SEOWorks）</span></div>
+      <div class="rp-fig"><span class="f-num">37%</span><span class="f-lab">AI経由のほうが、成果率が低かったサイトの割合（SEOWorks）</span></div>
+    </div>
+    <p>イギリスのSEO会社SEOWorksは、2025年9月から2026年4月の、複数のサイトのデータを比べました。AI経由の訪問の成果率は7.18%で、検索の6.08%を上回りました。しかし、成果の件数は、検索が15万5,605件、AI経由が5,001件でした。</p>
+    <p>B2Bの製品を売るサイトでは、AI経由の成果率は、検索の0.62倍でした。37%のサイトでは、AI経由のほうが低くなりました。SEOWorksは、検索を5%改善すれば、AI経由の訪問を2倍にするより、成果が増えると計算しています。</p>
+    <p>別のSEO会社の資料には、AI経由の成果率が、検索の4〜5倍という数字もあります。これらは、特定のサイトや業種のデータです。SEOツールの会社が、AI対策の需要を示すために出す数字でもあります。サイトの種類によって、結果は割れます。</p>
+    <h3>5. メールで打撃を受けたのは、開封率という物差し　AppleとGmailの変化</h3>
+    <p>開封率は、メールに埋め込んだ小さな画像が読み込まれたかどうかで、数えます。AppleのMail Privacy Protectionは、メールが届くと、画像を自動で読み込みます。Klaviyoの2026年のレポートによると、この機能は、記録される開封の数を、15〜20ポイント水増しします。このため、開封率を主な成果の指標にしている担当者は、15%にとどまります（Litmusの2026年の調査）。</p>
+    <p>Googleは、2026年1月8日に、Gmailを「Gemini時代」に入れると発表しました。長いメールのやり取りを要約する「AIによる概要」は、無料の利用者にも提供されます。「AI Inbox」は、今日対応すべきメールを選んで、受信箱の上部に表示します。頻繁にやり取りする相手からの連絡、支払いの期限、予約、配送の通知が、対象です。AI Inboxは、最初は有料プランの利用者向けで、米国の英語から始まりました。日本での提供の時期は、確認できていません。</p>
+    <p>配信サービスの会社のブログは、Gmailの刷新のあとに、クリック率が4.35%から3.93%に下がったと、紹介しています。しかし、元の調査を確認できませんでした。Gmailが、要約を作るために、メールを自動で開いて、開封の数を水増ししているという説明も、複数のブログにあります。Googleの公式の説明では、確認できていません。この記事では、事実として扱いません。</p>
+    <p>Gmail、Yahoo、Microsoftは、送信ドメイン認証を満たさない大量配信のメールを、拒否する運用を強めています。解説記事によると、Microsoftは2025年5月に、Gmailは2025年11月に、非準拠のメールを拒否し始めました。AIとは別の理由で、送り手に求められる条件が、厳しくなっています。</p>
+    <h3>6. メールの収益が減ったという証拠は、見つからなかった　Litmusの調査と、その限界</h3>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">36ドル</span><span class="f-lab">メールに1ドルをかけたときの、収益の平均。マーケティング担当者の自己申告（Litmus、2026年）</span></div>
+      <div class="rp-fig"><span class="f-num">75%</span><span class="f-lab">AIを深く取り入れた組織が、ROI 45対1を超える可能性の高さ。ほかの組織より75%高い</span></div>
+      <div class="rp-fig"><span class="f-num">12%</span><span class="f-lab">AIをメールの運用に、深く取り入れている組織の割合</span></div>
+    </div>
+    <p>Litmusの「State of Email 2026」は、マーケティング担当者500人超への調査です。対象は、米国、英国、オーストラリア、ニュージーランドです。2026年4月に公表されました。メールの収益の平均は、1ドルあたり36ドルで、同社が比べたチャネルの中で、最も高い数字です。35%のプログラムは、10〜36ドルでした。30%は36〜50ドル、約5%は50ドル以上です。</p>
+    <p>AIを深く取り入れた組織は、ROIが45対1を超える可能性が、75%高くなっています。ただし、そのように答えた組織は、全体の12%です。Klaviyoの2026年のレポートによると、自動配信のメール（カゴ落ちなど）は、送信数の5.3%で、メール売上の41%を生んでいます。</p>
+    <p>注意があります。第1に、36ドルは、マーケティング担当者が自分で答えた数字です。第2に、この数字は、Litmusの案内ページで、調査の年が書かれていないという指摘があります。業種別の数字は、2020年の調査のものだとされています。第3に、メールの調査の多くは、配信ツールの会社が出しています。メールの収益が減ったことを示す調査は、見つかりませんでした。減っていないことが証明されたわけでもありません。</p>
+    <h3>7. 担当者が確かめること　Webで5つ、メールで4つ</h3>
+    <p>次の9つは、この記事の数字をもとに、編集部が整理した確認項目です。</p>
+    <p><strong>Webマーケティング</strong></p>
+    <ol>
+      <li><b>検索からの訪問を、ページの種類で分けて見る。</b>調査で低下が大きいのは、情報収集型の検索です。購入や問い合わせにつながるページとは、分けて数えます。</li>
+      <li><b>検索広告は、クリック数ではなく、成果の単価で見る。</b>検索広告の売上は、伸びが鈍っています。AIモードの広告の収益化も、変わりつつあります。</li>
+      <li><b>AI経由の訪問を、アクセス解析で別に数える。</b>量は小さいので、成果の件数で、検索と比べます。成果率だけで、判断しません。</li>
+      <li><b>検索の表示回数とクリック数を、別々に見る。</b>順位が変わらずに、クリック率だけが下がっていないかを、Search Consoleで確かめます。</li>
+      <li><b>検索以外の接点を、持つ。</b>メールマガジン、LINE、会員登録、セミナーなどです。</li>
+    </ol>
+    <p><strong>メールマーケティング</strong></p>
+    <ol>
+      <li><b>開封率を、成果の指標にしない。</b>クリック数、返信の数、1通あたりの売上で見ます。Litmusの調査では、開封率を主な指標にしているのは、15%です。</li>
+      <li><b>送信ドメイン認証（SPF、DKIM、DMARC）を、確認する。</b>大量配信の送り手に、認証を求める運用が強まっています。</li>
+      <li><b>件名の先頭と、本文の最初の数行に、要点を書く。</b>AIが要約や抽出をするとき、最初の部分が使われやすいという説明が、配信会社のブログにあります。確かな根拠は、確認できていません。自社の配信で、試して確かめます。</li>
+      <li><b>自社のメールが、Gmailでどう表示されるかを、確かめる。</b>AIによる概要やAI Inboxで、どう扱われるかは、日本では、まだ分かっていません。自分の受信箱で、実際に確認します。</li>
+    </ol>
+    <h3>8. この記事の数字は、出どころで性質が違う</h3>
+    <table>
+      <tr><th>出どころ</th><th>何の数字か</th><th>注意点</th></tr>
+      <tr><td>電通</td><td>日本の広告費の推定</td><td>広告主が投じた金額の推定。広告の効果ではない</td></tr>
+      <tr><td>Alphabet</td><td>決算の公表数字</td><td>Google自身の発表。検索広告の売上であり、広告主の成果ではない</td></tr>
+      <tr><td>Pew、ロイター研究所（Chartbeat）</td><td>検索のクリック、出版社の訪問</td><td>米国の検索、ニュースサイトのデータ。一般の企業サイトとは違う可能性がある</td></tr>
+      <tr><td>Ahrefs</td><td>日本の検索1位のクリック率</td><td>予測と実測の差から出した推計。SEOツールを売る会社</td></tr>
+      <tr><td>SEOWorks</td><td>サイトごとの、AI経由と検索の成果</td><td>特定の複数サイトのデータ。SEO会社の資料</td></tr>
+      <tr><td>Litmus、Klaviyo</td><td>メールのROI、開封の水増し、自動配信の売上</td><td>マーケティング担当者の自己申告と、配信ツール会社のデータ。収益が減ったかどうかは、分からない</td></tr>
+      <tr><td>配信サービス会社のブログ</td><td>Gmailの刷新後のクリック率</td><td>元の調査を確認できない。この記事では、事実として扱わない</td></tr>
+    </table>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>電通「2025年 日本の広告費」（2026年3月5日）<br><a href="https://www.dentsu.co.jp/news/release/2026/0305-011003.html" target="_blank" rel="noopener">https://www.dentsu.co.jp/news/release/2026/0305-011003.html</a></li>
+        <li>ネットショップ担当者フォーラム「【2025年ネット広告の内訳】動画広告は1兆円突破…」（電通グループ4社の分析、2026年3月12日）<br><a href="https://netshop.impress.co.jp/n/2026/03/12/15729" target="_blank" rel="noopener">https://netshop.impress.co.jp/n/2026/03/12/15729</a></li>
+        <li>日本経済新聞「日本の広告費、25年は初の8兆円超え　ネット広告が過半に」（2026年3月）<br><a href="https://www.nikkei.com/article/DGXZQOUC0242O0S6A300C2000000/" target="_blank" rel="noopener">https://www.nikkei.com/article/DGXZQOUC0242O0S6A300C2000000/</a></li>
+        <li>Relevant Audience「Alphabet Q3 2026: Search +12%, AI Mode monetization lower」（決算の公表数字と電話会見の紹介、2026年10月28日）<br><a href="https://www.relevantaudience.com/google-ads-en/alphabet-q3-2026-search-revenue-ai-mode-monetization/" target="_blank" rel="noopener">https://www.relevantaudience.com/google-ads-en/alphabet-q3-2026-search-revenue-ai-mode-monetization/</a></li>
+        <li>MDM「Alphabet Q3 2026 earnings: AI Mode's monetization penalty」（Metaの広告売上の伸びを含む、2026年10月）<br><a href="https://mdm.co/alphabet-q3-2026-earnings-ai-modes-monetization-penalty/" target="_blank" rel="noopener">https://mdm.co/alphabet-q3-2026-earnings-ai-modes-monetization-penalty/</a></li>
+        <li>Yahoo Finance「Alphabet Q3 Earnings Call Highlights」（2026年10月）<br><a href="https://finance.yahoo.com/markets/stocks/articles/alphabet-q3-earnings-call-highlights-050416594.html" target="_blank" rel="noopener">https://finance.yahoo.com/markets/stocks/articles/alphabet-q3-earnings-call-highlights-050416594.html</a></li>
+        <li>PPC Land「Google disputes Pew study showing AI Overviews reduce clicks by half」（Pew Research Centerの調査（2025年7月公表）とGoogleの反論）<br><a href="https://ppc.land/google-disputes-pew-study-showing-ai-overviews-reduce-clicks-by-half/" target="_blank" rel="noopener">https://ppc.land/google-disputes-pew-study-showing-ai-overviews-reduce-clicks-by-half/</a></li>
+        <li>Digital Content Next「The evidence is clear: AI search is costing publishers」（ロイター研究所の報告書の紹介、2026年10月5日）<br><a href="https://digitalcontentnext.org/blog/2026/10/05/the-evidence-is-clear-ai-search-is-costing-publishers/" target="_blank" rel="noopener">https://digitalcontentnext.org/blog/2026/10/05/the-evidence-is-clear-ai-search-is-costing-publishers/</a></li>
+        <li>Ahrefs プレスリリース「AIによる概要のCTR低下が半年で加速、日本は検索1位でも62.7%減に」（2026年7月22日）<br><a href="https://prtimes.jp/main/html/rd/p/000000061.000157671.html" target="_blank" rel="noopener">https://prtimes.jp/main/html/rd/p/000000061.000157671.html</a></li>
+        <li>SEOWorks「AI Referral Traffic 2026: How Much, And Does It Convert?」（2026年10月）<br><a href="https://www.seoworks.co.uk/downloads/ai-referral-traffic-benchmark/" target="_blank" rel="noopener">https://www.seoworks.co.uk/downloads/ai-referral-traffic-benchmark/</a></li>
+        <li>ITmedia NEWS「Gmailに『Gemini 3』搭載の大型アップデート、情報の要約や『AI Inbox』が登場」（2026年1月9日）<br><a href="https://www.itmedia.co.jp/news/articles/2601/09/news066.html" target="_blank" rel="noopener">https://www.itmedia.co.jp/news/articles/2601/09/news066.html</a></li>
+        <li>GIGAZINE「Gmailで『Geminiがメールを集約して回答してくれる機能』…Googleが発表、まずは有料ユーザーから」（2026年1月9日）<br><a href="https://gigazine.net/news/20260109-google-gmail-with-gemini/" target="_blank" rel="noopener">https://gigazine.net/news/20260109-google-gmail-with-gemini/</a></li>
+        <li>SKITRATE「Email Marketing News 2026: Inbox Rules Tighten, ROI Hits $36」（Litmus State of Email 2026の紹介、2026年）<br><a href="https://skitrate.com/blog/email-marketing-news-2026-inbox-rules-roi" target="_blank" rel="noopener">https://skitrate.com/blog/email-marketing-news-2026-inbox-rules-roi</a></li>
+        <li>Yocto「162 Email Marketing Statistics for 2026 (Sourced)」（Litmusの36ドルの出どころについての指摘、2026年）<br><a href="https://yocto.agency/email-marketing-statistics/" target="_blank" rel="noopener">https://yocto.agency/email-marketing-statistics/</a></li>
+        <li>SuccessPixel「Email Marketing Statistics 2026」（Klaviyoの2026年のレポートの数字の引用、2026年）<br><a href="https://successpixel.com/email-marketing-statistics-and-trends/" target="_blank" rel="noopener">https://successpixel.com/email-marketing-statistics-and-trends/</a></li>
+        <li>本ページ掲載の記事「Reddit株が29%下がった理由　AI検索が、サイトに人を送らなくなった」（2026年11月2日）<br><a href="report-2026-11-ai-search-reddit.html" target="_blank" rel="noopener">report-2026-11-ai-search-reddit.html</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は、電通、Alphabetの公表数字、各調査の報道をもとに、Claudeが社内向けに整理・編集したものです。<strong>特定の製品やサービスの推奨はしていません。</strong>Googleの公式発表（Gmailの2026年1月の刷新）、LitmusとKlaviyoの原本は、作成時に読み込めず、複数の報道と解説で内容を照合しました。メールの分野は、調査の多くが配信ツールの会社のもので、出どころの限界を、第6章と第8章に書きました。2026年11月2日時点の情報です。前の記事（<a href="report-2026-11-ai-search-reddit.html">Reddit株が29%下がった理由</a>）の続きにあたります。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
