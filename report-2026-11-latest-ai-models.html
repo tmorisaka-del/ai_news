@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI各社の最新モデルは、何が優れているのか　Claude、GPT-6、Gemini 4、Muse、Grokを、強みと価格で比べる｜AIニュースまとめ！（社内版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=11">
+<style>
+  .rp{max-width:760px;margin:0 auto;padding:0 18px 70px}
+  .rp-card{background:var(--card);border-radius:20px;box-shadow:0 4px 14px rgba(50,90,110,.07);
+    padding:30px 32px 34px;margin:-38px 0 24px}
+  .rp-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .rp-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;letter-spacing:.07em;
+    color:#fff;background:#9c2d2d;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .rp-date{font-size:12px;color:var(--sub);font-weight:500}
+  .rp h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(21px,3.6vw,27px);
+    line-height:1.5;color:#1e4756;margin-bottom:10px}
+  .rp-lead{font-size:14px;color:var(--sub);line-height:1.8;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .rp h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:17.5px;color:#1e4756;
+    margin:30px 0 10px;padding-left:12px;border-left:5px solid #9c2d2d}
+  .rp h4{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:15.5px;color:#9c2d2d;margin:24px 0 7px}
+  .rp p{font-size:14.5px;margin-bottom:13px}
+  .rp strong{color:#1e4756}
+  .rp a{color:#9c2d2d}
+  .rp-points{background:#f8ecec;border-radius:14px;padding:18px 22px;margin:22px 0 6px}
+  .rp-points .pt-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:9px}
+  .rp-points ol{margin:0;padding-left:20px}
+  .rp-points li{font-size:14px;margin-bottom:8px;line-height:1.75}
+  .rp-points li:last-child{margin-bottom:0}
+  .rp-gloss{background:#fff;border:1px solid #ecd4d4;border-left:5px solid #9c2d2d;
+    border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0 6px}
+  .rp-gloss .g-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:4px}
+  .rp-gloss .g-lead{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+  .rp-gloss dl{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;margin:0}
+  .rp-gloss .g-row{font-size:13.3px;line-height:1.7}
+  .rp-gloss dt{font-weight:700;color:#1e4756;display:inline}
+  .rp-gloss dt::after{content:"…"}
+  .rp-gloss dd{display:inline;margin:0}
+  @media (max-width:640px){.rp-gloss dl{grid-template-columns:1fr}}
+  .rp-note{background:#fff8ea;border-radius:12px;padding:13px 18px;font-size:13.5px;margin:16px 0}
+  .rp-note b{color:#c07d00}
+  .rp-case{border:1px solid var(--line);border-left:4px solid #9c2d2d;border-radius:0 12px 12px 0;
+    padding:4px 20px 12px;margin:14px 0;background:#fdfafa}
+  .rp table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.3px}
+  .rp th,.rp td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  .rp th{background:#f8ecec;font-weight:700;color:#1e4756;font-size:12.8px}
+  .rp-figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .rp-fig{flex:1 1 190px;background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+  .rp-fig .f-num{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;color:#9c2d2d;display:block}
+  .rp-fig .f-lab{font-size:12.5px;color:var(--sub)}
+  .rp-steps{counter-reset:st;margin:14px 0 18px;padding:0;list-style:none}
+  .rp-steps li{counter-increment:st;position:relative;padding:10px 0 10px 44px;font-size:14px;line-height:1.7;
+    border-bottom:1px dashed var(--line)}
+  .rp-steps li:last-child{border-bottom:none}
+  .rp-steps li::before{content:counter(st);position:absolute;left:6px;top:11px;width:24px;height:24px;
+    border-radius:50%;background:#9c2d2d;color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;
+    font-weight:800;font-size:13px;text-align:center;line-height:24px}
+  .rp-src{background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:28px}
+  .rp-src .s-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.12em;color:#9c2d2d;display:block;margin-bottom:10px}
+  .rp-src ul{list-style:none;margin:0;padding:0}
+  .rp-src li{font-size:12.8px;line-height:1.7;margin-bottom:10px;color:var(--sub)}
+  .rp-src li:last-child{margin-bottom:0}
+  .rp-src a{word-break:break-all}
+  .rp-disc{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:22px;
+    padding-top:16px;border-top:1px dashed var(--line)}
+  .rp-back{display:inline-block;margin-top:24px;font-size:13.5px;font-weight:700;color:#9c2d2d}
+  @media (max-width:640px){.rp-card{padding:24px 20px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1><a href="./" title="トップページへ戻る" style="color:inherit;text-decoration:none">AIニュースまとめ！（社内版）</a></h1>
+    <div class="header-sub">Claude独自編集記事</div>
+    <a class="back-link" href="./">← 最新のニュースへ戻る</a>
+  </div>
+</header>
+
+<div class="rp">
+  <article class="rp-card">
+
+        <div class="rp-meta">
+      <span class="rp-tag">&#9998; Claude独自編集記事</span>
+      <span class="rp-date">2026年11月9日 作成</span>
+    </div>
+
+    <h2>AI各社の最新モデルは、何が優れているのか　Claude、GPT-6、Gemini 4、Muse、Grokを、強みと価格で比べる</h2>
+    <div class="rp-lead">
+      2026年9月から11月にかけて、AI各社が、最新のモデルを相次いで公開しました。Anthropicは「Claude Opus 5.5」を、OpenAIは「GPT-6 Astra」と「GPT-6.1 Sol」を出しました。Googleは「Gemini 4 Argon」と「Gemini 4 Carbon」を出しました。Metaは「Muse Wonder」、SpaceXAI（xAI）は「Grok 4.7」です。第三者の指標（Artificial Analysis）では、11月の時点の上位3つが、決まっています。1位がGemini 4 Carbon、2位がClaude Opus 5.5、3位がGPT-6 Astraです。ただし、Carbonは、サイバー防御を担う一部の組織にしか、提供されていません。この記事は、各社のモデルの強みを、料金と、使える場所とあわせて、整理します。
+    </div>
+
+    <div class="rp-points">
+      <span class="pt-title">この記事の要点</span>
+      <ol>
+        <li>第三者の総合点の1位は、Gemini 4 Carbonの59〜60点です。2位はClaude Opus 5.5の58〜59点、3位はGPT-6 Astraの57点です。Carbonは、サイバー防御を担う一部の組織にしか、提供されていません。</li>
+        <li>使えるモデルの中では、強みが分かれます。コーディングでは、Claude Opus 5.5が、Terminal-Bench 4.0の公式ランキングで、64.8%の1位です。人の好みを問うArenaでは、Gemini 4 Argonが、Opus 5.5より上です。</li>
+        <li>費用あたりでは、GPT-6.1 Solが、目立ちます。総合点55で、1タスクあたり1.27ドルです。同じ55点のClaude Sonnet 5.5は、10.02ドルです（Artificial Analysis）。</li>
+        <li>Metaの「Muse Wonder」は、同社が初めて、最上位に位置づけたモデルです。API料金は、100万トークンあたり、入力4ドル・出力20ドルで、Claude Opus 5.5と同じです。保険金請求や、賃貸契約書の理解など、実務のエージェント作業を、前面に出しています。</li>
+        <li>価格の下がり方が、目立ちます。Opus 5.5は、前のOpus 5より40%安く、Gemini 4 Argonは、11月30日まで、半額の導入価格です。Claude Haiku 5.5は、入力が100万トークンあたり0.10ドルです。</li>
+      </ol>
+    </div>
+
+    <div class="rp-gloss">
+      <span class="g-title">先に押さえておく言葉</span>
+      <div class="g-lead">本文に出てくる用語です。分かる部分は読み飛ばしてください。</div>
+      <dl>
+        <div class="g-row"><dt>最上位モデル</dt><dd>各社が、自社で最も性能が高いと位置づけているモデル。</dd></div>
+        <div class="g-row"><dt>Artificial Analysis Intelligence Index</dt><dd>第三者の調査会社Artificial Analysisが、多数のテストの結果を、1つの点数にまとめた指標。</dd></div>
+        <div class="g-row"><dt>Arena</dt><dd>利用者が、2つのAIの答えを見比べて、好みで投票する、順位の仕組み。正しさではなく、好みを測ります。</dd></div>
+        <div class="g-row"><dt>ベンチマーク</dt><dd>AIの能力を、同じ問題で測る、テストのこと。</dd></div>
+        <div class="g-row"><dt>エージェント</dt><dd>目標を伝えると、人に代わって、複数の作業を自分で進めるAI。</dd></div>
+        <div class="g-row"><dt>トークン</dt><dd>AIが文章を処理するときの単位。日本語では、1トークンがおおむね1〜2文字に相当します。モデルによって異なります。</dd></div>
+        <div class="g-row"><dt>推論の強さ（effort）</dt><dd>AIが、答えを出す前に、どれだけ時間をかけて考えるかの設定。強くするほど、点数が上がり、費用と時間も増えます。</dd></div>
+        <div class="g-row"><dt>公開重み（オープンウェイト）</dt><dd>学習済みのAIの設定値が公開され、自分の環境で動かせるモデル。</dd></div>
+      </dl>
+    </div>
+    <h3>1. 総合点の1位はGemini 4 Carbon、2位はClaude Opus 5.5、3位はGPT-6 Astra　2026年11月の順位</h3>
+    <div class="rp-figs">
+      <div class="rp-fig"><span class="f-num">59〜60点</span><span class="f-lab">Gemini 4 Carbon（Google）。ただし、一部の組織にしか提供されていない</span></div>
+      <div class="rp-fig"><span class="f-num">58〜59点</span><span class="f-lab">Claude Opus 5.5（Anthropic）。誰でも契約できるモデルの中で最高</span></div>
+      <div class="rp-fig"><span class="f-num">57点</span><span class="f-lab">GPT-6 Astra（OpenAI）。次に、Claude Sonnet 5.5とGPT-6.1 Solが55点</span></div>
+    </div>
+    <p>Artificial Analysisは、各社のモデルを、自社でテストして、総合点を出しています。2026年11月6日の順位は、次のとおりです。1位がGemini 4 Carbonで、59〜60点です。2位がClaude Opus 5.5で、58〜59点です。3位がGPT-6 Astraで、57点です。調べた日によって、1点ほどの違いがあります。</p>
+    <p>Gemini 4 Carbonは、Googleが10月28日に発表した、同社で最も強いモデルです。Googleは、サイバー防御に取り組む、審査を通った組織への提供から始めると発表しました。一般の利用者や企業に開く日は、示していません。</p>
+    <p>人の好みで順位を決めるArenaでは、10月27日の時点の上位が、次のとおりです。1位がGemini 4 Carbon（1528点、暫定）です。2位がGemini 4 Argon（1520点）、3位がClaude Opus 5.5（1509点）です。MetaのMuse Wonderは、4位です（1507点）。</p>
+    <p>第三者の総合点が、同じ会社のモデルでも、設定で大きく変わります。Claude Opus 5.5は、推論の強さを最大にすると59点、低くすると35点です。点数を比べるときは、設定をそろえる必要があります。</p>
+    <h3>2. Anthropic：Opus 5.5は、大きなコードを長時間扱う仕事に強い　一方で、科学研究の一部のテストではGPT-6 Astraを下回る</h3>
+    <p>Anthropicは、2026年9月から10月に、Claude 5.5の3モデルを出しました。9月2日には、最上位の「Fable 5.1」も公開しています。</p>
+    <p><strong>Claude Opus 5.5</strong>（9月22日）について、Anthropicは、こう説明しています。最上位のFable 5.1と、ほとんどの作業で、同じ性能です。前のOpus 5より、費用は40%安く、出力は30%以上速くなりました。API料金は、100万トークンあたり、入力4ドル・出力20ドルです。</p>
+    <p>強みは、大きなコードを、長時間扱う仕事です。初期のテスターが、20万行のコードの監査と修正を、3時間未満で終えました。前のOpus 5は、同じ作業に20時間以上かかりました。ウェブアプリの読み込み時間を短くする指示では、40回中39回、成功しました。</p>
+    <p>ベンチマークのTerminal-Bench 4.0（コマンド操作のテスト）の公式ランキングでは、Opus 5.5が64.8%で1位です。Claude Sonnet 5.5が61.8%で2位、GPT-6 AstraとGPT-6.1 Solが58.2%で3位です。</p>
+    <p>不利な点も、あります。ITmedia NEWSによると、科学研究や、業務の流れを測る一部のテストでは、GPT-6 Astraを下回りました。サイバーセキュリティに関わる作業の多くは、安全のため、旧モデルのOpus 4.8に、振り分けられます。</p>
+    <p><strong>Claude Sonnet 5.5</strong>（9月28日）は、日常の作業向けです。範囲が決まった作業、バグの修正、文書・スライド・表計算の作成を、得意とします。出力は、Sonnet 5より30%以上速くなりました。料金は、入力2ドル・出力10ドルで、据え置きです。</p>
+    <p><strong>Claude Haiku 5.5</strong>（10月7日）は、大量の処理向けの、小型のモデルです。費用は、前のHaiku 4.5より、平均で約75%安くなりました。料金は、入力0.10ドル・出力0.50ドルです（入力が10万トークン以下の場合）。無料プランでも、使えます。</p>
+    <p><strong>Claude Fable 5.1</strong>は、最上位のモデルです。料金は、入力10ドル・出力50ドルです。個人向けでは、MaxとUltraのプランで使えます。</p>
+    <h3>3. OpenAI：Astraが最上位、Solは「Astraに迫る性能を5分の1の料金」　最新のAstraの公開は見送られた</h3>
+    <p><strong>GPT-6 Astra</strong>（9月3日）は、OpenAIの最上位モデルです。パソコンの操作、Webの閲覧、ソフトウェアの開発、科学、専門的な仕事を、得意とします。API料金は、入力10ドル・出力50ドルです。ChatGPTでは、Proのプランで使えます。</p>
+    <p><strong>GPT-6.1 Sol</strong>（9月29日）は、Astraに迫る性能を、5分の1の料金で出すモデルです。入力2ドル・出力10ドルで、キャッシュ済みの入力は0.10ドルです。パソコン操作のテスト（OSWorld 2.0）では、1タスクあたりの費用が約7分の1で、Astraとの差を2.1ポイントに縮めました。</p>
+    <p>第三者の費用の比較では、さらに差が出ます。Artificial Analysisの総合点が55点の、GPT-6.1 Solは、1タスクあたり1.27ドルです。同じ55点のClaude Sonnet 5.5は、10.02ドルです。Opus 5.5は、59点で10.04ドルです。</p>
+    <p><strong>GPT-6.1 Terra</strong>（10月26日）は、画面を見てパソコンを操作する力に、重点を置いたモデルです。入力1ドル・出力5ドルです。総合点は51点です。</p>
+    <p>OpenAIは、10月に出す予定だった、最先端のモデル「GPT-6.1 Astra」の発表を、見送りました。安全基準を満たさないためと、米国の新聞社と通信社が報じています（ITmedia AI＋）。サイバーセキュリティに特化した「GPT-6 Cyber」は、審査を受けた防御担当者にだけ、提供されています。</p>
+    <h3>4. Google：Gemini 4 Argonは、出力が100万トークンに伸び、Arenaでは上位　導入価格は11月30日まで</h3>
+    <p><strong>Gemini 4 Argon</strong>は、9月30日に発表され、10月13日に一般提供が始まりました。コーディング、金融、法務、サイバーセキュリティ、科学の、複雑な作業を、得意とします。Googleは、金融や法務などを測る「Vals Index」で、1位だと説明しています。</p>
+    <p>いちばん大きな変化は、出力の上限です。従来の6万4,000トークンから、約100万トークンに伸びました。長い契約書を、全文のまま作り直せるようになります。コードを書く力を測るDeepSWE v1.1では、77.9%です（Google発表）。</p>
+    <p>API料金は、11月30日まで、入力2ドル・出力10ドルの導入価格です。12月1日から、入力4ドル・出力20ドルになります。Geminiアプリでは、Google AI ProとUltraの契約者が、使えます。無料版とAI Plusは、対象外です。</p>
+    <p>第三者の総合点では、Argonは50点で、Opus 5.5の59点より、低くなります。一方、人の好みを測るArenaでは、Argonが1520点で、Opus 5.5の1509点より上です。企業の専門的な仕事を測るMercorのAPEX-Agentsでも、Argonは82.4%で、Opus 5.5の73.5%を上回っています。</p>
+    <p>Googleは、動画を作る「Gemini Omni 1.2 Flash」も、11月5日に一般提供しました（このページで紹介）。</p>
+    <h3>5. Meta：Muse Wonderは、同社が初めて最上位に位置づけたモデル　保険金請求や契約書の理解など、実務のエージェント作業を前面に</h3>
+    <p>Metaは、2026年4月に、Museシリーズの最初のモデル「Muse Spark」を出しました。軽くて、反応が速いモデルです。10月12日に、より大きな「Muse Wonder」と「Muse Wonder Full」を発表しました。Metaは、これまでで最も性能が高いモデルだと説明しています。TechCrunchは、Metaが初めて出す、最先端のモデルだと報じました。</p>
+    <p>Metaが示した用途は、実務のエージェント作業です。保険金請求の手続き、賃貸借契約書の内容の理解、個人の財務状況の把握、アプリの開発などです。複数のやり取りを重ねながら、時間をかけて進める仕事を、想定しています。</p>
+    <p>2つのモデルは、提供のされ方が違います。Muse Wonderは、開発者向けのMeta Model APIと、コーディングの「Muse Code」で使えます。API料金は、入力4ドル・出力20ドルで、Claude Opus 5.5と同じです。Muse Wonder Fullは、Muse Codeの、上位プランの契約者だけが使えます。どちらも、読み込めるのは100万トークンまでです。</p>
+    <p>Metaの表では、総合点は、Muse Wonderが52点、Muse Wonder Fullが56点です。Artificial Analysisの指標です。Metaは、Wonder Fullが、他社の最上位モデルを、上回ると説明しています。比べたのは、Claude Fable 5.1、GPT-6 Astra、Gemini 4 Argonです。TechCrunchは、Metaのテストで、Fable 5.1とGPT-6 Astraに、近い得点だったと伝えています。Arenaでは、Muse Wonderは4位です。</p>
+    <p>10月15日には、公開重みの「Muse Spark Open」も出ました。全体で8,160億個、実際に動くのは420億個の、パラメーターを持つ、専門家の組み合わせ型のモデルです。日本では、10月23日に、パーソナルAIエージェントのアプリ「Muse」の提供が始まりました（このページで紹介）。</p>
+    <h3>6. SpaceXAI（xAI）：Grok 4.7は、同等のモデルの半額で長時間の作業をこなすと主張　第三者の総合点は、上位と差がある</h3>
+    <p>SpaceXAI（xAI）は、9月21日に「Grok 4.7」を公開しました。コーディングと、知識を使う仕事に向く、同社の最上位モデルです。新しい、より大きな基盤モデルを使い、数時間かかる難しい作業を中心に、長く強化学習をしました。自分の作業を確かめる力と、長い文脈を扱う力が、上がったと説明しています。</p>
+    <p>API料金は、入力2ドル・出力6ドルで、前のGrok 4.6と同じです。SpaceXAIは、同等のモデルと比べて、速度は2倍、価格は半額だと説明しています。読み込める量は、50万トークンです。Cursorと、コーディングツールのGrok Buildで、使えます。</p>
+    <p>第三者の総合点（Artificial Analysis）では、Grok 4.7は34〜35点で、上位の57〜60点とは、差があります。</p>
+    <h3>7. 公開重みのモデル：Kimi K3.1 Proが、総合点46で最高</h3>
+    <p>自分の環境で動かせる、公開重みのモデルでは、中国のMoonshot AIの「Kimi K3.1 Pro」が、総合点46で、最高です。上位の57〜60点とは、13点以上の差があります。全体で2.8兆個、実際に動くのは1,040億個の、パラメーターを持ちます。利用には、同社独自のライセンスの条件があります。</p>
+    <p>その次は、DeepSeekの「V4.1 Flash」で、33点です。Metaの「Muse Spark Open」も、公開重みのモデルです。</p>
+    <h3>8. 仕事では、何を選ぶか　用途別の目安と、費用の比べ方</h3>
+    <p>第三者の指標と、各社の発表から、用途別の目安を、まとめます。</p>
+    <table>
+      <tr><th>用途</th><th>候補</th><th>理由</th></tr>
+      <tr><td>コーディング、長時間のエージェント作業</td><td>Claude Opus 5.5</td><td>Terminal-Bench 4.0の公式ランキングで1位（64.8%）。次にClaude Sonnet 5.5（61.8%）</td></tr>
+      <tr><td>文書、スライド、表計算などの、日常の仕事</td><td>Claude Sonnet 5.5、GPT-6.1 Sol、Gemini 4 Argon</td><td>Sonnet 5.5は、この種の作業を得意とすると、Anthropicが説明。Argonは、人の好みを測るArenaで上位</td></tr>
+      <tr><td>費用をおさえたいAPIの利用</td><td>GPT-6.1 Sol</td><td>総合点55で、1タスクあたり1.27ドル</td></tr>
+      <tr><td>大量の、簡単な処理</td><td>Claude Haiku 5.5</td><td>入力0.10ドル・出力0.50ドル。無料プランでも使える</td></tr>
+      <tr><td>長い文章を、全文のまま作り直す</td><td>Gemini 4 Argon</td><td>出力の上限が、約100万トークン</td></tr>
+    </table>
+    <p>費用は、1トークンあたりの価格だけでは、比べられません。同じ作業でも、モデルによって、考える量が違うためです。Artificial Analysisが公表する、1タスクあたりの費用で見ると、差がはっきりします。</p>
+    <table>
+      <tr><th>モデル（推論の強さ）</th><th>総合点</th><th>1タスクあたりの費用</th></tr>
+      <tr><td>GPT-6.1 Sol（最大）</td><td>55点</td><td>1.27ドル</td></tr>
+      <tr><td>GPT-6 Astra（高）</td><td>55点</td><td>3.24ドル</td></tr>
+      <tr><td>Claude Opus 5.5（最高に近い設定）</td><td>57点</td><td>6.05ドル</td></tr>
+      <tr><td>GPT-6 Astra（最大）</td><td>57点</td><td>6.24ドル</td></tr>
+      <tr><td>Claude Sonnet 5.5（最大）</td><td>55点</td><td>10.02ドル</td></tr>
+      <tr><td>Claude Opus 5.5（最大）</td><td>59点</td><td>10.04ドル</td></tr>
+    </table>
+    <p>同じ55点でも、GPT-6.1 Solは1.27ドル、Claude Sonnet 5.5は10.02ドルです。Opus 5.5は、57点から59点に上げるために、約4ドルを、追加で使います。推論の強さの設定が、費用に大きく効きます。</p>
+    <p>Anthropic自身が、Opus 5.5の発表に書いています。ベンチマークの差は、実際の使い心地の差を示す指標として、信頼しにくくなっているという内容です。各社の発表の表は、各社が自分で測った数字で、比べるモデルの設定が、そろっていない場合があります。</p>
+    <p><strong>自社で確かめる手順</strong></p>
+    <ol>
+      <li><b>顧客や取引先の情報を扱うなら、各社のデータの取り扱いの規約を、先に確認する。</b></li>
+      <li><b>候補を3つに絞る。</b>複数のテストで、上位に入っているモデルから選びます。</li>
+      <li><b>自社の実際の仕事を、20〜50件、同じ条件で試す。</b>メルマガの下書き、記事の構成、調査のまとめ、表の整理などです。</li>
+      <li><b>正しさ、費用、かかった時間の3つを、記録して比べる。</b></li>
+      <li><b>新しいモデルが出たら、同じ仕事で、もう一度試す。</b>Googleは、Argonの約2週間後に、Carbonを出しました。</li>
+    </ol>
+    <h3>9. これからの予定　Argonの値上げ、Carbonの提供範囲</h3>
+    <p>Gemini 4 Argonの導入価格は、11月30日で終わります。12月1日から、入力4ドル・出力20ドルになります。</p>
+    <p>Gemini 4 Carbonは、Googleが、できるだけ早く、開発者、企業、一般の利用者に開くと述べています。日付は、示されていません。Carbonが一般に開けば、「最も強いモデル」の答えが、変わる可能性があります。</p>
+    <p>OpenAIは、見送った「GPT-6.1 Astra」の扱いを、示していません。AnthropicのFable 5.1とMythos 5.1、Metaの公開重みのモデルなど、上位の動きが、毎月のように続いています。</p>
+
+    <div class="rp-src">
+      <span class="s-title">出典</span>
+      <ul>
+        <li>Artificial Analysis「Comparison of AI Models across Intelligence, Performance, and Price」（Intelligence Index v5.0、2026年11月）<br><a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">https://artificialanalysis.ai/models</a></li>
+        <li>GEO Toolbox「Best AI Model in November 2026: Ranked by What You Do」（Artificial Analysis、Arena、Mercor、Terminal-Benchの順位と、各社の料金の一覧、2026年11月6日）<br><a href="https://geotoolbox.ai/blog/best-ai-model" target="_blank" rel="noopener">https://geotoolbox.ai/blog/best-ai-model</a></li>
+        <li>Impress Watch「Claude Opus 5.5登場　Fable 5.1並みの性能をOpus 5より40%安価に」（2026年9月23日）<br><a href="https://www.watch.impress.co.jp/docs/news/2142619.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2142619.html</a></li>
+        <li>ITmedia NEWS「Anthropic、『Claude Opus 5.5』公開　Fable 5.1並みの性能で利用コスト4割減」（2026年9月23日）<br><a href="https://www.itmedia.co.jp/news/article/2609/23/2000001673/" target="_blank" rel="noopener">https://www.itmedia.co.jp/news/article/2609/23/2000001673/</a></li>
+        <li>GIGAZINE「AnthropicがAIモデル『Claude Opus 5.5』を発表、Opus 5よりコスト40％減・30％以上高速化しコーディング性能も向上」（2026年9月23日）<br><a href="https://gigazine.net/news/20260923-claude-opus-5-5/" target="_blank" rel="noopener">https://gigazine.net/news/20260923-claude-opus-5-5/</a></li>
+        <li>CNET Japan「AnthropicがClaude新モデル『Opus 5.5』発表　Fable 5.1並みの性能をOpus 5より4割安く」（Yahoo!ニュース、2026年9月）<br><a href="https://news.yahoo.co.jp/articles/eb044667a569c51b3964c1b0fce3e1fec72aad2d" target="_blank" rel="noopener">https://news.yahoo.co.jp/articles/eb044667a569c51b3964c1b0fce3e1fec72aad2d</a></li>
+        <li>Impress Watch「Claude Sonnet 5.5公開　Opus 5.5に迫る性能で日常タスクや文章力に強み」（2026年9月29日）<br><a href="https://www.watch.impress.co.jp/docs/news/2143947.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2143947.html</a></li>
+        <li>ITmedia NEWS「Anthropic、『Claude Haiku 5.5』公開　『Haiku 4.5』から大幅性能向上で利用コスト約75％減」（2026年10月8日）<br><a href="https://www.itmedia.co.jp/news/article/2610/08/2000002112/" target="_blank" rel="noopener">https://www.itmedia.co.jp/news/article/2610/08/2000002112/</a></li>
+        <li>Uravation「Claude Haiku 5.5とは｜料金は10分の1・Sonnetとの違い」（2026年10月8日）<br><a href="https://uravation.com/media/claude-haiku-5-5-pricing-features-guide-2026-10/" target="_blank" rel="noopener">https://uravation.com/media/claude-haiku-5-5-pricing-features-guide-2026-10/</a></li>
+        <li>ITmedia AI＋「『GPT-6.1 Sol』登場　『一部Astra並み』性能をコスト5分の1で提供」（2026年9月30日）<br><a href="https://www.itmedia.co.jp/aiplus/article/2609/30/2000001867/" target="_blank" rel="noopener">https://www.itmedia.co.jp/aiplus/article/2609/30/2000001867/</a></li>
+        <li>Impress Watch「5分の1の料金でAstraに迫る『GPT-6.1 Sol』公開　前バージョンから1週間」（2026年9月30日）<br><a href="https://www.watch.impress.co.jp/docs/news/2144306.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2144306.html</a></li>
+        <li>GIGAZINE「『GPT-6.1 Sol』がもう登場、GPT-6 Astraと同等性能で料金は5分の1」（2026年9月30日）<br><a href="https://gigazine.net/news/20260930-gpt-6-1-sol/" target="_blank" rel="noopener">https://gigazine.net/news/20260930-gpt-6-1-sol/</a></li>
+        <li>OpenAI「GPT-6 Astra: The next generation in intelligence for work」（2026年）<br><a href="https://openai.com/index/gpt-6-astra-next-generation-work/" target="_blank" rel="noopener">https://openai.com/index/gpt-6-astra-next-generation-work/</a></li>
+        <li>ITmedia NEWS「OpenAI、サイバーセキュリティ特化型『GPT-6 Cyber』発表　Firefoxの未知の脆弱性81件を発見」（2026年11月6日）<br><a href="https://www.itmedia.co.jp/news/article/2611/06/2000002931/" target="_blank" rel="noopener">https://www.itmedia.co.jp/news/article/2611/06/2000002931/</a></li>
+        <li>窓の杜「『Gemini 4 Argon』が一般提供開始」（2026年10月14日）<br><a href="https://forest.watch.impress.co.jp/docs/news/2147842.html" target="_blank" rel="noopener">https://forest.watch.impress.co.jp/docs/news/2147842.html</a></li>
+        <li>Impress Watch「グーグル最上位モデル『Gemini 4 Argon』　出力100万トークンで最高性能」（2026年10月1日）<br><a href="https://www.watch.impress.co.jp/docs/news/2144689.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2144689.html</a></li>
+        <li>ビジネス＋IT「グーグル『Gemini 4 Argon』発表…出力上限は100万トークン、脆弱性も自力修正」（Yahoo!ニュース、2026年10月）<br><a href="https://news.yahoo.co.jp/articles/c3161cad27e91677b6636f5b845b063d2721a738" target="_blank" rel="noopener">https://news.yahoo.co.jp/articles/c3161cad27e91677b6636f5b845b063d2721a738</a></li>
+        <li>窓の杜「Google、『Gemini 4 Carbon』を発表　『Argon』をしのぐ同社最強モデル」（2026年10月29日）<br><a href="https://forest.watch.impress.co.jp/docs/news/2152085.html" target="_blank" rel="noopener">https://forest.watch.impress.co.jp/docs/news/2152085.html</a></li>
+        <li>Meta「Muse WonderおよびMuse Wonder Fullが登場：AIエージェント用フロンティアモデル」（2026年10月12日）<br><a href="https://about.fb.com/ja/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener">https://about.fb.com/ja/news/2026/10/introducing-muse-wonder-models/</a></li>
+        <li>TechCrunch「Meta releases its first frontier model, Muse Wonder」（2026年10月12日）<br><a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" target="_blank" rel="noopener">https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/</a></li>
+        <li>Impress Watch「Meta、新最上位AIモデル『Muse Wonder』　専門タスクやエージェントに強み」（2026年10月13日）<br><a href="https://www.watch.impress.co.jp/docs/news/2147484.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2147484.html</a></li>
+        <li>GIGAZINE「OpenAIやAnthropicの最先端モデルを上回る高性能AI『Muse Wonder』をMetaが発表」（2026年10月13日）<br><a href="https://gigazine.net/news/20261013-meta-ai-muse-wonder/" target="_blank" rel="noopener">https://gigazine.net/news/20261013-meta-ai-muse-wonder/</a></li>
+        <li>GIGAZINE「Grok 4.7が登場、前世代モデルと同価格で高性能」（2026年9月24日）<br><a href="https://gigazine.net/news/20260924-grok-4-7/" target="_blank" rel="noopener">https://gigazine.net/news/20260924-grok-4-7/</a></li>
+        <li>Impress Watch「『Grok 4.7』登場、長時間タスクも安定処理　価格はSolの半分以下」（2026年9月）<br><a href="https://www.watch.impress.co.jp/docs/news/2142588.html" target="_blank" rel="noopener">https://www.watch.impress.co.jp/docs/news/2142588.html</a></li>
+        <li>SpaceXAI「Introducing Grok 4.7」（2026年9月21日）<br><a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener">https://x.ai/news/grok-4-7</a></li>
+        <li>本ページ掲載のニュース「Meta、パーソナルAIエージェント『Muse』を日本で提供開始」（2026年10月23日）<br><a href="./" target="_blank" rel="noopener">./</a></li>
+      </ul>
+    </div>
+
+    <div class="rp-disc">
+      この記事は、各社の発表と、ITmedia、Impress Watch、GIGAZINEなどの報道、Artificial AnalysisやArenaなどの比較をもとに、Claudeが社内向けに整理・編集したものです。各社の発表の数字は、各社が自分で測ったものです。順位と価格は、2026年11月6日前後の時点で、毎週のように変わります。2026年11月9日時点の情報です。
+    </div>
+
+    <a class="rp-back" href="./">← 最新のニュースへ戻る</a>
+
+  </article>
+</div>
+
+</body>
+</html>
