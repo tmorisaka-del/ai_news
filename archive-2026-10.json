@@ -1,5 +1,49 @@
 [
   {
+    "date": "2026-11-12",
+    "postedAt": "2026-11-16",
+    "category": "産業動向",
+    "title": "Microsoft 365で世界規模の障害　Outlookを中心にTeams、Copilotなど20サービスに影響　ChatGPTとClaudeのMicrosoft 365連携も使えず　Microsoftは「ネットワーク増強作業の問題」と説明",
+    "summary": "Microsoft 365で、11月12日（米国時間）に、世界規模の接続障害が起きました。日本時間では、11月13日の未明です。Outlook（Exchange Online）で、メールボックスに接続できない、メールの配信が遅れる、という状態になりました。\n影響は、Teams、SharePoint、Copilot、Defender XDR、Purviewなど、メールの仕組みにつながる、20のサービスに広がりました。Teamsでは、予定表と連動する、会議の予約や招待が、失敗することがありました。通話、会議への参加、グループチャットなどの基本機能は、おおむね使えました。Microsoft 365 Copilotでは、Copilot Chatの読み込みや応答が失敗し、メールや予定表の情報を、参照できない場合がありました。\nOpenAIとAnthropicの、Microsoft 365との連携にも、影響が出ました。Anthropicは、メール、SharePoint、Teamsのチャット、予定表へのリクエストの大半が、失敗していると公表しました。影響を受けたのは、claude.aiと、Claude Coworkなどです。Claude APIとClaude Codeは、稼働中でした。OpenAIも、連携の新しい接続とツールに、問題が出ていると公表しました。\nロイターによると、12日の障害は、5時間以上続きました。Microsoftは、悪意のある活動が、原因となった証拠は、確認していないと説明しています。14日には、ネットワーク容量の増強作業で入り込んだ問題が、最近のネットワーク変更で表に出たことが、原因だと説明しました。根本の問題には、対処済みです。",
+    "hint": "Microsoft 365のメールを、AIに読ませたり、AIから送ったりしている会社は、障害のときに、AIの機能も止まることに、注意が必要です。この障害では、AI側のサービスは動いていても、連携先のMicrosoft 365が止まったために、メールや予定表を扱う機能が、使えませんでした。\n復旧のあとは、障害中に配信が遅れたメールや、予定表の予約を、確認する必要があります。",
+    "terms": [
+      {
+        "word": "Exchange Online",
+        "desc": "Microsoft 365の、メールと予定表を扱う、クラウドのサービス。"
+      },
+      {
+        "word": "連携（コネクタ）",
+        "desc": "AIサービスが、他のサービスのデータを、読み書きするための、接続の仕組み。"
+      }
+    ],
+    "source": {
+      "label": "NOVAIST（ロイターの報道を含む、2026年11月13日）",
+      "url": "https://novaist.jp/articles/microsoft-365-outage/"
+    }
+  },
+  {
+    "date": "2026-11-12",
+    "postedAt": "2026-11-16",
+    "category": "業務ツール",
+    "title": "Google、高速で低価格の「Gemini 4 Hydrogen」を発表　無料ユーザーも利用可能　総合点51でArgonを上回り、API料金は入力1.5ドル・出力7.5ドル",
+    "summary": "Googleは、11月12日（米国時間）に、AIモデル「Gemini 4 Hydrogen」を発表し、同日から世界で順次、提供を始めました。日常的なコーディングや、AIエージェントによる作業に向けた、速度と効率を重視したモデルです。前世代の軽量モデル「Gemini 3.8 Flash」の後継です。\n第三者の指標「Artificial Analysis Intelligence Index」で、標準の思考レベルは51点でした。Gemini 4 Argon（50点）を上回りました。「Gemini 3.8 Flash」と比べて、タスクを約2.5倍の速さで終えるといいます。「Terminal-Bench 4.1」の得点は、18.2%から57%に、3倍以上に上がりました。根拠のない主張は、5分の1以下に減りました。\n思考レベルは、low、medium、high（既定）、xhighの4段階から選べます。xhighは、今回、新しく加わりました。読み込めるのは、入力も出力も、最大100万トークンです。\nAPI料金は、100万トークンあたり、入力1.5ドル、出力7.5ドルです。コンテキストの長さによらず、一律です。Gemini 4 ArgonとCarbonは、導入期間中は入力2ドル・出力10ドルで、12月1日から、入力4ドル・出力20ドルです。\n使える場所は、次のとおりです。開発者は、Google AI StudioとAndroid Studioから、Gemini APIで使えます。企業は、「Gemini for business」で使えます。一般のユーザーは、Geminiアプリと、Google検索で使えます。Geminiアプリでは、無料ユーザーに、質問に応じて自動で選ばれます。",
+    "hint": "Hydrogenは、Geminiアプリと、Google検索の標準のモデルが、Gemini 3.8 Flashから入れ替わったものです。Gemini 4のシリーズで、無料ユーザーが使える唯一のモデルです（innovaTopia）。\n11月6日と9日に公開した記事「AI各社の最新モデルは、何が優れているのか」は、この発表に合わせて更新しました。",
+    "terms": [
+      {
+        "word": "思考レベル",
+        "desc": "AIが、答えを出す前に、どれだけ時間をかけて考えるかの設定。高くするほど、点数が上がり、費用と時間も増えます。"
+      },
+      {
+        "word": "Terminal-Bench",
+        "desc": "コマンド操作で、AIの能力を測る、テスト。"
+      }
+    ],
+    "source": {
+      "label": "ITmedia NEWS（2026年11月13日）",
+      "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003162/"
+    }
+  },
+  {
     "date": "2026-11-10",
     "postedAt": "2026-11-12",
     "category": "業務ツール",
