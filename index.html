@@ -20,24 +20,28 @@
 <div class="wrap">
 
   <style>
-    .fb-row{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 12px;}
-    .feature-banner{display:flex;flex-direction:column;justify-content:center;color:#fff;
-      text-decoration:none;border-radius:13px;padding:12px 16px 13px;margin:0;
+    .fb-row{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 18px;}
+    @media (min-width:760px){.fb-row{grid-template-columns:1fr 1fr;}}
+    .feature-banner{display:flex;flex-direction:column;justify-content:center;text-decoration:none;
+      border-radius:10px;padding:9px 34px 9px 13px;margin:0;position:relative;
       transition:transform .15s,box-shadow .15s;}
-    .feature-banner.fb-a{background:linear-gradient(120deg,#463526,#7a614a);
-      box-shadow:0 3px 10px rgba(70,53,38,.18);}
-    .feature-banner.fb-b{background:linear-gradient(120deg,#6e1f1f,#a84a4a);
-      box-shadow:0 3px 10px rgba(110,31,31,.18);}
-    .feature-banner:hover{transform:translateY(-2px);}
-    .feature-banner.fb-a:hover{box-shadow:0 7px 18px rgba(70,53,38,.28);}
-    .feature-banner.fb-b:hover{box-shadow:0 7px 18px rgba(110,31,31,.28);}
-    .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:6px;}
-    .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:10.5px;
-      letter-spacing:.06em;color:#4d1512;background:#ffe9a8;padding:2px 10px;border-radius:999px;white-space:nowrap;}
-    .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.08em;
-      color:#fff;background:var(--sun);padding:2px 8px;border-radius:999px;}
-    .fb-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;
-      font-size:clamp(19px,2.9vw,25px);line-height:1.55;margin:0;}
+    .feature-banner::after{content:"\203A";position:absolute;right:13px;top:50%;transform:translateY(-50%);
+      font-size:18px;font-weight:700;opacity:.5;}
+    .feature-banner.fb-a{background:#f6f1ea;border-left:4px solid #7a614a;color:#463526;}
+    .feature-banner.fb-b{background:#fbefef;border-left:4px solid #a84a4a;color:#6e1f1f;}
+    .feature-banner:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(70,53,38,.14);}
+    .fb-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:3px;}
+    .fb-tag{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:10px;
+      letter-spacing:.04em;color:#4d1512;background:#ffe9a8;padding:1px 8px;border-radius:999px;white-space:nowrap;}
+    .fb-new{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:9px;letter-spacing:.06em;
+      color:#fff;background:var(--sun);padding:1px 7px;border-radius:999px;}
+    .fb-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:13.5px;line-height:1.5;margin:0;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .fb-cta{display:none;}
+    .sec-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:4px 2px 14px;
+      padding:2px 0 2px 12px;border-left:6px solid var(--primary);}
+    .sec-title{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(20px,3.2vw,24px);color:#0e3d4b;}
+    .sec-sub{font-size:12.5px;color:var(--sub);}
     .notice{display:flex;align-items:center;gap:13px;background:#fff8ea;
       border:1px solid #f2dfae;border-radius:14px;padding:13px 18px;margin:0 0 16px;
       text-decoration:none;transition:box-shadow .15s,border-color .15s;}
@@ -84,14 +88,19 @@
         </a>
   </div>
 
-  <a class="more-link" href="reports.html">
-    <span class="ml-text">これまでの記事をすべて見る</span>
-    <span class="ml-count">全16本</span>
-    <span class="ml-go" aria-hidden="true">&#8250;</span>
-  </a>
 
+
+
+  <div class="sec-head"><span class="sec-title">&#128240; 最新ニュース</span><span class="sec-sub">直近2営業日の記事</span></div>
 
   <div id="list" class="grid"></div>
+
+  <div style="margin-top:22px"></div>
+  <a class="more-link" href="reports.html">
+    <span class="ml-text">これまでの記事をすべて見る</span>
+    <span class="ml-count">全21本</span>
+    <span class="ml-go" aria-hidden="true">&#8250;</span>
+  </a>
 
   <div class="panel" style="margin:30px 0 26px">
     <div class="panel-lead" style="font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:14px;color:#067e96;margin-bottom:10px">🔍 過去の記事も含めて探す</div>
